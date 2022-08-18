@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap");
+
+.navbar {
+  width: 15%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 8px 8px 0px;
+}
+
+.navbar__logo > h1 {
+  margin-top: 2rem;
+  font-family: "Allerta Stencil", sans-serif;
+  font-size: 2.5rem;
+}
+
+.navbar__logo > h1 > strong {
+  color: #737373;
+}
+
+.navbar__userInfo {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  align-items: center;
+}
+
+.navbar__userInfo > img {
+  width: 100px;
+}
+
+.navbar__userInfo > h2 {
+  margin-top: 1.5rem;
+  font-weight: 600;
+}
+
+.navbar__menu {
+  width: 80%;
+  margin-top: 6rem;
+}
+
+.navbar__menu > ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding-left: 0;
+}
+
+.navbar__menu > ul > li {
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+.navbar__menu > ul > li > img {
+  margin-right: 1rem;
+}
+
+.navbar__signout {
+  margin-top: auto;
+  margin-bottom: 2rem;
+}
+
+.navbar__signout > button {
+  background-color: #d9d9d9;
+  width: 240px;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
