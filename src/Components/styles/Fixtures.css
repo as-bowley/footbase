@@ -1,0 +1,81 @@
+.team__fixtures {
+  grid-area: fixtures;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  margin: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+  padding: 20px 20px;
+}
+
+.team__fixtures > h2 {
+  margin-bottom: 30px;
+}
+
+.team__fixtures > .fixture {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #9a9a9a;
+}
+
+.team__fixtures > .fixture:last-child {
+  border-bottom: 1px solid #9a9a9a;
+}
+
+.team__fixtures > .fixture > .fixture__home,
+.team__fixtures > .fixture > .fixture__away {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team__fixtures > .fixture > .fixture__home {
+  width: 30%;
+}
+.team__fixtures > .fixture > .fixture__away {
+  width: 30%;
+}
+
+.team__fixtures > .fixture > .fixture__home > h4 {
+  width: 70%;
+  text-align: center;
+}
+
+.team__fixtures > .fixture > .fixture__away > h4 {
+  width: 70%;
+  text-align: center;
+}
+
+.team__fixtures > .fixture > .fixture__home > img {
+  margin-right: auto;
+  margin-left: 10px;
+}
+
+.team__fixtures > .fixture > .fixture__away > img {
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.team__fixtures > .fixture > .fixture__details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+}
+
+.team__fixtures > .fixture > .fixture__details > p {
+  margin: 10px 0;
+}
+
+.team__fixtures > .fixture > .fixture__details > img {
+  margin-bottom: 20px;
+}
+
+.team__fixtures > .fixture > .fixture__details > h5 {
+  font-weight: 400;
+}

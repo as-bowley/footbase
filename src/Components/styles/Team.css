@@ -1,0 +1,67 @@
+.team {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  grid-template-rows: 0.5fr 1fr 3fr 1fr;
+  grid-template-areas:
+    "search . ."
+    "teamdetails tweets ."
+    "fixtures table trophies"
+    "squad table trophies";
+}
+
+.team__info {
+  grid-area: teamdetails;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  margin: 20px 40px;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.team__info__logo {
+  align-self: center;
+  margin: 0 2rem;
+  width: 2%;
+  display: flex;
+  justify-content: center;
+}
+
+.team__info__info {
+  width: 60%;
+}
+
+.team__info__info > ul {
+  list-style: none;
+  padding-left: 0;
+  column-count: 2;
+  letter-spacing: 0.01em;
+}
+
+.team__info__info > ul > li {
+  margin-bottom: 5px;
+}
+
+.team__info__info > ul > li > .formbox.red {
+  display: inline-block;
+  font-weight: 700;
+  width: 20px;
+  height: 20px;
+  margin: 0 3px;
+  background-color: #a40000;
+  color: #fff;
+  text-align: center;
+}
+
+.team__info__league {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.team__info__league > h4 {
+  margin: 0;
+}

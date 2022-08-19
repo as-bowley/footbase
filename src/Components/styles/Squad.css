@@ -1,0 +1,39 @@
+.team__squad {
+  grid-area: squad;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  margin: 20px 40px;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 20px;
+  height: auto;
+}
+
+.team__squad > h2 {
+  margin-right: 20px;
+}
+
+.team__squad > ul {
+  list-style: none;
+  columns: 3;
+  column-gap: 30px;
+  padding-left: 10px;
+  margin-bottom: auto;
+}
+
+.team__squad > ul > li {
+  font-size: 0.9rem;
+}
+
+.team__squad > button {
+  background-color: transparent;
+  border: none;
+  text-decoration: underline;
+  font-size: 0.8rem;
+  padding: 0;
+  height: 20px;
+  cursor: pointer;
+  align-self: flex-end;
+  width: 10ch;
+}

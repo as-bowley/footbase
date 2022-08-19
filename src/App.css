@@ -13,4 +13,5 @@ body {
 .App {
   background-color: #d2d3df;
   height: 100%;
+  display: flex;
 }

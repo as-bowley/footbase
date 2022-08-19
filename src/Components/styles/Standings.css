@@ -1,0 +1,36 @@
+.team__standings {
+  grid-area: table;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  margin: 20px 20px;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.team__standings > table {
+  table-layout: auto;
+  width: 100%;
+}
+
+.team__standings > table > tbody > tr > th:nth-child(2) {
+  text-align: left;
+}
+
+.team__standings > table > tbody > tr > td {
+  margin: 3px 0;
+}
+
+.team__standings > table > tbody > tr > td:first-child {
+  display: flex;
+  justify-content: center;
+  margin-right: 5px;
+}
+
+.team__standings > table > tbody > tr > td:last-child {
+  display: flex;
+  justify-content: end;
+  font-weight: 700;
+}
