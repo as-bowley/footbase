@@ -1,0 +1,16 @@
+.team__seasonStats {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  margin: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  height: -webkit-fill-available;
+}
+
+.team__seasonStats > table > tbody > tr > th {
+  padding: 0;
+  padding-top: 15px;
+  text-align: left;
+}

@@ -1,18 +1,24 @@
 .team__standings {
-  grid-area: table;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-  margin: 20px 20px;
+  margin: 20px 30px;
   padding: 10px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: -webkit-fill-available;
+}
+
+.team__standings > h2 {
+  margin-top: 5px;
 }
 
 .team__standings > table {
   table-layout: auto;
   width: 100%;
+  font-size: 0.8rem;
+  line-height: 130%;
 }
 
 .team__standings > table > tbody > tr > th:nth-child(2) {
@@ -32,5 +38,9 @@
 .team__standings > table > tbody > tr > td:last-child {
   display: flex;
   justify-content: end;
+  font-weight: 700;
+}
+
+.selectedTeam {
   font-weight: 700;
 }

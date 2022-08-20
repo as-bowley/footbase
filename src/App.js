@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Navbar from "./Components/Navbar";
-import Searchbar from "./Components/Searchbar";
 import Team from "./Components/Team";
 const data = require("./Components/data.json");
 
@@ -25,6 +24,7 @@ const App = () => {
         fixtures={fixtures}
         squad={squad}
         standings={standings}
+        team={teamDetails.name}
       />
     </div>
   );

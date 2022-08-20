@@ -34,29 +34,31 @@ const Teaminfo = ({
   };
   return (
     <div className="team__info">
-      <div className="team__info__logo">
-        <img src={logo} width="90px" alt="club badge" />
-      </div>
       <div className="team__info__info">
-        <h3>{name}</h3>
-        <ul>
-          <li>
-            Country: <strong>{country}</strong>
-          </li>
-          <li>
-            Year founded: <strong>{founded}</strong>
-          </li>
-          <li>
-            Stadium: <strong>{stadium}</strong>
-          </li>
-          <li>
-            Capacity: <strong>{capacity.toLocaleString()}</strong>
-          </li>
-          <li>
-            Address: <strong>{address}</strong>
-          </li>
-          <li>Form: {formBoxes()}</li>
-        </ul>
+        <div className="team__info__logo">
+          <img src={logo} width="90px" alt="club badge" />
+        </div>
+        <div className="team__info__details">
+          <h3>{name}</h3>
+          <ul>
+            <li>
+              Country: <strong>{country}</strong>
+            </li>
+            <li>
+              Year founded: <strong>{founded}</strong>
+            </li>
+            <li>
+              Stadium: <strong>{stadium}</strong>
+            </li>
+            <li>
+              Capacity: <strong>{capacity.toLocaleString()}</strong>
+            </li>
+            <li>
+              Address: <strong>{address}</strong>
+            </li>
+            <li>Form: {formBoxes()}</li>
+          </ul>
+        </div>
       </div>
       <div className="team__info__league">
         <h4>{league}</h4>

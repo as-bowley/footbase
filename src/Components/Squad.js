@@ -3,7 +3,7 @@ import "./styles/Squad.css";
 const Squad = ({ squad }) => {
   const getFirst10SquadMembers = () => {
     const players = [];
-    for (let i = 0; players.length < 15; i++) {
+    for (let i = 0; players.length < 17; i++) {
       players.push(squad[i]);
     }
     return players;

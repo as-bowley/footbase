@@ -1,6 +1,6 @@
 import "./styles/Standings.css";
 
-const Standings = ({ standings }) => {
+const Standings = ({ standings, team }) => {
   return (
     <div className="team__standings">
       <h2>Table</h2>
@@ -11,12 +11,16 @@ const Standings = ({ standings }) => {
             <th>Team</th>
             <th>Pts</th>
           </tr>
-          {standings.map((team) => {
+          {standings.map((position) => {
             return (
-              <tr key={team.rank}>
-                <td>{team.rank}</td>
-                <td>{team.team.name}</td>
-                <td>{team.points}</td>
+              <tr key={position.rank}>
+                <td>{position.rank}</td>
+                <td
+                  className={position.team.name === team ? `selectedTeam` : ""}
+                >
+                  {position.team.name}
+                </td>
+                <td>{position.points}</td>
               </tr>
             );
           })}
