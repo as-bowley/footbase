@@ -62,16 +62,16 @@ const Team = ({
       </motion.div>
       <motion.div
         className="standings__container"
-        initial={{ y: 400 }}
-        animate={{ y: 0 }}
+        initial={{ x: 400 }}
+        animate={{ x: 0 }}
         transition={{ type: "spring", duration: 1.2 }}
       >
         <Standings standings={standings} team={team} />
       </motion.div>
       <motion.div
         className="seasonstats__container"
-        initial={{ y: 400 }}
-        animate={{ y: 0 }}
+        initial={{ x: 400 }}
+        animate={{ x: 0 }}
         transition={{ type: "spring", duration: 1.2 }}
       >
         <SeasonStats statistics={teamstatistics} />

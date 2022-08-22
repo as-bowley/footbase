@@ -3,6 +3,7 @@ import faveicon from "./img/fav.png";
 import playericon from "./img/player.png";
 import teamicon from "./img/team.png";
 import "./styles/Navbar.css";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -24,11 +25,11 @@ const Navbar = () => {
           </li>
           <li>
             <img src={playericon} alt="playericon" />
-            Players
+            <Link to="./player">Players</Link>
           </li>
           <li>
             <img src={teamicon} alt="teamicon" width="30px" />
-            Teams
+            <Link to="/">Teams</Link>
           </li>
         </ul>
       </div>

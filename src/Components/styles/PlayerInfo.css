@@ -1,0 +1,56 @@
+.player__info {
+  display: flex;
+  height: 300px;
+  font-size: 1.2rem;
+}
+
+.player__name {
+  grid-area: playername;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+.player__stats {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 4fr;
+  grid-template-areas:
+    "playername playername"
+    "playerimg details";
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  margin: 20px 40px;
+  padding: 20px;
+}
+.player__stats__img {
+  grid-area: playerimg;
+  width: 50%;
+}
+
+.player__stats > .player__stats__img > img {
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.player__team {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  margin: 20px 40px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+.player__stats__info {
+  grid-area: details;
+  display: flex;
+  align-items: center;
+}
+
+.player__stats__info > ul {
+  list-style: none;
+  columns: 2;
+  line-height: 150%;
+  padding: 0;
+}

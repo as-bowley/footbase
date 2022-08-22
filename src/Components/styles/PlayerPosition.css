@@ -1,0 +1,98 @@
+.player__position {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  margin: 20px 40px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.player__position > h2 {
+  margin-top: 0;
+  align-self: baseline;
+}
+
+.player__position > img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.player__position__img {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  -webkit-box-shadow: 0px 0px 28px 5px rgba(235, 235, 235, 1);
+  -moz-box-shadow: 0px 0px 28px 5px rgba(235, 235, 235, 1);
+  box-shadow: 0px 0px 28px 5px rgba(235, 235, 235, 1);
+  visibility: hidden;
+}
+
+.player__position__img.gk {
+  bottom: 25px;
+}
+
+.player__position__img.cb1 {
+  left: 130px;
+  bottom: 120px;
+}
+
+.player__position__img.cb2 {
+  right: 130px;
+  bottom: 120px;
+}
+
+.player__position__img.lb {
+  left: 45px;
+  bottom: 140px;
+}
+
+.player__position__img.rb {
+  right: 45px;
+  bottom: 140px;
+}
+
+.player__position__img.cm1 {
+  bottom: 240px;
+  left: 130px;
+}
+
+.player__position__img.cm2 {
+  bottom: 240px;
+  right: 130px;
+}
+
+.player__position__img.cdm {
+  bottom: 180px;
+}
+
+.player__position__img.lw {
+  left: 65px;
+  bottom: 320px;
+}
+
+.player__position__img.rw {
+  right: 65px;
+  bottom: 320px;
+}
+
+.player__position__img.st {
+  bottom: 370px;
+}
+
+.player__position__img.cam {
+  bottom: 300px;
+}
+
+.show {
+  visibility: visible;
+}

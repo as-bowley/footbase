@@ -1,0 +1,36 @@
+.player__seasonStats {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  margin: 20px 40px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.player__seasonStats > h2 {
+  max-width: 100%;
+}
+
+.player__stats__table {
+  display: flex;
+  font-size: 1.2rem;
+}
+
+.player__stats__table--left {
+  width: 50%;
+}
+
+.player__stats__table--left > table {
+  width: 100%;
+}
+
+.player__stats__table--left > table > tbody > tr > th {
+  padding: 0;
+  padding-top: 15px;
+  text-align: left;
+}
+
+.player__stats__table--right > table {
+  width: 100%;
+}

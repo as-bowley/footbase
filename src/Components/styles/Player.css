@@ -1,0 +1,26 @@
+.player {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 600px 320px 500px;
+  grid-template-rows: 100px 300px 400px;
+  grid-template-areas:
+    "search search ."
+    "playerinfo playerinfo position"
+    "current current position";
+}
+
+.player__search__container {
+  grid-area: search;
+}
+
+.player__playerstats__container {
+  grid-area: playerinfo;
+}
+
+.player__seasonstats__container {
+  grid-area: current;
+}
+
+.player__position__container {
+  grid-area: position;
+}

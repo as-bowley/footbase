@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap");
 
 .navbar {
-  width: 320px;
+  min-width: 290px;
+  height: 100%;
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -55,6 +56,13 @@
   font-weight: 700;
   display: flex;
   align-items: center;
+  text-align: none;
+}
+
+.navbar__menu > ul > li > a {
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
 }
 
 .navbar__menu > ul > li > img {
@@ -62,8 +70,10 @@
 }
 
 .navbar__signout {
-  margin-top: auto;
   margin-bottom: 2rem;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
 }
 
 .navbar__signout > button {
@@ -75,4 +85,5 @@
   cursor: pointer;
   font-size: 1.5rem;
   font-weight: 700;
+  margin-bottom: 2rem;
 }
