@@ -29,12 +29,7 @@ const Fixtures = ({ fixtures }) => {
         return (
           <div className="fixture" key={index}>
             <div className="fixture__home">
-              <img
-                src={game.teams.home.logo}
-                width="40px"
-                height="40px"
-                alt="club logo"
-              />
+              <img src={game.teams.home.logo} width="45px" alt="club logo" />
               <h4>{game.teams.home.name}</h4>
             </div>
             <div className="fixture__details">
@@ -52,17 +47,12 @@ const Fixtures = ({ fixtures }) => {
                   timeZone: "UTC",
                 })}
               </p>
-              <img src={game.league.logo} alt="league logo" height="30px" />
+              <img src={game.league.logo} alt="league logo" height="40px" />
             </div>
 
             <div className="fixture__away">
               <h4>{game.teams.away.name}</h4>
-              <img
-                src={game.teams.away.logo}
-                width="40px"
-                height="40px"
-                alt="club logo"
-              />
+              <img src={game.teams.away.logo} width="45px" alt="club logo" />
             </div>
           </div>
         );

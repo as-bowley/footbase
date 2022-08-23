@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Playerstats from "./PlayerInfo";
 // import Searchbar from "./TeamSearchbar";
 import PlayerSeason from "./PlayerSeason";

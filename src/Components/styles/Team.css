@@ -31,7 +31,7 @@
 
 .team__info {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .team__info__logo {
@@ -82,6 +82,28 @@
   text-align: center;
 }
 
+.team__info__details > ul > li > .formbox.green {
+  display: inline-block;
+  font-weight: 700;
+  width: 20px;
+  height: 20px;
+  margin: 0 3px;
+  background-color: #0ea400;
+  color: #fff;
+  text-align: center;
+}
+
+.team__info__details > ul > li > .formbox.grey {
+  display: inline-block;
+  font-weight: 700;
+  width: 20px;
+  height: 20px;
+  margin: 0 3px;
+  background-color: #545454;
+  color: #fff;
+  text-align: center;
+}
+
 .team__info__league {
   display: flex;
   flex-direction: column;
@@ -97,4 +119,18 @@
 
 .team__info__league > h4 {
   margin: 0;
+}
+
+@media screen and (max-width: 1920px) {
+  .team {
+    display: grid;
+    grid-template-columns: 880px 320px;
+    grid-template-rows: 100px 230px 700px 230px 700px;
+    grid-template-areas:
+      "search search"
+      "teamdetails teamdetails"
+      "fixtures fixtures"
+      "squad squad"
+      "table stats";
+  }
 }

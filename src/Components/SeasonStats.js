@@ -21,6 +21,10 @@ const SeasonStats = ({ statistics }) => {
             <td>{statistics.fixtures.wins.total}</td>
           </tr>
           <tr>
+            <td>Draws</td>
+            <td>{statistics.fixtures.draws.total}</td>
+          </tr>
+          <tr>
             <td>Losses</td>
             <td>{statistics.fixtures.loses.total}</td>
           </tr>
