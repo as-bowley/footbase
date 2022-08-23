@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import Playerstats from "./PlayerInfo";
-import Searchbar from "./Searchbar";
+// import Searchbar from "./TeamSearchbar";
 import PlayerSeason from "./PlayerSeason";
 import "./styles/Player.css";
 import PlayerPosition from "./PlayerPosition";
@@ -9,14 +9,14 @@ import { motion } from "framer-motion";
 const Player = ({ stats, seasonStats }) => {
   return (
     <div className="player">
-      <motion.div
+      {/* <motion.div
         className="player__search__container"
         initial={{ y: -600 }}
         animate={{ y: 0 }}
         transition={{ type: "spring", duration: 1.5 }}
       >
-        <Searchbar />
-      </motion.div>
+        <Searchbar placeholder="Search player here..." />
+      </motion.div> */}
       <motion.div
         className="player__playerstats__container"
         initial={{ y: -400 }}

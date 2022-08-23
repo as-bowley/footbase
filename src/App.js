@@ -19,6 +19,17 @@ const App = () => {
   const [playerSeasonStats, setPlayerSeasonStats] = useState(
     data[6].response[0]
   );
+  const [searchValue, setTeamSearchValue] = useState("");
+  const [searchData, setSearchData] = useState(data[7].response);
+
+  const onTeamSearchChange = (event) => {
+    setTeamSearchValue(event.target.value);
+  };
+
+  const searchTeam = (id) => {
+    console.log(id);
+    setTeamSearchValue("");
+  };
 
   return (
     <div className="App">
@@ -35,6 +46,10 @@ const App = () => {
               squad={squad}
               standings={standings}
               team={teamDetails.name}
+              searchChange={onTeamSearchChange}
+              teamSearchData={searchData}
+              teamSearchValue={searchValue}
+              searchTeam={searchTeam}
             />
           }
         />

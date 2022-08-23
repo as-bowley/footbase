@@ -1,0 +1,44 @@
+.searchbar {
+  grid-area: search;
+  margin: 20px 40px;
+}
+.searchbar > input {
+  border: none;
+  border-radius: 8px;
+  height: 50px;
+  background: transparent url("../img/searchicon.png");
+  background-repeat: no-repeat;
+  background-color: #fff;
+  padding: 13px 4px 9px 80px;
+  background-position: 3% 50%;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+  width: 100%;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.searchbar > .searchbar__dropdown {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(246, 246, 246);
+  position: relative;
+  border-radius: 8px;
+  margin-top: 2px;
+}
+
+.searchbar > .searchbar__dropdown > .searchbar__dropdown--row {
+  cursor: pointer;
+  text-align: start;
+  margin: 2px 0;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgb(200, 199, 199);
+}
+
+.searchbar > .searchbar__dropdown > .searchbar__dropdown--row:last-child {
+  border-bottom: none;
+}
+
+.searchbar > .searchbar__dropdown > .searchbar__dropdown--row > img {
+  margin: 10px;
+}

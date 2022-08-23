@@ -1,6 +1,6 @@
 import Teaminfo from "./Teaminfo";
 import "./styles/Team.css";
-import Searchbar from "./Searchbar";
+import TeamSearchbar from "./TeamSearchbar";
 import Fixtures from "./Fixtures";
 import Squad from "./Squad";
 import Standings from "./Standings";
@@ -15,6 +15,10 @@ const Team = ({
   squad,
   standings,
   team,
+  searchChange,
+  teamSearchData,
+  teamSearchValue,
+  searchTeam,
 }) => {
   return (
     <div className="team">
@@ -23,7 +27,13 @@ const Team = ({
         animate={{ y: 0 }}
         transition={{ type: "spring", duration: 1.5 }}
       >
-        <Searchbar />
+        <TeamSearchbar
+          placeholder="Search team here..."
+          searchData={teamSearchData}
+          searchChange={searchChange}
+          teamSearchValue={teamSearchValue}
+          searchTeam={searchTeam}
+        />
       </motion.div>
       <motion.div
         className="teaminfo__container"
