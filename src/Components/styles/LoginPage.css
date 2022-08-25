@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap");
+
+.loginPage {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+.loginPage__logo {
+  margin-top: 2rem;
+  font-family: "Allerta Stencil", sans-serif;
+  font-size: 4.5rem;
+  margin-bottom: 5rem;
+}
+
+.loginPage__logo > strong {
+  color: #737373;
+}
+
+.loginPage > .loginPage__formContainer {
+  background-color: rgb(201, 252, 205);
+  padding: 60px 60px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  height: 30%;
+}
+
+.loginPage > .loginPage__formContainer > .loginPage__registerForm,
+.loginPage > .loginPage__formContainer > .loginPage__loginForm {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.loginPage > .loginPage__formContainer > .loginPage__registerForm > input,
+.loginPage > .loginPage__formContainer > .loginPage__loginForm > input {
+  border: none;
+  height: 3.5rem;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.loginPage > .loginPage__formContainer > .loginPage__registerForm > button,
+.loginPage > .loginPage__formContainer > .loginPage__loginForm > button {
+  border: none;
+  background-color: rgb(30, 29, 29);
+  height: 3.5rem;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  color: #fff;
+  width: 100%;
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.loginPage__formDisplayButtons {
+  display: flex;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.loginPage__loginFormDisplay,
+.loginPage__registerFormDisplay {
+  background-color: #fff;
+  padding: 1rem 0.8rem;
+  width: 50%;
+  border: none;
+  font-size: 1.4rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.loginPage__loginFormDisplay {
+  border-radius: 8px 0px 0px 8px;
+}
+
+.loginPage__registerFormDisplay {
+  border-radius: 0px 8px 8px 0px;
+}
+
+.loginPage__registerFormDisplay.formSelected,
+.loginPage__loginFormDisplay.formSelected {
+  border-bottom: 2px solid #000;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}

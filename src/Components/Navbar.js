@@ -5,7 +5,7 @@ import teamicon from "./img/team.png";
 import "./styles/Navbar.css";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ username, signOut }) => {
   return (
     <div className="navbar">
       <div className="navbar__logo">
@@ -15,7 +15,7 @@ const Navbar = () => {
       </div>
       <div className="navbar__userInfo">
         <img src={profpic} alt="profile" />
-        <h2>Alex Bowley</h2>
+        <h2>{username}</h2>
       </div>
       <div className="navbar__menu">
         <ul>
@@ -34,7 +34,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar__signout">
-        <button>Sign Out</button>
+        <button onClick={signOut}>Sign Out</button>
       </div>
     </div>
   );

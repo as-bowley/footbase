@@ -4,18 +4,32 @@ import PlayerSeason from "./PlayerSeason";
 import "./styles/Player.css";
 import PlayerPosition from "./PlayerPosition";
 import { motion } from "framer-motion";
+import PlayerSearchbar from "./PlayerSearchbar";
 
-const Player = ({ stats, seasonStats }) => {
+const Player = ({
+  stats,
+  seasonStats,
+  playerSearchChange,
+  playerSearchData,
+  playerSearchValue,
+  searchPlayer,
+}) => {
   return (
     <div className="player">
-      {/* <motion.div
+      <motion.div
         className="player__search__container"
         initial={{ y: -600 }}
         animate={{ y: 0 }}
         transition={{ type: "spring", duration: 1.5 }}
       >
-        <Searchbar placeholder="Search player here..." />
-      </motion.div> */}
+        <PlayerSearchbar
+          placeholder="Search player here..."
+          onPlayerSearchChange={playerSearchChange}
+          playerSearchData={playerSearchData}
+          playerSearchValue={playerSearchValue}
+          searchPlayer={searchPlayer}
+        />
+      </motion.div>
       <motion.div
         className="player__playerstats__container"
         initial={{ y: -400 }}

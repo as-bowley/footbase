@@ -11,19 +11,22 @@ const Standings = ({ standings, team }) => {
             <th>Team</th>
             <th>Pts</th>
           </tr>
-          {standings.map((position) => {
-            return (
-              <tr key={position.rank}>
-                <td>{position.rank}</td>
-                <td
-                  className={position.team.name === team ? `selectedTeam` : ""}
-                >
-                  {position.team.name}
-                </td>
-                <td>{position.points}</td>
-              </tr>
-            );
-          })}
+          {standings.length > 0 &&
+            standings.map((position) => {
+              return (
+                <tr key={position.rank}>
+                  <td>{position.rank}</td>
+                  <td
+                    className={
+                      position.team.name === team ? `selectedTeam` : ""
+                    }
+                  >
+                    {position.team.name}
+                  </td>
+                  <td>{position.points}</td>
+                </tr>
+              );
+            })}
         </tbody>
       </table>
     </div>

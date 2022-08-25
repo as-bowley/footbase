@@ -24,6 +24,8 @@
   position: relative;
   border-radius: 8px;
   margin-top: 2px;
+  max-height: 600px;
+  overflow-y: scroll;
 }
 
 .searchbar > .searchbar__dropdown > .searchbar__dropdown--row {
