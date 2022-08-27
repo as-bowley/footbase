@@ -59,13 +59,13 @@ const LoginPage = ({ register, login, error }) => {
                 setRegisterPassword(event.target.value);
               }}
             />
+            <div>
+              <p>{error}</p>
+            </div>
 
             <button onClick={() => register(registerEmail, registerPassword)}>
               Register
             </button>
-            <div>
-              <p>{error}</p>
-            </div>
           </div>
         )}
 
@@ -84,6 +84,9 @@ const LoginPage = ({ register, login, error }) => {
               }}
               type="password"
             />
+            <div>
+              <p>{error}</p>
+            </div>
 
             <button
               onClick={() => {
@@ -92,9 +95,15 @@ const LoginPage = ({ register, login, error }) => {
             >
               Login
             </button>
-            <div>
-              <p>{error}</p>
-            </div>
+            <button
+              className="loginPage__loginform__demoUser"
+              onClick={() => {
+                login("demo@demo.com", "123456");
+              }}
+            >
+              {" "}
+              Login as demo user
+            </button>
           </div>
         )}
       </div>

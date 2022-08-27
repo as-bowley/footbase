@@ -161,8 +161,7 @@ const App = () => {
       );
       console.log(user);
     } catch (error) {
-      setError(error);
-      console.log(error);
+      setError(error.message.split("Firebase:")[1]);
     }
   };
 
@@ -177,8 +176,7 @@ const App = () => {
 
       console.log(user);
     } catch (error) {
-      console.log(error);
-      setError(error);
+      setError(error.message.split("Firebase:")[1]);
     }
   };
 
@@ -231,7 +229,7 @@ const App = () => {
           login={login}
           logout={logout}
           register={register}
-          error={error?.message}
+          error={error}
         />
       )}
     </div>
