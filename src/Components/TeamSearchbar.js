@@ -1,17 +1,24 @@
 import "./styles/TeamSearchbar.css";
 
-const Searchbar = ({
+const TeamSearchbar = ({
   placeholder,
-  searchChange,
   searchData,
   teamSearchValue,
   searchTeam,
+  setTeamSearchValue,
 }) => {
-  //onclick for each dropdown row to return team.id
+  const onTeamSearchChange = (event) => {
+    console.log(event.target.value);
+    setTeamSearchValue(event.target.value);
+  };
 
   return (
     <form className="searchbar">
-      <input type="search" placeholder={placeholder} onChange={searchChange} />
+      <input
+        type="search"
+        placeholder={placeholder}
+        onChange={onTeamSearchChange}
+      />
       <div className="searchbar__dropdown">
         {searchData
           .filter((data) => {
@@ -35,4 +42,4 @@ const Searchbar = ({
     </form>
   );
 };
-export default Searchbar;
+export default TeamSearchbar;

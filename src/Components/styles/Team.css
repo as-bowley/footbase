@@ -4,9 +4,17 @@
   grid-template-columns: 880px 320px 340px;
   grid-template-rows: 100px 230px 700px;
   grid-template-areas:
-    "search . ."
+    "search fave fave"
     "teamdetails squad squad"
     "fixtures table stats";
+}
+
+.team__favebutton {
+  grid-area: fave;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 20px 40px;
 }
 
 .teaminfo__container {
@@ -121,13 +129,29 @@
   margin: 0;
 }
 
+.team__favebutton > button {
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.team__favebutton > button > img {
+  margin-right: 0.8rem;
+}
+
 @media screen and (max-width: 1920px) {
   .team {
     display: grid;
     grid-template-columns: 880px 320px;
     grid-template-rows: 100px 230px 700px 230px 700px;
     grid-template-areas:
-      "search search"
+      "search fave"
       "teamdetails teamdetails"
       "fixtures fixtures"
       "squad squad"

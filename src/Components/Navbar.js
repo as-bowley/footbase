@@ -21,7 +21,7 @@ const Navbar = ({ username, signOut }) => {
         <ul>
           <li>
             <img src={faveicon} alt="favourite" />
-            Favourites
+            <Link to="./favourites">Favourites</Link>
           </li>
           <li>
             <img src={playericon} alt="playericon" />

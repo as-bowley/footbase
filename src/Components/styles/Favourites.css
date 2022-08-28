@@ -1,0 +1,45 @@
+.favourites {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 7fr;
+  grid-template-areas:
+    "title ."
+    "teams players";
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  margin: 20px 40px;
+  padding: 10px 20px;
+}
+
+.favourites__teams {
+  grid-area: teams;
+  align-self: baseline;
+}
+
+.favourites__players {
+  grid-area: players;
+  align-self: baseline;
+}
+
+.favourites__teams--row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.favourites__players--row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.favourites__teams--row > img {
+  margin-right: 1rem;
+}
+
+.favourites__players--row > img {
+  margin-right: 1rem;
+}

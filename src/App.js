@@ -12,6 +12,9 @@ import {
   signOut,
 } from "firebase/auth";
 import { auth } from "./firebase-config";
+import { doc, setDoc, getDoc, updateDoc, arrayUnion } from "firebase/firestore";
+import { db } from "../src/firebase-config";
+import Favourites from "./Components/Favourites";
 
 const data = require("./Components/data.json");
 
@@ -52,9 +55,11 @@ const App = () => {
   const [user, setUser] = useState({});
   const [error, setError] = useState("");
 
-  onAuthStateChanged(auth, (currentUser) => {
-    setUser(currentUser);
-  });
+  useEffect(() => {
+    onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+  }, []);
 
   // useEffect(() => {
   //   fetch(
@@ -111,10 +116,6 @@ const App = () => {
   //     .catch((err) => console.error(err));
   // };
 
-  const onTeamSearchChange = (event) => {
-    setTeamSearchValue(event.target.value);
-  };
-
   const searchTeam = (id) => {
     console.log(id);
     // fetchTeamStats(id);
@@ -128,7 +129,7 @@ const App = () => {
     setPlayerSearchValue(event.target.value);
     if (playerSearchValue.split("").length === 4) {
       console.log("Search value === 4");
-      // fetchPlayerSearchData(playerSearchValue);
+      fetchPlayerSearchData(playerSearchValue);
     }
   };
 
@@ -139,6 +140,7 @@ const App = () => {
         setPlayerStats(data);
         setPlayerSearchValue("");
       }
+      return null;
     });
   };
 
@@ -202,10 +204,11 @@ const App = () => {
                   squad={squad}
                   standings={standings}
                   team={teamDetails.name}
-                  searchChange={onTeamSearchChange}
                   teamSearchData={teamSearchData}
                   teamSearchValue={teamSearchValue}
+                  setTeamSearchValue={setTeamSearchValue}
                   searchTeam={searchTeam}
+                  user={user.uid}
                 />
               }
             />
@@ -219,8 +222,13 @@ const App = () => {
                   playerSearchData={playerSearchData}
                   playerSearchValue={playerSearchValue}
                   searchPlayer={searchPlayer}
+                  user={user.uid}
                 />
               }
+            />
+            <Route
+              path="/favourites"
+              element={<Favourites user={user.uid} />}
             />
           </Routes>
         </>

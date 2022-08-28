@@ -4,7 +4,7 @@
   grid-template-columns: 600px 320px 500px;
   grid-template-rows: 100px 300px 400px;
   grid-template-areas:
-    "search search ."
+    "search search fave"
     "playerinfo playerinfo position"
     "current current position";
 }
@@ -23,4 +23,28 @@
 
 .player__position__container {
   grid-area: position;
+}
+
+.player__faveButton__container {
+  grid-area: fave;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 20px 40px;
+}
+
+.player__faveButton__container > button {
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.player__faveButton__container > button > img {
+  margin-right: 0.8rem;
 }
