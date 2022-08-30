@@ -1,8 +1,9 @@
 import { type } from "@testing-library/user-event/dist/type";
 import { useState } from "react";
 import "./styles/LoginPage.css";
+import loadIcon from "./img/loading-icon.gif";
 
-const LoginPage = ({ register, login, error }) => {
+const LoginPage = ({ register, login, error, isLoggingIn }) => {
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
   const [loginEmail, setLoginEmail] = useState("");
@@ -64,7 +65,11 @@ const LoginPage = ({ register, login, error }) => {
             </div>
 
             <button onClick={() => register(registerEmail, registerPassword)}>
-              Register
+              {!isLoggingIn ? (
+                "Register"
+              ) : (
+                <img src={loadIcon} alt="loading" width={"35px"} />
+              )}
             </button>
           </div>
         )}
@@ -93,7 +98,11 @@ const LoginPage = ({ register, login, error }) => {
                 login(loginEmail, loginPassword);
               }}
             >
-              Login
+              {!isLoggingIn ? (
+                "Login"
+              ) : (
+                <img src={loadIcon} alt="loading" width={"35px"} />
+              )}
             </button>
             <button
               className="loginPage__loginform__demoUser"
@@ -101,8 +110,11 @@ const LoginPage = ({ register, login, error }) => {
                 login("demo@demo.com", "123456");
               }}
             >
-              {" "}
-              Login as demo user
+              {!isLoggingIn ? (
+                "Login as demo user"
+              ) : (
+                <img src={loadIcon} alt="loading" width={"35px"} />
+              )}
             </button>
           </div>
         )}

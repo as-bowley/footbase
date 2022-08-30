@@ -42,7 +42,7 @@
 
 .navbar__menu {
   width: 80%;
-  margin-top: 6rem;
+  margin-top: 10rem;
 }
 
 .navbar__menu > ul {
@@ -54,7 +54,7 @@
 }
 
 .navbar__menu > ul > li {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -65,6 +65,10 @@
   text-decoration: none;
   color: #000;
   cursor: pointer;
+}
+
+.navbar__menu > ul > li > a.active {
+  color: rgb(54, 54, 249);
 }
 
 .navbar__menu > ul > li > img {
@@ -88,4 +92,5 @@
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 2rem;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
 }

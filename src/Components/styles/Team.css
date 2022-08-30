@@ -139,6 +139,7 @@
   cursor: pointer;
   display: flex;
   align-items: center;
+  background-color: #fff;
 }
 
 .team__favebutton > button > img {

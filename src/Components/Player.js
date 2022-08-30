@@ -104,9 +104,10 @@ const Player = ({
     <div className="player">
       <motion.div
         className="player__search__container"
-        initial={{ y: -600 }}
-        animate={{ y: 0 }}
-        transition={{ type: "spring", duration: 1.5 }}
+        initial={{ y: -5, opacity: 0 }}
+        exit={{ y: -5, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ ease: "easeIn", duration: 0.5 }}
       >
         <PlayerSearchbar
           placeholder="Search player here..."
@@ -118,17 +119,22 @@ const Player = ({
       </motion.div>
       <motion.div
         className="player__faveButton__container"
-        initial={{ x: 400 }}
-        animate={{ x: 0 }}
-        transition={{ type: "spring", duration: 1.2 }}
+        initial={{ y: -5, opacity: 0 }}
+        exit={{ y: -5, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ ease: "easeIn", duration: 0.5 }}
       >
         {playerIsFavourited ? (
-          <button onClick={removeFromFavourites}>
-            <img src={unfavIcon} />
+          <motion.button
+            onClick={removeFromFavourites}
+            whileTap={{ scale: 0.95 }}
+          >
+            <img src={unfavIcon} alt="" />
             Remove from Favourites
-          </button>
+          </motion.button>
         ) : (
-          <button
+          <motion.button
+            whileTap={{ scale: 0.95 }}
             onClick={() =>
               addTeamToFavourites(
                 stats.player.firstname + " " + stats.player.lastname,
@@ -137,32 +143,35 @@ const Player = ({
               )
             }
           >
-            <img src={favIcon} />
+            <img src={favIcon} alt="" />
             Add to Favourites
-          </button>
+          </motion.button>
         )}
       </motion.div>
       <motion.div
         className="player__playerstats__container"
-        initial={{ y: -400 }}
-        animate={{ y: 0 }}
-        transition={{ type: "spring", duration: 1.2 }}
+        initial={{ y: -5, opacity: 0 }}
+        exit={{ y: -5, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ ease: "easeIn", duration: 0.5 }}
       >
         <Playerstats stats={stats} />
       </motion.div>
       <motion.div
         className="player__seasonstats__container"
-        initial={{ y: 400 }}
-        animate={{ y: 0 }}
-        transition={{ type: "spring", duration: 1.2 }}
+        initial={{ y: 5, opacity: 0 }}
+        exit={{ y: 5, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ ease: "easeIn", duration: 0.5 }}
       >
         <PlayerSeason seasonStats={seasonStats} />
       </motion.div>
       <motion.div
         className="player__position__container"
-        initial={{ x: 400 }}
-        animate={{ x: 0 }}
-        transition={{ type: "spring", duration: 1.2 }}
+        initial={{ x: 5, opacity: 0 }}
+        exit={{ y: 5, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ ease: "easeIn", duration: 0.5 }}
       >
         <PlayerPosition position={seasonStats.statistics[0].games.position} />
       </motion.div>

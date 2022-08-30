@@ -1,5 +1,6 @@
 .favourites {
   width: 100%;
+  max-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 7fr;
@@ -15,27 +16,61 @@
   padding: 10px 20px;
 }
 
+.favourites__title {
+  padding: 1.5rem;
+  font-size: 2rem;
+}
+
 .favourites__teams {
   grid-area: teams;
   align-self: baseline;
+  padding-right: 3rem;
+  overflow-y: scroll;
 }
 
 .favourites__players {
   grid-area: players;
   align-self: baseline;
+  padding-right: 3rem;
+  overflow-y: scroll;
+}
+
+.favourites__teams__title {
+  padding: 1.5rem;
+  text-decoration: underline;
+}
+
+.favourites__players__title {
+  padding: 1.5rem;
+  text-decoration: underline;
 }
 
 .favourites__teams--row {
   display: flex;
   align-items: center;
-  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: #000;
+  border-bottom: 0.5px solid rgb(105, 104, 104);
 }
 
 .favourites__players--row {
   display: flex;
   align-items: center;
-  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: #000;
+  border-bottom: 0.5px solid rgb(105, 104, 104);
 }
+
+.favourites__teams--row:last-child {
+  border: none;
+}
+
+.favourites__players--row:last-child {
+  border: none;
+}
+
 .favourites__teams--row > img {
   margin-right: 1rem;
 }

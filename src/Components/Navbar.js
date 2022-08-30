@@ -3,7 +3,8 @@ import faveicon from "./img/fav.png";
 import playericon from "./img/player.png";
 import teamicon from "./img/team.png";
 import "./styles/Navbar.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Navbar = ({ username, signOut }) => {
   return (
@@ -21,20 +22,22 @@ const Navbar = ({ username, signOut }) => {
         <ul>
           <li>
             <img src={faveicon} alt="favourite" />
-            <Link to="./favourites">Favourites</Link>
+            <NavLink to="./favourites">Favourites</NavLink>
           </li>
           <li>
             <img src={playericon} alt="playericon" />
-            <Link to="./player">Players</Link>
+            <NavLink to="./player">Players</NavLink>
           </li>
           <li>
             <img src={teamicon} alt="teamicon" width="30px" />
-            <Link to="/">Teams</Link>
+            <NavLink to="./team">Teams</NavLink>
           </li>
         </ul>
       </div>
       <div className="navbar__signout">
-        <button onClick={signOut}>Sign Out</button>
+        <motion.button whileTap={{ scale: 0.95 }} onClick={signOut}>
+          Sign Out
+        </motion.button>
       </div>
     </div>
   );

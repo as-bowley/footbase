@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate, useLocation } from "react-router-dom";
 import "./App.css";
 import LoginPage from "./Components/LoginPage";
 import Navbar from "./Components/Navbar";
@@ -15,6 +15,7 @@ import { auth } from "./firebase-config";
 import { doc, setDoc, getDoc, updateDoc, arrayUnion } from "firebase/firestore";
 import { db } from "../src/firebase-config";
 import Favourites from "./Components/Favourites";
+import { AnimatePresence } from "framer-motion";
 
 const data = require("./Components/data.json");
 
@@ -52,8 +53,11 @@ const App = () => {
   //login page data
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggingIn, setIsLoggingIn] = useState(false);
   const [user, setUser] = useState({});
   const [error, setError] = useState("");
+
+  const location = useLocation();
 
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
@@ -168,6 +172,7 @@ const App = () => {
   };
 
   const login = async (loginEmail, loginPassword) => {
+    setIsLoggingIn(true);
     try {
       const user = await signInWithEmailAndPassword(
         auth,
@@ -175,10 +180,10 @@ const App = () => {
         loginPassword
       );
       setIsLoggedIn(true);
-
-      console.log(user);
+      setIsLoggingIn(false);
     } catch (error) {
       setError(error.message.split("Firebase:")[1]);
+      setIsLoggingIn(false);
     }
   };
 
@@ -192,45 +197,55 @@ const App = () => {
       {isLoggedIn ? (
         <>
           <Navbar username={user?.email} signOut={logout} />
-          <Routes>
-            <Route
-              index
-              element={
-                <Team
-                  teamdetails={teamDetails}
-                  venue={venueInfo}
-                  teamstatistics={teamStatistics}
-                  fixtures={fixtures}
-                  squad={squad}
-                  standings={standings}
-                  team={teamDetails.name}
-                  teamSearchData={teamSearchData}
-                  teamSearchValue={teamSearchValue}
-                  setTeamSearchValue={setTeamSearchValue}
-                  searchTeam={searchTeam}
-                  user={user.uid}
-                />
-              }
-            />
-            <Route
-              path="/player"
-              element={
-                <Player
-                  stats={playerStats}
-                  seasonStats={playerSeasonStats}
-                  playerSearchChange={onPlayerSearchChange}
-                  playerSearchData={playerSearchData}
-                  playerSearchValue={playerSearchValue}
-                  searchPlayer={searchPlayer}
-                  user={user.uid}
-                />
-              }
-            />
-            <Route
-              path="/favourites"
-              element={<Favourites user={user.uid} />}
-            />
-          </Routes>
+          <AnimatePresence mode="wait">
+            <Routes key={location.pathname} location={location}>
+              <Route path="/" element={<Navigate to="/team" />} />
+              <Route
+                index
+                path="/team"
+                element={
+                  <Team
+                    teamdetails={teamDetails}
+                    venue={venueInfo}
+                    teamstatistics={teamStatistics}
+                    fixtures={fixtures}
+                    squad={squad}
+                    standings={standings}
+                    team={teamDetails.name}
+                    teamSearchData={teamSearchData}
+                    teamSearchValue={teamSearchValue}
+                    setTeamSearchValue={setTeamSearchValue}
+                    searchTeam={searchTeam}
+                    user={user.uid}
+                  />
+                }
+              />
+              <Route
+                path="/player"
+                element={
+                  <Player
+                    stats={playerStats}
+                    seasonStats={playerSeasonStats}
+                    playerSearchChange={onPlayerSearchChange}
+                    playerSearchData={playerSearchData}
+                    playerSearchValue={playerSearchValue}
+                    searchPlayer={searchPlayer}
+                    user={user.uid}
+                  />
+                }
+              />
+              <Route
+                path="/favourites"
+                element={
+                  <Favourites
+                    user={user.uid}
+                    searchTeam={searchTeam}
+                    searchPlayer={searchPlayer}
+                  />
+                }
+              />
+            </Routes>
+          </AnimatePresence>
         </>
       ) : (
         <LoginPage
@@ -238,6 +253,7 @@ const App = () => {
           logout={logout}
           register={register}
           error={error}
+          isLoggingIn={isLoggingIn}
         />
       )}
     </div>

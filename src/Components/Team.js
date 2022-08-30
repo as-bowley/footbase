@@ -100,9 +100,10 @@ const Team = ({
   return (
     <div className="team">
       <motion.div
-        initial={{ y: -600 }}
-        animate={{ y: 0 }}
-        transition={{ type: "spring", duration: 1.5 }}
+        initial={{ y: -5, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: -5, opacity: 0 }}
+        transition={{ ease: "easeIn", duration: 0.5 }}
       >
         <TeamSearchbar
           placeholder="Search team here..."
@@ -114,17 +115,22 @@ const Team = ({
         />
       </motion.div>
       <motion.div
-        initial={{ y: -600 }}
-        animate={{ y: 0 }}
-        transition={{ type: "spring", duration: 1.5 }}
+        initial={{ y: -5, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: -5, opacity: 0 }}
+        transition={{ ease: "easeIn", duration: 0.5 }}
         className="team__favebutton"
       >
         {isTeamFavourited ? (
-          <button onClick={removeFromFavourites}>
-            <img src={unfavIcon} /> Remove from favourites
-          </button>
+          <motion.button
+            whileTap={{ scale: 0.95 }}
+            onClick={removeFromFavourites}
+          >
+            <img src={unfavIcon} alt="" /> Remove from favourites
+          </motion.button>
         ) : (
-          <button
+          <motion.button
+            whileTap={{ scale: 0.95 }}
             onClick={() => {
               addTeamToFavourites(
                 teamdetails.name,
@@ -133,16 +139,17 @@ const Team = ({
               );
             }}
           >
-            <img src={favIcon} />
+            <img src={favIcon} alt="" />
             Add to favourites
-          </button>
+          </motion.button>
         )}
       </motion.div>
       <motion.div
         className="teaminfo__container"
-        initial={{ y: -400 }}
-        animate={{ y: 0 }}
-        transition={{ type: "spring", duration: 1.2 }}
+        initial={{ y: -5, opacity: 0 }}
+        exit={{ y: -5, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ ease: "easeIn", duration: 0.5 }}
       >
         <Teaminfo
           name={teamdetails.name}
@@ -159,33 +166,37 @@ const Team = ({
       </motion.div>
       <motion.div
         className="fixtures__container"
-        initial={{ y: 400 }}
-        animate={{ y: 0 }}
-        transition={{ type: "spring", duration: 1.2 }}
+        initial={{ y: 5, opacity: 0 }}
+        exit={{ y: 5, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ type: "easeIn", duration: 0.5 }}
       >
         <Fixtures fixtures={fixtures} />
       </motion.div>
       <motion.div
         className="squad__container"
-        initial={{ y: -400 }}
-        animate={{ y: 0 }}
-        transition={{ type: "spring", duration: 1.2 }}
+        initial={{ y: -5, opacity: 0 }}
+        exit={{ y: -5, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ ease: "easeIn", duration: 0.5 }}
       >
         <Squad squad={squad} />
       </motion.div>
       <motion.div
         className="standings__container"
-        initial={{ x: 400 }}
-        animate={{ x: 0 }}
-        transition={{ type: "spring", duration: 1.2 }}
+        initial={{ x: 5, opacity: 0 }}
+        exit={{ y: 5, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ ease: "easeIn", duration: 0.5 }}
       >
         <Standings standings={standings} team={team} />
       </motion.div>
       <motion.div
         className="seasonstats__container"
-        initial={{ x: 400 }}
-        animate={{ x: 0 }}
-        transition={{ type: "spring", duration: 1.2 }}
+        initial={{ x: 5, opacity: 0 }}
+        exit={{ y: 5, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ ease: "easeIn", duration: 0.5 }}
       >
         <SeasonStats statistics={teamstatistics} />
       </motion.div>

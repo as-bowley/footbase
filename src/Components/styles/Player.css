@@ -43,6 +43,7 @@
   cursor: pointer;
   display: flex;
   align-items: center;
+  background-color: #fff;
 }
 
 .player__faveButton__container > button > img {
