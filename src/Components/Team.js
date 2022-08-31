@@ -104,6 +104,7 @@ const Team = ({
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: -5, opacity: 0 }}
         transition={{ ease: "easeIn", duration: 0.5 }}
+        className="team__searchbar__container"
       >
         <TeamSearchbar
           placeholder="Search team here..."
@@ -121,12 +122,13 @@ const Team = ({
         transition={{ ease: "easeIn", duration: 0.5 }}
         className="team__favebutton"
       >
+        <h2>Teams</h2>
         {isTeamFavourited ? (
           <motion.button
             whileTap={{ scale: 0.95 }}
             onClick={removeFromFavourites}
           >
-            <img src={unfavIcon} alt="" /> Remove from favourites
+            <img src={unfavIcon} alt="" /> <p>Remove from favourites</p>
           </motion.button>
         ) : (
           <motion.button
@@ -140,7 +142,7 @@ const Team = ({
             }}
           >
             <img src={favIcon} alt="" />
-            Add to favourites
+            <p>Add to favourites</p>
           </motion.button>
         )}
       </motion.div>

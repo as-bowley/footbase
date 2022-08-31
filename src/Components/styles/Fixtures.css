@@ -2,17 +2,17 @@
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-  margin: 20px 40px;
   display: flex;
   flex-direction: column;
   align-self: baseline;
-  justify-content: center;
   padding: 20px 20px;
-  height: -webkit-fill-available;
   justify-content: space-between;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .team__fixtures > h2 {
+  margin-top: 5px;
   margin-bottom: 30px;
 }
 
@@ -71,6 +71,7 @@
 
 .team__fixtures > .fixture > .fixture__details > p {
   margin: 10px 0;
+  font-weight: 700;
 }
 
 .team__fixtures > .fixture > .fixture__details > img {
@@ -79,4 +80,21 @@
 
 .team__fixtures > .fixture > .fixture__details > h5 {
   font-weight: 400;
+}
+
+@media (max-width: 700px) {
+  .team__fixtures {
+    padding: 20px 15px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .team__fixtures > .fixture > .fixture__home > h4,
+  .team__fixtures > .fixture > .fixture__away > h4 {
+    display: none;
+  }
+
+  .team__fixtures > .fixture > .fixture__details {
+    width: 80%;
+  }
 }

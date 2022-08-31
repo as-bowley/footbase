@@ -12,7 +12,7 @@
 
 .player__stats {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 4fr;
   grid-template-rows: 1fr 4fr;
   grid-template-areas:
     "playername playername"
@@ -20,12 +20,14 @@
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-  margin: 20px 40px;
   padding: 20px;
+  height: 100%;
+  box-sizing: border-box;
+  margin-right: 25px;
 }
+
 .player__stats__img {
   grid-area: playerimg;
-  width: 50%;
 }
 
 .player__stats > .player__stats__img > img {
@@ -37,7 +39,6 @@
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-  margin: 20px 40px;
   padding: 20px;
   display: flex;
   align-items: center;
@@ -53,4 +54,27 @@
   columns: 2;
   line-height: 150%;
   padding: 0;
+}
+
+@media (max-width: 950px) {
+  .player__info {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .player__stats {
+    margin-right: 0;
+    margin-bottom: 25px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "playername"
+      "playerimg "
+      "details";
+    justify-items: center;
+  }
+
+  .player__team {
+    justify-content: center;
+  }
 }

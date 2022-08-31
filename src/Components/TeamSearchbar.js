@@ -18,6 +18,7 @@ const TeamSearchbar = ({
         type="search"
         placeholder={placeholder}
         onChange={onTeamSearchChange}
+        value={teamSearchValue}
       />
       <div className="searchbar__dropdown">
         {searchData

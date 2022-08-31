@@ -124,13 +124,14 @@ const Player = ({
         animate={{ y: 0, opacity: 1 }}
         transition={{ ease: "easeIn", duration: 0.5 }}
       >
+        <h4>Player</h4>
         {playerIsFavourited ? (
           <motion.button
             onClick={removeFromFavourites}
             whileTap={{ scale: 0.95 }}
           >
             <img src={unfavIcon} alt="" />
-            Remove from Favourites
+            <p>Remove from Favourites</p>
           </motion.button>
         ) : (
           <motion.button
@@ -144,7 +145,7 @@ const Player = ({
             }
           >
             <img src={favIcon} alt="" />
-            Add to Favourites
+            <p>Add to Favourites</p>
           </motion.button>
         )}
       </motion.div>

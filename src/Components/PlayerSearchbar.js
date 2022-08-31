@@ -1,4 +1,4 @@
-import "./styles/TeamSearchbar.css";
+import "./styles/PlayerSearchbar.css";
 
 const PlayerSearchbar = ({
   onPlayerSearchChange,
@@ -6,16 +6,13 @@ const PlayerSearchbar = ({
   playerSearchValue,
   searchPlayer,
 }) => {
-  //onclick for each dropdown row to return team.id
-
-  //while searchvalue is < 5 characters, do nothing and then after, fetch api and then filter/map those results and show them. Need to stop the fetch re-firing after each new character typed
-
   return (
-    <form className="searchbar">
+    <form className="player__searchbar">
       <input
         type="search"
         placeholder="Search player here..."
         onChange={onPlayerSearchChange}
+        value={playerSearchValue}
       />
       <div className="searchbar__dropdown">
         {playerSearchData &&

@@ -1,21 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap");
 
 .navbar {
-  min-width: 290px;
-  height: 100vh;
+  width: 250px;
+  height: 100%;
   background-color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
   border-radius: 0px 8px 8px 0px;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
   align-self: flex-start;
 }
 
 .navbar__logo > h1 {
-  margin-top: 2rem;
+  margin-top: 3rem;
   font-family: "Allerta Stencil", sans-serif;
   font-size: 2.5rem;
 }
@@ -24,10 +25,21 @@
   color: #737373;
 }
 
+.navbar__logo__responsive {
+  display: none;
+  font-family: "Allerta Stencil", sans-serif;
+  font-size: 1.5rem;
+  margin-top: 5px;
+}
+
+.navbar__logo__responsive > h1 > strong {
+  color: #737373;
+}
+
 .navbar__userInfo {
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
+  margin-top: 60px;
   align-items: center;
 }
 
@@ -36,13 +48,15 @@
 }
 
 .navbar__userInfo > h2 {
-  margin-top: 1.5rem;
+  margin-top: 20px;
   font-weight: 600;
+  overflow-wrap: anywhere;
+  text-align: center;
 }
 
 .navbar__menu {
   width: 80%;
-  margin-top: 10rem;
+  margin-top: 60px;
 }
 
 .navbar__menu > ul {
@@ -54,7 +68,7 @@
 }
 
 .navbar__menu > ul > li {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -62,21 +76,23 @@
 }
 
 .navbar__menu > ul > li > a {
+  display: flex;
+  align-items: center;
   text-decoration: none;
   color: #000;
   cursor: pointer;
+}
+
+.navbar__menu > ul > li > a > img {
+  margin-right: 1rem;
 }
 
 .navbar__menu > ul > li > a.active {
   color: rgb(54, 54, 249);
 }
 
-.navbar__menu > ul > li > img {
-  margin-right: 1rem;
-}
-
 .navbar__signout {
-  margin-bottom: 2rem;
+  margin-bottom: 10px;
   height: 100%;
   display: flex;
   align-items: flex-end;
@@ -84,7 +100,7 @@
 
 .navbar__signout > button {
   background-color: #d9d9d9;
-  width: 240px;
+  width: 200px;
   height: 40px;
   border-radius: 8px;
   border: none;
@@ -93,4 +109,65 @@
   font-weight: 700;
   margin-bottom: 2rem;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar__signout > button > img {
+  margin-right: 20px;
+}
+
+@media (max-width: 950px) {
+  .navbar__menu > ul > li > a > strong {
+    display: none;
+  }
+
+  .navbar__logo__responsive {
+    display: flex;
+  }
+
+  .navbar {
+    width: 75px;
+  }
+
+  .navbar__signout {
+    width: 30px;
+    justify-content: center;
+  }
+
+  .navbar__signout > button {
+    font-size: 14px;
+  }
+
+  .navbar__userInfo {
+    display: none;
+  }
+
+  .navbar__logo {
+    display: none;
+  }
+
+  .navbar__menu {
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar__menu > ul > li > a > img {
+    margin-right: 0;
+  }
+
+  .navbar__menu > ul > li {
+    margin-right: 0;
+  }
+
+  .navbar__signout > button > p {
+    display: none;
+  }
+
+  .navbar__signout > button > img {
+    margin: 0;
+  }
 }

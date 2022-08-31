@@ -6,7 +6,7 @@ const Playerstats = ({ stats }) => {
       <div className="player__stats">
         <h2 className="player__name">{`${stats.player.firstname} ${stats.player.lastname}`}</h2>
         <div className="player__stats__img">
-          <img src={stats.player.photo} width={"150px"} alt="player" />
+          <img src={stats.player.photo} width={"180px"} alt="player" />
         </div>
         <div className="player__stats__info">
           <ul>
@@ -34,7 +34,7 @@ const Playerstats = ({ stats }) => {
       <div className="player__team">
         <img
           src={stats.statistics[0].team.logo}
-          width={"width: 100px"}
+          width={"width: 150px"}
           alt="club badge"
         />
       </div>
