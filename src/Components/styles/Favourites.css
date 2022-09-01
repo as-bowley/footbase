@@ -27,6 +27,7 @@
   border-radius: 8px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
   padding: 10px 20px;
+  margin-right: 2rem;
 }
 
 .favourites__players {
@@ -111,5 +112,6 @@
 
   .favourites__teams {
     padding: 5px;
+    margin-right: 0;
   }
 }

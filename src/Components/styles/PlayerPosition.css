@@ -40,58 +40,70 @@
 }
 
 .player__position__img.gk {
+  color: #000;
   bottom: 8%;
 }
 
 .player__position__img.cb1 {
+  color: #000;
   left: 32%;
   bottom: 20%;
 }
 
 .player__position__img.cb2 {
+  color: #000;
   right: 32%;
   bottom: 20%;
 }
 
 .player__position__img.lb {
+  color: #000;
   left: 12%;
   bottom: 25%;
 }
 
 .player__position__img.rb {
+  color: #000;
   right: 12%;
   bottom: 25%;
 }
 
 .player__position__img.cm1 {
+  color: #000;
   bottom: 40%;
   left: 32%;
 }
 
 .player__position__img.cm2 {
+  color: #000;
   bottom: 40%;
   right: 32%;
 }
 
 .player__position__img.cdm {
+  color: #000;
   bottom: 30%;
 }
 
 .player__position__img.lw {
+  color: #000;
   left: 15%;
   bottom: 65%;
 }
 
 .player__position__img.rw {
+  color: #000;
   right: 15%;
   bottom: 65%;
 }
 
 .player__position__img.st {
+  color: #000;
   bottom: 72%;
 }
 
 .player__position__img.cam {
+  color: #000;
   bottom: 55%;
 }
 

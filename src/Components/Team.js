@@ -33,6 +33,7 @@ const Team = ({
   searchTeam,
   user,
   setTeamSearchValue,
+  style,
 }) => {
   const [isTeamFavourited, setIsTeamFavourited] = useState(false);
 
@@ -113,6 +114,7 @@ const Team = ({
           teamSearchValue={teamSearchValue}
           searchTeam={searchTeam}
           setTeamSearchValue={setTeamSearchValue}
+          style={style}
         />
       </motion.div>
       <motion.div
@@ -127,11 +129,13 @@ const Team = ({
           <motion.button
             whileTap={{ scale: 0.95 }}
             onClick={removeFromFavourites}
+            style={style}
           >
             <img src={unfavIcon} alt="" /> <p>Remove from favourites</p>
           </motion.button>
         ) : (
           <motion.button
+            style={style}
             whileTap={{ scale: 0.95 }}
             onClick={() => {
               addTeamToFavourites(
@@ -164,6 +168,7 @@ const Team = ({
           league={teamstatistics.league.name}
           leagueLogo={teamstatistics.league.logo}
           form={teamstatistics.form}
+          style={style}
         />
       </motion.div>
       <motion.div
@@ -173,7 +178,7 @@ const Team = ({
         animate={{ y: 0, opacity: 1 }}
         transition={{ type: "easeIn", duration: 0.5 }}
       >
-        <Fixtures fixtures={fixtures} />
+        <Fixtures fixtures={fixtures} style={style} />
       </motion.div>
       <motion.div
         className="squad__container"
@@ -182,7 +187,7 @@ const Team = ({
         animate={{ y: 0, opacity: 1 }}
         transition={{ ease: "easeIn", duration: 0.5 }}
       >
-        <Squad squad={squad} />
+        <Squad squad={squad} style={style} />
       </motion.div>
       <motion.div
         className="standings__container"
@@ -191,7 +196,7 @@ const Team = ({
         animate={{ x: 0, opacity: 1 }}
         transition={{ ease: "easeIn", duration: 0.5 }}
       >
-        <Standings standings={standings} team={team} />
+        <Standings standings={standings} team={team} style={style} />
       </motion.div>
       <motion.div
         className="seasonstats__container"
@@ -200,7 +205,7 @@ const Team = ({
         animate={{ x: 0, opacity: 1 }}
         transition={{ ease: "easeIn", duration: 0.5 }}
       >
-        <SeasonStats statistics={teamstatistics} />
+        <SeasonStats statistics={teamstatistics} style={style} />
       </motion.div>
     </div>
   );

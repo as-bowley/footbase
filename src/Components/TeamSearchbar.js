@@ -6,9 +6,9 @@ const TeamSearchbar = ({
   teamSearchValue,
   searchTeam,
   setTeamSearchValue,
+  style,
 }) => {
   const onTeamSearchChange = (event) => {
-    console.log(event.target.value);
     setTeamSearchValue(event.target.value);
   };
 
@@ -19,8 +19,9 @@ const TeamSearchbar = ({
         placeholder={placeholder}
         onChange={onTeamSearchChange}
         value={teamSearchValue}
+        style={style}
       />
-      <div className="searchbar__dropdown">
+      <div className="searchbar__dropdown" style={style}>
         {searchData
           .filter((data) => {
             const searchWord = teamSearchValue.toLowerCase();

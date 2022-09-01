@@ -11,6 +11,7 @@ const Teaminfo = ({
   league,
   leagueLogo,
   form,
+  style,
 }) => {
   const formBoxes = () => {
     const formArray = form.split("");
@@ -34,7 +35,7 @@ const Teaminfo = ({
   };
   return (
     <div className="team__info">
-      <div className="team__info__info">
+      <div className="team__info__info" style={style}>
         <div className="team__info__logo">
           <img src={logo} width="90px" alt="club badge" />
         </div>
@@ -60,7 +61,7 @@ const Teaminfo = ({
           </ul>
         </div>
       </div>
-      <div className="team__info__league">
+      <div className="team__info__league" style={style}>
         <h4>{league}</h4>
         <img src={leagueLogo} alt="league logo" width="90px" />
       </div>

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./styles/Favourites.css";
 
-const Favourites = ({ user, searchTeam, searchPlayer }) => {
+const Favourites = ({ user, searchTeam, searchPlayer, style }) => {
   const [favTeams, setFavTeams] = useState([]);
   const [favPlayers, setFavPlayers] = useState([]);
 
@@ -42,6 +42,7 @@ const Favourites = ({ user, searchTeam, searchPlayer }) => {
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: -5, opacity: 0 }}
         transition={{ ease: "easeIn", duration: 0.5 }}
+        style={style}
       >
         <div>
           <h2 className="favourites__teams__title">Teams</h2>
@@ -66,6 +67,7 @@ const Favourites = ({ user, searchTeam, searchPlayer }) => {
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: -5, opacity: 0 }}
         transition={{ ease: "easeIn", duration: 0.5 }}
+        style={style}
       >
         <div>
           <h2 className="favourites__players__title">Players</h2>

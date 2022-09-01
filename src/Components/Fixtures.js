@@ -1,6 +1,6 @@
 import "./styles/Fixtures.css";
 
-const Fixtures = ({ fixtures }) => {
+const Fixtures = ({ fixtures, style }) => {
   const getNextThreeFixtures = () => {
     const games = [];
     for (let i = 0; games.length < 3; i++) {
@@ -23,7 +23,7 @@ const Fixtures = ({ fixtures }) => {
   });
 
   return (
-    <div className="team__fixtures">
+    <div className="team__fixtures" style={style}>
       <h2>Upcoming Fixtures</h2>
       {games.map((game, index) => {
         return (

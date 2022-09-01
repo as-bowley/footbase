@@ -5,6 +5,7 @@ const PlayerSearchbar = ({
   playerSearchData,
   playerSearchValue,
   searchPlayer,
+  style,
 }) => {
   return (
     <form className="player__searchbar">
@@ -13,6 +14,7 @@ const PlayerSearchbar = ({
         placeholder="Search player here..."
         onChange={onPlayerSearchChange}
         value={playerSearchValue}
+        style={style}
       />
       <div className="searchbar__dropdown">
         {playerSearchData &&

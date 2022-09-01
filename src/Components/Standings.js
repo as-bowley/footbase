@@ -1,8 +1,8 @@
 import "./styles/Standings.css";
 
-const Standings = ({ standings, team }) => {
+const Standings = ({ standings, team, style }) => {
   return (
-    <div className="team__standings">
+    <div className="team__standings" style={style}>
       <h2>Table</h2>
       <table>
         <tbody>

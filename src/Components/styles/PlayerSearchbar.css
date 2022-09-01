@@ -33,13 +33,8 @@
   margin: 2px 0;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid rgb(200, 199, 199);
-}
-
-.player__searchbar
-  > .searchbar__dropdown
-  > .searchbar__dropdown--row:last-child {
-  border-bottom: none;
+  border: 1px solid rgb(200, 199, 199);
+  border-radius: 8px;
 }
 
 .player__searchbar > .searchbar__dropdown > .searchbar__dropdown--row > img {

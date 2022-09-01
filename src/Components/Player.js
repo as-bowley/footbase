@@ -26,6 +26,7 @@ const Player = ({
   playerSearchValue,
   searchPlayer,
   user,
+  style,
 }) => {
   const [playerIsFavourited, setPlayerIsFavourited] = useState(false);
 
@@ -115,6 +116,7 @@ const Player = ({
           playerSearchData={playerSearchData}
           playerSearchValue={playerSearchValue}
           searchPlayer={searchPlayer}
+          style={style}
         />
       </motion.div>
       <motion.div
@@ -129,12 +131,14 @@ const Player = ({
           <motion.button
             onClick={removeFromFavourites}
             whileTap={{ scale: 0.95 }}
+            style={style}
           >
             <img src={unfavIcon} alt="" />
             <p>Remove from Favourites</p>
           </motion.button>
         ) : (
           <motion.button
+            style={style}
             whileTap={{ scale: 0.95 }}
             onClick={() =>
               addTeamToFavourites(
@@ -156,7 +160,7 @@ const Player = ({
         animate={{ y: 0, opacity: 1 }}
         transition={{ ease: "easeIn", duration: 0.5 }}
       >
-        <Playerstats stats={stats} />
+        <Playerstats stats={stats} style={style} />
       </motion.div>
       <motion.div
         className="player__seasonstats__container"
@@ -165,7 +169,7 @@ const Player = ({
         animate={{ y: 0, opacity: 1 }}
         transition={{ ease: "easeIn", duration: 0.5 }}
       >
-        <PlayerSeason seasonStats={seasonStats} />
+        <PlayerSeason seasonStats={seasonStats} style={style} />
       </motion.div>
       <motion.div
         className="player__position__container"
@@ -174,7 +178,10 @@ const Player = ({
         animate={{ x: 0, opacity: 1 }}
         transition={{ ease: "easeIn", duration: 0.5 }}
       >
-        <PlayerPosition position={seasonStats.statistics[0].games.position} />
+        <PlayerPosition
+          position={seasonStats.statistics[0].games.position}
+          style={style}
+        />
       </motion.div>
     </div>
   );

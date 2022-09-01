@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./styles/LoginPage.css";
 import loadIcon from "./img/loading-icon.gif";
 
-const LoginPage = ({ register, login, error, isLoggingIn }) => {
+const LoginPage = ({ register, login, error, isLoggingIn, style }) => {
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
   const [loginEmail, setLoginEmail] = useState("");
@@ -22,7 +22,7 @@ const LoginPage = ({ register, login, error, isLoggingIn }) => {
   };
 
   return (
-    <div className="loginPage">
+    <div className="loginPage" style={style}>
       <h1 className="loginPage__logo">
         Foot<strong>base</strong>
       </h1>

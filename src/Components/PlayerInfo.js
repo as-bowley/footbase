@@ -1,9 +1,9 @@
 import "./styles/PlayerInfo.css";
 
-const Playerstats = ({ stats }) => {
+const Playerstats = ({ stats, style }) => {
   return (
     <div className="player__info">
-      <div className="player__stats">
+      <div className="player__stats" style={style}>
         <h2 className="player__name">{`${stats.player.firstname} ${stats.player.lastname}`}</h2>
         <div className="player__stats__img">
           <img src={stats.player.photo} width={"180px"} alt="player" />
@@ -31,7 +31,7 @@ const Playerstats = ({ stats }) => {
           </ul>
         </div>
       </div>
-      <div className="player__team">
+      <div className="player__team" style={style}>
         <img
           src={stats.statistics[0].team.logo}
           width={"width: 150px"}

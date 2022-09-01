@@ -1,8 +1,8 @@
 import pitch from "./img/positionpitch.png";
 import "./styles/PlayerPosition.css";
-const PlayerPosition = ({ position }) => {
+const PlayerPosition = ({ position, style }) => {
   return (
-    <div className="player__position">
+    <div className="player__position" style={style}>
       <div
         className={`player__position__img gk ${
           position === "Goalkeeper" && "show"

@@ -80,6 +80,7 @@
 
 .team__fixtures > .fixture > .fixture__details > h5 {
   font-weight: 400;
+  width: max-content;
 }
 
 @media (max-width: 700px) {

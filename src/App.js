@@ -30,6 +30,21 @@ const options = {
 };
 
 const App = () => {
+  //darkmode
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const darkMode = {
+    backgroundColor: "#303030",
+    color: "#fff",
+    boxShadow: "2px 2px 4px rgba(94, 94, 94, 0.25)",
+  };
+  const darkBG = {
+    backgroundColor: "#000",
+  };
+
+  const toggleDarkMode = () => {
+    setIsDarkMode((prev) => !prev);
+  };
+
   //fteam page data
   const [teamDetails, setTeamDetails] = useState(data[0].response[0].team);
   const [venueInfo, setVenueInfo] = useState(data[0].response[0].venue);
@@ -193,10 +208,16 @@ const App = () => {
   };
 
   return (
-    <div className="App">
+    <div className="App" style={isDarkMode ? darkBG : null}>
       {isLoggedIn ? (
         <>
-          <Navbar username={user?.email} signOut={logout} />
+          <Navbar
+            username={user?.email}
+            signOut={logout}
+            style={isDarkMode ? darkMode : null}
+            toggleDarkMode={toggleDarkMode}
+            darkMode={isDarkMode}
+          />
           <AnimatePresence mode="wait">
             <Routes key={location.pathname} location={location}>
               <Route path="/" element={<Navigate to="/team" />} />
@@ -217,6 +238,7 @@ const App = () => {
                     setTeamSearchValue={setTeamSearchValue}
                     searchTeam={searchTeam}
                     user={user.uid}
+                    style={isDarkMode ? darkMode : null}
                   />
                 }
               />
@@ -231,6 +253,7 @@ const App = () => {
                     playerSearchValue={playerSearchValue}
                     searchPlayer={searchPlayer}
                     user={user.uid}
+                    style={isDarkMode ? darkMode : null}
                   />
                 }
               />
@@ -241,6 +264,7 @@ const App = () => {
                     user={user.uid}
                     searchTeam={searchTeam}
                     searchPlayer={searchPlayer}
+                    style={isDarkMode ? darkMode : null}
                   />
                 }
               />
@@ -254,6 +278,7 @@ const App = () => {
           register={register}
           error={error}
           isLoggingIn={isLoggingIn}
+          style={isDarkMode ? darkMode : null}
         />
       )}
     </div>

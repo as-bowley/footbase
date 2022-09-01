@@ -77,7 +77,7 @@
 
 .navbar__menu > ul > li > a {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   text-decoration: none;
   color: #000;
   cursor: pointer;
@@ -88,7 +88,7 @@
 }
 
 .navbar__menu > ul > li > a.active {
-  color: rgb(54, 54, 249);
+  color: rgb(48, 56, 210);
 }
 
 .navbar__signout {
@@ -161,6 +161,10 @@
 
   .navbar__menu > ul > li {
     margin-right: 0;
+  }
+
+  .navbar__menu > ul > li > a.active {
+    border-bottom: 4px solid rgb(111, 117, 245);
   }
 
   .navbar__signout > button > p {

@@ -1,8 +1,8 @@
 import "./styles/SeasonStats.css";
 
-const SeasonStats = ({ statistics }) => {
+const SeasonStats = ({ statistics, style }) => {
   return (
-    <div className="team__seasonStats">
+    <div className="team__seasonStats" style={style}>
       <h2>Season Stats</h2>
       <table>
         <tbody>

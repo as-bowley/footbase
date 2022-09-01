@@ -38,4 +38,110 @@
   cursor: pointer;
   align-self: flex-end;
   width: 10ch;
+  font-weight: 700;
+}
+
+.team__squad.open {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 60%;
+  height: 60%;
+  box-shadow: 0 0 0 50vmax rgba(0, 0, 0, 0.5);
+}
+
+.squad__detailed {
+  display: flex;
+  justify-content: space-between;
+  height: 90%;
+}
+
+.squad__detailed--goalkeepers {
+  height: auto;
+  overflow-y: scroll;
+  margin-right: 10px;
+}
+
+.squad__detailed--goalkeepers::-webkit-scrollbar {
+  width: 2px;
+}
+
+.squad__detailed--defenders {
+  overflow-y: scroll;
+  margin-right: 10px;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+}
+
+.squad__detailed--defenders::-webkit-scrollbar {
+  width: 2px;
+}
+
+.squad__detailed--midfielders {
+  overflow-y: scroll;
+  margin-right: 10px;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+}
+
+.squad__detailed--midfielders::-webkit-scrollbar {
+  width: 2px;
+}
+
+.squad__detailed--attackers {
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+}
+
+.squad__detailed--attackers::-webkit-scrollbar {
+  width: 2px;
+}
+
+.squad__detailed--row {
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+}
+
+.squad__detailed--row > img {
+  border-radius: 4px;
+  margin-right: 5px;
+}
+
+@media (max-width: 1500px) {
+  .team__squad.open {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    box-shadow: 0 0 0 50vmax rgba(0, 0, 0, 0.5);
+  }
+
+  .squad__detailed {
+    flex-direction: column;
+    overflow-y: scroll;
+    justify-content: flex-start;
+  }
+
+  .squad__detailed--row.hidden {
+    display: none;
+  }
+
+  .squad__detailed--goalkeepers,
+  .squad__detailed--defenders,
+  .squad__detailed--midfielders,
+  .squad__detailed--attackers {
+    width: 70%;
+  }
+
+  .squad__detailed--goalkeepers > h3,
+  .squad__detailed--defenders > h3,
+  .squad__detailed--midfielders > h3,
+  .squad__detailed--attackers > h3 {
+    cursor: pointer;
+    border-bottom: 1px solid rgb(172, 172, 172);
+    padding-bottom: 5px;
+  }
 }

@@ -7,9 +7,9 @@ import "./styles/Navbar.css";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 
-const Navbar = ({ username, signOut }) => {
+const Navbar = ({ username, signOut, style, toggleDarkMode, darkMode }) => {
   return (
-    <div className="navbar">
+    <div className="navbar" style={style}>
       <div className="navbar__logo">
         <h1>
           Foot<strong>base</strong>
@@ -27,24 +27,30 @@ const Navbar = ({ username, signOut }) => {
       <div className="navbar__menu">
         <ul>
           <li>
-            <NavLink to="./favourites">
+            <NavLink
+              to="./favourites"
+              style={darkMode ? { color: "#fff" } : null}
+            >
               <img src={faveicon} alt="favourite" />
               <strong>Favourites</strong>
             </NavLink>
           </li>
           <li>
-            <NavLink to="./player">
+            <NavLink to="./player" style={darkMode ? { color: "#fff" } : null}>
               <img src={playericon} alt="playericon" />
               <strong>Players</strong>
             </NavLink>
           </li>
           <li>
-            <NavLink to="./team">
+            <NavLink to="./team" style={darkMode ? { color: "#fff" } : null}>
               <img src={teamicon} alt="teamicon" width="30px" />
               <strong>Teams</strong>
             </NavLink>
           </li>
         </ul>
+      </div>
+      <div>
+        <motion.button onClick={toggleDarkMode}>Dark</motion.button>
       </div>
       <div className="navbar__signout">
         <motion.button whileTap={{ scale: 0.95 }} onClick={signOut}>
