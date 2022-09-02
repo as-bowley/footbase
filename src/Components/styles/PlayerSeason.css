@@ -28,6 +28,8 @@
   padding: 0;
   padding-top: 15px;
   text-align: left;
+  border-bottom: thin solid #fff;
+  padding-bottom: 10px;
 }
 
 .player__stats__table--right > table {

@@ -1,4 +1,3 @@
-import { type } from "@testing-library/user-event/dist/type";
 import { useState } from "react";
 import "./styles/LoginPage.css";
 import loadIcon from "./img/loading-icon.gif";
@@ -6,6 +5,7 @@ import loadIcon from "./img/loading-icon.gif";
 const LoginPage = ({ register, login, error, isLoggingIn, style }) => {
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
+  const [registerPasswordConfirm, setRegisterPasswordConfirm] = useState("");
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
   const [registerIsDisplayed, setRegisterIsDisplayed] = useState(false);
@@ -59,12 +59,28 @@ const LoginPage = ({ register, login, error, isLoggingIn, style }) => {
               onChange={(event) => {
                 setRegisterPassword(event.target.value);
               }}
+              type="password"
+            />
+            <input
+              placeholder="Confirm password.."
+              onChange={(event) => {
+                setRegisterPasswordConfirm(event.target.value);
+              }}
+              type="password"
             />
             <div>
               <p>{error}</p>
             </div>
 
-            <button onClick={() => register(registerEmail, registerPassword)}>
+            <button
+              onClick={() =>
+                register(
+                  registerEmail,
+                  registerPassword,
+                  registerPasswordConfirm
+                )
+              }
+            >
               {!isLoggingIn ? (
                 "Register"
               ) : (

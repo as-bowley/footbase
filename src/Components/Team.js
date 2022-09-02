@@ -34,6 +34,7 @@ const Team = ({
   user,
   setTeamSearchValue,
   style,
+  darkMode,
 }) => {
   const [isTeamFavourited, setIsTeamFavourited] = useState(false);
 
@@ -124,7 +125,7 @@ const Team = ({
         transition={{ ease: "easeIn", duration: 0.5 }}
         className="team__favebutton"
       >
-        <h2>Teams</h2>
+        <h2 style={style}>Teams</h2>
         {isTeamFavourited ? (
           <motion.button
             whileTap={{ scale: 0.95 }}
@@ -187,7 +188,7 @@ const Team = ({
         animate={{ y: 0, opacity: 1 }}
         transition={{ ease: "easeIn", duration: 0.5 }}
       >
-        <Squad squad={squad} style={style} />
+        <Squad squad={squad} style={style} darkMode={darkMode} />
       </motion.div>
       <motion.div
         className="standings__container"

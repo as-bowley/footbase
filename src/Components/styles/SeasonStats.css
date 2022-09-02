@@ -14,10 +14,20 @@
   margin-bottom: 0;
 }
 
+.team__seasonStats > table {
+  height: 100%;
+}
+
+.team__seasonStats > table > tbody > tr {
+  width: 100%;
+}
+
 .team__seasonStats > table > tbody > tr > th {
   padding: 0;
   padding-top: 15px;
   text-align: left;
+  border-bottom: thin solid #9a9a9a;
+  width: 100%;
 }
 
 @media (max-width: 950px) {

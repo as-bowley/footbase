@@ -6,7 +6,6 @@
   flex-direction: column;
   align-self: baseline;
   padding: 20px 20px;
-  justify-content: space-between;
   height: 100%;
   box-sizing: border-box;
 }
@@ -16,52 +15,57 @@
   margin-bottom: 30px;
 }
 
-.team__fixtures > .fixture {
+.fixture {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid #9a9a9a;
+  border-top: thin solid #9a9a9a;
 }
 
-.team__fixtures > .fixture:last-child {
+.fixture:last-child {
   border-bottom: 1px solid #9a9a9a;
 }
 
-.team__fixtures > .fixture > .fixture__home,
-.team__fixtures > .fixture > .fixture__away {
+.text__fixtures__container {
+  display: grid;
+  height: 100%;
+}
+
+.fixture > .fixture__home,
+.fixture > .fixture__away {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.team__fixtures > .fixture > .fixture__home {
+.fixture > .fixture__home {
   width: 30%;
 }
-.team__fixtures > .fixture > .fixture__away {
+.fixture > .fixture__away {
   width: 30%;
 }
 
-.team__fixtures > .fixture > .fixture__home > h4 {
+.fixture > .fixture__home > h4 {
   width: 70%;
   text-align: center;
 }
 
-.team__fixtures > .fixture > .fixture__away > h4 {
+.fixture > .fixture__away > h4 {
   width: 70%;
   text-align: center;
 }
 
-.team__fixtures > .fixture > .fixture__home > img {
+.fixture > .fixture__home > img {
   margin-right: auto;
   margin-left: 10px;
 }
 
-.team__fixtures > .fixture > .fixture__away > img {
+.fixture > .fixture__away > img {
   margin-left: auto;
   margin-right: 10px;
 }
 
-.team__fixtures > .fixture > .fixture__details {
+.fixture > .fixture__details {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -69,16 +73,19 @@
   width: 20%;
 }
 
-.team__fixtures > .fixture > .fixture__details > p {
+.fixture > .fixture__details > p {
   margin: 10px 0;
   font-weight: 700;
 }
 
-.team__fixtures > .fixture > .fixture__details > img {
+.fixture > .fixture__details > img {
   margin-bottom: 20px;
+  background: #fff;
+  border-radius: 50%;
+  padding: 2px;
 }
 
-.team__fixtures > .fixture > .fixture__details > h5 {
+.fixture > .fixture__details > h5 {
   font-weight: 400;
   width: max-content;
 }
@@ -90,12 +97,12 @@
     box-sizing: border-box;
   }
 
-  .team__fixtures > .fixture > .fixture__home > h4,
-  .team__fixtures > .fixture > .fixture__away > h4 {
+  .fixture > .fixture__home > h4,
+  .fixture > .fixture__away > h4 {
     display: none;
   }
 
-  .team__fixtures > .fixture > .fixture__details {
+  .fixture > .fixture__details {
     width: 80%;
   }
 }

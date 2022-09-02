@@ -1,5 +1,4 @@
 import Playerstats from "./PlayerInfo";
-// import Searchbar from "./TeamSearchbar";
 import PlayerSeason from "./PlayerSeason";
 import "./styles/Player.css";
 import PlayerPosition from "./PlayerPosition";
@@ -32,7 +31,8 @@ const Player = ({
 
   useEffect(() => {
     checkPlayerIsFavourited(stats.player.id);
-  }, [stats]);
+    console.log(playerIsFavourited);
+  }, [playerSearchData[0]]);
 
   const checkFireStoreDocExists = async () => {
     const docRef = doc(db, "users", user);
@@ -45,12 +45,12 @@ const Player = ({
     }
   };
 
-  const checkPlayerIsFavourited = async (team) => {
+  const checkPlayerIsFavourited = async (player) => {
     const docRef = doc(db, "users", user);
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
-      if (docSnap.data()?.favourites?.players.some((el) => el.id === team)) {
+      if (docSnap.data()?.favourites?.players.indexOf(player) !== -1) {
         setPlayerIsFavourited(true);
       }
     } else {
@@ -126,7 +126,7 @@ const Player = ({
         animate={{ y: 0, opacity: 1 }}
         transition={{ ease: "easeIn", duration: 0.5 }}
       >
-        <h4>Player</h4>
+        <h4 style={style}>Player</h4>
         {playerIsFavourited ? (
           <motion.button
             onClick={removeFromFavourites}

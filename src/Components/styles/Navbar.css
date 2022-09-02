@@ -91,9 +91,23 @@
   color: rgb(48, 56, 210);
 }
 
+.navbar__darkMode {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 50px;
+}
+
+.navbar__darkMode__button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: auto;
+}
+
 .navbar__signout {
   margin-bottom: 10px;
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   align-items: flex-end;
 }
@@ -165,6 +179,10 @@
 
   .navbar__menu > ul > li > a.active {
     border-bottom: 4px solid rgb(111, 117, 245);
+  }
+
+  .navbar__darkMode__button > img {
+    width: 40px;
   }
 
   .navbar__signout > button > p {

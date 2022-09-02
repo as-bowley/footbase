@@ -16,22 +16,27 @@
 .team__standings > table {
   table-layout: auto;
   width: 100%;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   line-height: 130%;
+  height: 95%;
+  border-collapse: collapse;
+}
+
+.team__standings > table > tbody > tr {
+  align-items: center;
+  border-bottom: thin solid #9a9a9a;
 }
 
 .team__standings > table > tbody > tr > th:nth-child(2) {
   text-align: left;
 }
 
-.team__standings > table > tbody > tr > td {
-  margin: 3px 0;
-}
-
 .team__standings > table > tbody > tr > td:first-child {
   display: flex;
   justify-content: center;
   margin-right: 5px;
+  height: 100%;
+  align-items: center;
 }
 
 .team__standings > table > tbody > tr > td:last-child {

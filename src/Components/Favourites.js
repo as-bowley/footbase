@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./styles/Favourites.css";
 
-const Favourites = ({ user, searchTeam, searchPlayer, style }) => {
+const Favourites = ({ user, searchTeam, searchPlayer, style, darkMode }) => {
   const [favTeams, setFavTeams] = useState([]);
   const [favPlayers, setFavPlayers] = useState([]);
 
@@ -25,12 +25,16 @@ const Favourites = ({ user, searchTeam, searchPlayer, style }) => {
   }, []);
 
   return (
-    <div className="favourites">
+    <div
+      className="favourites"
+      style={darkMode ? { backgroundColor: "#000" } : null}
+    >
       <motion.div
         initial={{ y: -5, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: -5, opacity: 0 }}
         transition={{ ease: "easeIn", duration: 0.5 }}
+        style={darkMode ? { color: "#fff" } : null}
       >
         <div className="favourites__title">
           <h1>Favourites</h1>
@@ -45,7 +49,12 @@ const Favourites = ({ user, searchTeam, searchPlayer, style }) => {
         style={style}
       >
         <div>
-          <h2 className="favourites__teams__title">Teams</h2>
+          <h2
+            className="favourites__teams__title"
+            style={darkMode ? { color: "#fff" } : null}
+          >
+            Teams
+          </h2>
           {favTeams.map((data, i) => {
             return (
               <Link
@@ -53,6 +62,7 @@ const Favourites = ({ user, searchTeam, searchPlayer, style }) => {
                 key={i}
                 to="../team"
                 onClick={() => searchTeam(data.id)}
+                style={darkMode ? { color: "#fff" } : null}
               >
                 <img src={data.logo} width={"80px"} alt="team badge" />
                 <span>{data.name}</span>
@@ -78,6 +88,7 @@ const Favourites = ({ user, searchTeam, searchPlayer, style }) => {
                 key={i}
                 to="../player"
                 onClick={() => searchPlayer(data.id)}
+                style={darkMode ? { color: "#fff" } : null}
               >
                 <img src={data.photo} width={"80px"} alt="team badge" />
                 <span>{data.name}</span>

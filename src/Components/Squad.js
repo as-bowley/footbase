@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./styles/Squad.css";
 
-const Squad = ({ squad, style }) => {
+const Squad = ({ squad, style, darkMode }) => {
   const [squadModalIsOpen, setSquadModalIsOpen] = useState(false);
   const [isGKHidden, setIsGKHidden] = useState(false);
   const [isDefenderHidden, setIsDefenderHidden] = useState(false);
@@ -59,7 +59,7 @@ const Squad = ({ squad, style }) => {
   return (
     <div
       className={`team__squad ${squadModalIsOpen ? `open` : ""}`}
-      style={style}
+      style={!darkMode ? style : { backgroundColor: "#303030", color: "#fff" }}
     >
       <h2>Squad</h2>
       {!squadModalIsOpen ? (
@@ -152,7 +152,7 @@ const Squad = ({ squad, style }) => {
           </div>
         </div>
       )}
-      <button onClick={handleModal} style={style}>
+      <button onClick={handleModal} style={darkMode ? { color: "#fff" } : null}>
         {squadModalIsOpen ? "See Less" : "See more"}
       </button>
     </div>
