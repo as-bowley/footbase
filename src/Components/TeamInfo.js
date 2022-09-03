@@ -27,11 +27,15 @@ const Teaminfo = ({
           break;
       }
     };
-    return formArray.map((formItem) => (
-      <span className={`formbox ${checkResult(formItem)}`} key={uniqid()}>
-        {formItem}
-      </span>
-    ));
+    return formArray.map((formItem, i) => {
+      if (i < 4) {
+        return (
+          <span className={`formbox ${checkResult(formItem)}`} key={uniqid()}>
+            {formItem}
+          </span>
+        );
+      }
+    });
   };
   return (
     <div className="team__info">

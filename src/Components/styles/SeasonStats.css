@@ -33,5 +33,6 @@
 @media (max-width: 950px) {
   .team__seasonStats {
     margin-bottom: 40px;
+    height: auto;
   }
 }

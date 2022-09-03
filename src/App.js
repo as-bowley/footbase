@@ -33,7 +33,7 @@ const App = () => {
   const darkMode = {
     backgroundColor: "#303030",
     color: "#fff",
-    boxShadow: "2px 2px 4px rgba(255, 255, 255, 0.25)",
+    boxShadow: "rgb(255 255 255 / 10%)",
   };
   const darkBG = {
     backgroundColor: "#000",
@@ -78,74 +78,73 @@ const App = () => {
     });
   }, []);
 
-  useEffect(() => {
-    fetch(
-      "https://api-football-v1.p.rapidapi.com/v3/standings?season=2022&league=39",
-      options
-    )
-      .then((response) => response.json())
-      .then((response) =>
-        setStandings(response.response[0].league.standings[0])
-      )
-      .catch((err) => console.error(err));
-  }, []);
+  // useEffect(() => {
+  //   fetch(
+  //     "https://api-football-v1.p.rapidapi.com/v3/standings?season=2022&league=39",
+  //     options
+  //   )
+  //     .then((response) => response.json())
+  //     .then((response) =>
+  //       setStandings(response.response[0].league.standings[0])
+  //     )
+  //     .catch((err) => console.error(err));
+  // }, []);
 
-  const fetchTeamStats = (teamid) => {
-    fetch(
-      `https://api-football-v1.p.rapidapi.com/v3/teams/statistics?league=39&season=2022&team=${teamid}`,
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => setTeamStatistics(response.response))
-      .catch((err) => console.error(err));
-  };
+  // const fetchTeamStats = (teamid) => {
+  //   fetch(
+  //     `https://api-football-v1.p.rapidapi.com/v3/teams/statistics?league=39&season=2022&team=${teamid}`,
+  //     options
+  //   )
+  //     .then((response) => response.json())
+  //     .then((response) => setTeamStatistics(response.response))
+  //     .catch((err) => console.error(err));
+  // };
 
-  const fetchTeamDetails = (teamid) => {
-    fetch(
-      `https://api-football-v1.p.rapidapi.com/v3/teams?id=${teamid}`,
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        setTeamDetails(response.response[0].team);
-        setVenueInfo(response.response[0].venue);
-      })
-      .catch((err) => console.error(err));
-  };
+  // const fetchTeamDetails = (teamid) => {
+  //   fetch(
+  //     `https://api-football-v1.p.rapidapi.com/v3/teams?id=${teamid}`,
+  //     options
+  //   )
+  //     .then((response) => response.json())
+  //     .then((response) => {
+  //       setTeamDetails(response.response[0].team);
+  //       setVenueInfo(response.response[0].venue);
+  //     })
+  //     .catch((err) => console.error(err));
+  // };
 
-  const fetchFixtures = (teamid) => {
-    fetch(
-      `https://api-football-v1.p.rapidapi.com/v3/fixtures?league=39&team=${teamid}&next=3`,
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => setFixtures(response.response))
-      .catch((err) => console.error(err));
-  };
+  // const fetchFixtures = (teamid) => {
+  //   fetch(
+  //     `https://api-football-v1.p.rapidapi.com/v3/fixtures?league=39&team=${teamid}&next=3`,
+  //     options
+  //   )
+  //     .then((response) => response.json())
+  //     .then((response) => setFixtures(response.response))
+  //     .catch((err) => console.error(err));
+  // };
 
-  const fetchSquad = (teamid) => {
-    fetch(
-      `https://api-football-v1.p.rapidapi.com/v3/players?team=${teamid}&season=2022`,
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => setSquad(response.response))
-      .catch((err) => console.error(err));
-  };
+  // const fetchSquad = (teamid) => {
+  //   fetch(
+  //     `https://api-football-v1.p.rapidapi.com/v3/players?team=${teamid}&season=2022`,
+  //     options
+  //   )
+  //     .then((response) => response.json())
+  //     .then((response) => setSquad(response.response))
+  //     .catch((err) => console.error(err));
+  // };
 
   const searchTeam = (id) => {
     console.log(id);
-    fetchTeamStats(id);
-    fetchTeamDetails(id);
-    fetchFixtures(id);
-    fetchSquad(id);
+    // fetchTeamStats(id);
+    // fetchTeamDetails(id);
+    // fetchFixtures(id);
+    // fetchSquad(id);
     setTeamSearchValue("");
   };
 
   const onPlayerSearchChange = (event) => {
     setPlayerSearchValue(event.target.value);
     if (playerSearchValue.split("").length === 4) {
-      console.log("Search value === 4");
       fetchPlayerSearchData(playerSearchValue);
     }
   };

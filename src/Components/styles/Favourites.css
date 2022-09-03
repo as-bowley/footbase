@@ -2,7 +2,6 @@
   background-color: #fff;
   margin-left: 250px;
   width: 100%;
-  max-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 7fr;
@@ -106,6 +105,7 @@
       "teams"
       "players";
     gap: 15px;
+    height: max-content;
   }
 
   .favourites__title {

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap");
 
 .loginPage {
-  height: 100%;
+  height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -133,5 +133,20 @@
     align-items: center;
     width: 18rem;
     height: 22rem;
+  }
+
+  .loginPage__loginFormDisplay,
+  .loginPage__registerFormDisplay {
+    font-size: 1.2rem;
+  }
+
+  .loginPage > .loginPage__formContainer > .loginPage__registerForm > input,
+  .loginPage > .loginPage__formContainer > .loginPage__loginForm > input {
+    font-size: 1.1rem;
+  }
+
+  .loginPage > .loginPage__formContainer > .loginPage__registerForm > button,
+  .loginPage > .loginPage__formContainer > .loginPage__loginForm > button {
+    font-size: 1.1rem;
   }
 }

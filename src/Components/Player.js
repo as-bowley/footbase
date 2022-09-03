@@ -31,7 +31,6 @@ const Player = ({
 
   useEffect(() => {
     checkPlayerIsFavourited(stats.player.id);
-    console.log(playerIsFavourited);
   }, [playerSearchData[0]]);
 
   const checkFireStoreDocExists = async () => {
