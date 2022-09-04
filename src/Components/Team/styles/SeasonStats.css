@@ -30,9 +30,14 @@
   width: 100%;
 }
 
+@media (max-width: 1500px) {
+  .team__seasonStats {
+    height: min-content;
+  }
+}
+
 @media (max-width: 950px) {
   .team__seasonStats {
     margin-bottom: 40px;
-    height: auto;
   }
 }

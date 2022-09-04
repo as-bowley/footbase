@@ -123,9 +123,13 @@
 }
 
 @media (max-width: 950px) {
+  .player__position {
+    width: 100%;
+  }
+
   .player__position > img {
     min-width: 180px;
-    max-width: 280px;
+    max-width: 100%;
   }
 
   .player__position__img {

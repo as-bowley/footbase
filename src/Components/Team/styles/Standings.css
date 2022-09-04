@@ -51,6 +51,6 @@
 
 @media (max-width: 1500px) {
   .team__standings {
-    height: auto;
+    height: min-content;
   }
 }

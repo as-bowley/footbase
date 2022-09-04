@@ -3,8 +3,8 @@ import { Route, Routes, Navigate, useLocation } from "react-router-dom";
 import "./App.css";
 import LoginPage from "./Components/LoginPage";
 import Navbar from "./Components/Navbar";
-import Player from "./Components/Player";
-import Team from "./Components/Team";
+import Player from "./Components/Player/Player";
+import Team from "./Components/Team/Team";
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
@@ -22,8 +22,8 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 const options = {
   method: "GET",
   headers: {
-    "X-RapidAPI-Key": `${API_KEY}`,
-    "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com",
+    "x-rapidapi-key": `${API_KEY}`,
+    "x-rapidapi-host": "v3.football.api-sports.io",
   },
 };
 
@@ -78,67 +78,63 @@ const App = () => {
     });
   }, []);
 
-  // useEffect(() => {
-  //   fetch(
-  //     "https://api-football-v1.p.rapidapi.com/v3/standings?season=2022&league=39",
-  //     options
-  //   )
-  //     .then((response) => response.json())
-  //     .then((response) =>
-  //       setStandings(response.response[0].league.standings[0])
-  //     )
-  //     .catch((err) => console.error(err));
-  // }, []);
+  useEffect(() => {
+    fetch(
+      "https://v3.football.api-sports.io/standings?league=39&season=2022",
+      options
+    )
+      .then((response) => response.json())
+      .then((response) =>
+        setStandings(response.response[0].league.standings[0])
+      )
+      .catch((err) => console.error(err));
+  }, []);
 
-  // const fetchTeamStats = (teamid) => {
-  //   fetch(
-  //     `https://api-football-v1.p.rapidapi.com/v3/teams/statistics?league=39&season=2022&team=${teamid}`,
-  //     options
-  //   )
-  //     .then((response) => response.json())
-  //     .then((response) => setTeamStatistics(response.response))
-  //     .catch((err) => console.error(err));
-  // };
+  const fetchTeamStats = (teamid) => {
+    fetch(
+      `https://v3.football.api-sports.io/teams/statistics?league=39&season=2022&team=${teamid}`,
+      options
+    )
+      .then((response) => response.json())
+      .then((response) => setTeamStatistics(response.response))
+      .catch((err) => console.error(err));
+  };
 
-  // const fetchTeamDetails = (teamid) => {
-  //   fetch(
-  //     `https://api-football-v1.p.rapidapi.com/v3/teams?id=${teamid}`,
-  //     options
-  //   )
-  //     .then((response) => response.json())
-  //     .then((response) => {
-  //       setTeamDetails(response.response[0].team);
-  //       setVenueInfo(response.response[0].venue);
-  //     })
-  //     .catch((err) => console.error(err));
-  // };
+  const fetchTeamDetails = (teamid) => {
+    fetch(`https://v3.football.api-sports.io/teams?id=${teamid}`, options)
+      .then((response) => response.json())
+      .then((response) => {
+        setTeamDetails(response.response[0].team);
+        setVenueInfo(response.response[0].venue);
+      })
+      .catch((err) => console.error(err));
+  };
 
-  // const fetchFixtures = (teamid) => {
-  //   fetch(
-  //     `https://api-football-v1.p.rapidapi.com/v3/fixtures?league=39&team=${teamid}&next=3`,
-  //     options
-  //   )
-  //     .then((response) => response.json())
-  //     .then((response) => setFixtures(response.response))
-  //     .catch((err) => console.error(err));
-  // };
+  const fetchFixtures = (teamid) => {
+    fetch(
+      `https://v3.football.api-sports.io/fixtures?league=39&team=${teamid}&next=3`,
+      options
+    )
+      .then((response) => response.json())
+      .then((response) => setFixtures(response.response))
+      .catch((err) => console.error(err));
+  };
 
-  // const fetchSquad = (teamid) => {
-  //   fetch(
-  //     `https://api-football-v1.p.rapidapi.com/v3/players?team=${teamid}&season=2022`,
-  //     options
-  //   )
-  //     .then((response) => response.json())
-  //     .then((response) => setSquad(response.response))
-  //     .catch((err) => console.error(err));
-  // };
+  const fetchSquad = (teamid) => {
+    fetch(
+      `https://v3.football.api-sports.io/players?team=${teamid}&season=2022`,
+      options
+    )
+      .then((response) => response.json())
+      .then((response) => setSquad(response.response))
+      .catch((err) => console.error(err));
+  };
 
   const searchTeam = (id) => {
-    console.log(id);
-    // fetchTeamStats(id);
-    // fetchTeamDetails(id);
-    // fetchFixtures(id);
-    // fetchSquad(id);
+    fetchTeamStats(id);
+    fetchTeamDetails(id);
+    fetchFixtures(id);
+    fetchSquad(id);
     setTeamSearchValue("");
   };
 
@@ -148,6 +144,20 @@ const App = () => {
       fetchPlayerSearchData(playerSearchValue);
     }
   };
+
+  const fetchFavePlayerData = (id) => {
+    fetch(
+      `https://v3.football.api-sports.io/players?id=${id}&league=39&season=2022`,
+      options
+    )
+      .then((response) => response.json())
+      .then((response) => setPlayerSearchData(response.response))
+      .catch((err) => console.error(err));
+  };
+
+  useEffect(() => {
+    searchPlayer(playerSearchData[0]?.player.id);
+  }, [fetchFavePlayerData]);
 
   const searchPlayer = (id) => {
     playerSearchData.filter((data) => {
@@ -162,7 +172,7 @@ const App = () => {
 
   const fetchPlayerSearchData = (searchValue) => {
     fetch(
-      `https://api-football-v1.p.rapidapi.com/v3/players?league=39&search=${searchValue}`,
+      `https://v3.football.api-sports.io/players?league=39&search=${searchValue}`,
       options
     )
       .then((response) => response.json())
@@ -265,7 +275,7 @@ const App = () => {
                   <Favourites
                     user={user.uid}
                     searchTeam={searchTeam}
-                    searchPlayer={searchPlayer}
+                    searchPlayer={fetchFavePlayerData}
                     style={isDarkMode ? darkMode : null}
                     darkMode={isDarkMode}
                   />

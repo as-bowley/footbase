@@ -1,6 +1,7 @@
 .player {
   margin-left: 250px;
   padding: 20px;
+  height: 100vh;
   width: 100%;
   display: grid;
   gap: 25px;
@@ -63,6 +64,7 @@
 
 @media (max-width: 1560px) {
   .player {
+    height: 100%;
     grid-template-columns: 40% 40%;
     grid-template-rows: 50px auto;
     grid-template-areas:
@@ -84,6 +86,7 @@
 @media (max-width: 950px) {
   .player {
     padding: 15px;
+    height: fit-content;
     box-sizing: border-box;
     margin-left: 75px;
     grid-template-columns: 100%;

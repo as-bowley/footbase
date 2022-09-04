@@ -13,15 +13,6 @@ const Fixtures = ({ fixtures, style }) => {
 
   const games = getNextThreeFixtures();
 
-  const mappedFixtures = games.map((game) => {
-    return (
-      <div className="fixture">
-        <h4>{game.teams.home}</h4>
-        <h4>{game.teams.away}</h4>
-      </div>
-    );
-  });
-
   return (
     <div className="team__fixtures" style={style}>
       <h2>Upcoming Fixtures</h2>

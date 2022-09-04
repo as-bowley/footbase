@@ -12,10 +12,10 @@ import {
   arrayUnion,
   arrayRemove,
 } from "firebase/firestore";
-import { db } from "../firebase-config";
+import { db } from "../../firebase-config";
 import { useEffect, useState } from "react";
-import favIcon from "./img/favfilled.png";
-import unfavIcon from "./img/unfav.png";
+import favIcon from "../img/favfilled.png";
+import unfavIcon from "../img/unfav.png";
 
 const Player = ({
   stats,
@@ -31,7 +31,7 @@ const Player = ({
 
   useEffect(() => {
     checkPlayerIsFavourited(stats.player.id);
-  }, [playerSearchData[0]]);
+  }, [stats.player.id]);
 
   const checkFireStoreDocExists = async () => {
     const docRef = doc(db, "users", user);
@@ -49,11 +49,18 @@ const Player = ({
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
-      if (docSnap.data()?.favourites?.players.indexOf(player) !== -1) {
+      if (
+        docSnap
+          .data()
+          ?.favourites?.players.map(function (e) {
+            return e.id;
+          })
+          .indexOf(player) !== -1
+      ) {
         setPlayerIsFavourited(true);
+      } else {
+        setPlayerIsFavourited(false);
       }
-    } else {
-      setPlayerIsFavourited(false);
     }
   };
 

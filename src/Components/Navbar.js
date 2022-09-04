@@ -22,10 +22,6 @@ const Navbar = ({ username, signOut, style, toggleDarkMode, darkMode }) => {
           F<strong>b</strong>
         </h1>
       </div>
-      <div className="navbar__userInfo">
-        <img src={profpic} alt="profile" />
-        <h2>{username}</h2>
-      </div>
       <div className="navbar__menu">
         <ul>
           <li>
@@ -72,6 +68,9 @@ const Navbar = ({ username, signOut, style, toggleDarkMode, darkMode }) => {
         >
           {<img src={darkMode ? lightIcon : darkIcon} alt="" />}
         </motion.button>
+      </div>
+      <div className="navbar__userInfo">
+        <h2>{username}</h2>
       </div>
       <div className="navbar__signout">
         <motion.button whileTap={{ scale: 0.95 }} onClick={signOut}>

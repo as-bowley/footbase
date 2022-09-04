@@ -6,7 +6,7 @@
   display: grid;
   padding: 20px 80px 50px 30px;
   grid-template-columns: 60% 20% 20%;
-  grid-template-rows: 4% 16% 60%;
+  grid-template-rows: 4% 20% 60%;
   grid-gap: 25px;
   grid-template-areas:
     "search fave fave"
@@ -55,6 +55,10 @@
   height: 100%;
 }
 
+.team__info__details__container {
+  display: flex;
+}
+
 .team__info__logo {
   align-self: center;
   margin: 0 1rem;
@@ -69,11 +73,17 @@
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
   padding: 10px;
   display: flex;
+  flex-direction: column;
+}
+
+.team__info__info > h1 {
+  margin-left: 0.8rem;
 }
 
 .team__info__details {
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .team__info__details > h3 {
@@ -212,7 +222,6 @@
   }
 
   .team__info__info {
-    box-sizing: border-box;
   }
 
   .team__info__details > h3 {
@@ -227,8 +236,10 @@
   }
 
   .team__info__info {
+    box-sizing: border-box;
     flex-direction: column;
     width: 100%;
+    align-items: center;
   }
 
   .searchbar {
