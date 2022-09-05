@@ -2,8 +2,10 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "@firebase/firestore";
 
+const API_KEY = process.env.REACT_APP_FIREBASE_KEY;
+
 const firebaseConfig = {
-  apiKey: "AIzaSyA2ItDCxBdsZN1UnqONNKcy09ekaXiTgPg",
+  apiKey: `${API_KEY}`,
   authDomain: "footbase-51104.firebaseapp.com",
   projectId: "footbase-51104",
   storageBucket: "footbase-51104.appspot.com",

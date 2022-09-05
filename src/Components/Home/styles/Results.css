@@ -1,0 +1,47 @@
+.home__results {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.home__result {
+  padding: 15px;
+  border-bottom: thin solid #000;
+}
+
+.home__result:last-child {
+  border-bottom: none;
+}
+
+.home__result__hometeam {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+.home__result__awayteam {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+.home__result__hometeam > img {
+  margin-right: 1rem;
+}
+
+.home__result__awayteam > img {
+  margin-right: 1rem;
+}
+
+.home__result__hometeam > span {
+  margin-left: auto;
+}
+
+.home__result__awayteam > span {
+  margin-left: auto;
+}
+
+.winner {
+  background-color: rgb(225, 252, 229);
+}

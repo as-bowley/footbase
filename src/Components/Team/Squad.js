@@ -20,16 +20,16 @@ const Squad = ({ squad, style, darkMode }) => {
 
   const sortSquad = () => {
     const goalkeepers = squad.filter(
-      (player) => player.statistics[0].games.position === "Goalkeeper"
+      (player) => player?.statistics[0].games.position === "Goalkeeper"
     );
     const defenders = squad.filter(
-      (player) => player.statistics[0].games.position === "Defender"
+      (player) => player?.statistics[0].games.position === "Defender"
     );
     const midfielders = squad.filter(
-      (player) => player.statistics[0].games.position === "Midfielder"
+      (player) => player?.statistics[0].games.position === "Midfielder"
     );
     const attackers = squad.filter(
-      (player) => player.statistics[0].games.position === "Attacker"
+      (player) => player?.statistics[0].games.position === "Attacker"
     );
     return [goalkeepers, defenders, midfielders, attackers];
   };
@@ -65,7 +65,7 @@ const Squad = ({ squad, style, darkMode }) => {
       {!squadModalIsOpen ? (
         <ul>
           {first10Players.map((player) => {
-            return <li key={player.player.id}>{player.player.name}</li>;
+            return <li key={player?.player.id}>{player?.player.name}</li>;
           })}
         </ul>
       ) : (
@@ -81,11 +81,11 @@ const Squad = ({ squad, style, darkMode }) => {
                   key={i}
                 >
                   <img
-                    src={player.player.photo}
+                    src={player?.player.photo}
                     width={"40px"}
                     alt="player img"
                   />
-                  <span>{player.player.name}</span>
+                  <span>{player?.player.name}</span>
                 </div>
               );
             })}
@@ -105,7 +105,7 @@ const Squad = ({ squad, style, darkMode }) => {
                     width={"40px"}
                     alt="player img"
                   />
-                  <span>{player.player.name}</span>
+                  <span>{player?.player.name}</span>
                 </div>
               );
             })}
@@ -121,11 +121,11 @@ const Squad = ({ squad, style, darkMode }) => {
                   key={i}
                 >
                   <img
-                    src={player.player.photo}
+                    src={player?.player.photo}
                     width={"40px"}
                     alt="player img"
                   />
-                  <span>{player.player.name}</span>
+                  <span>{player?.player.name}</span>
                 </div>
               );
             })}
@@ -141,11 +141,11 @@ const Squad = ({ squad, style, darkMode }) => {
                   key={i}
                 >
                   <img
-                    src={player.player.photo}
+                    src={player?.player.photo}
                     width={"40px"}
                     alt="player img"
                   />
-                  <span>{player.player.name}</span>
+                  <span>{player?.player.name}</span>
                 </div>
               );
             })}

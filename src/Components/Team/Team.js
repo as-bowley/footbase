@@ -16,8 +16,8 @@ import {
 } from "firebase/firestore";
 import { db } from "../../firebase-config";
 import { useEffect, useState } from "react";
-import favIcon from "../img/favfilled.png";
-import unfavIcon from "../img/unfav.png";
+import favIcon from "../../img/favfilled.png";
+import unfavIcon from "../../img/unfav.png";
 
 const Team = ({
   teamdetails,
@@ -30,7 +30,7 @@ const Team = ({
   searchChange,
   teamSearchData,
   teamSearchValue,
-  searchTeam,
+  fetchTeam,
   user,
   setTeamSearchValue,
   style,
@@ -120,7 +120,7 @@ const Team = ({
           searchData={teamSearchData}
           searchChange={searchChange}
           teamSearchValue={teamSearchValue}
-          searchTeam={searchTeam}
+          searchTeam={fetchTeam}
           setTeamSearchValue={setTeamSearchValue}
           style={style}
         />
@@ -166,16 +166,16 @@ const Team = ({
         transition={{ ease: "easeIn", duration: 0.5 }}
       >
         <Teaminfo
-          name={teamdetails.name}
-          logo={teamdetails.logo}
-          country={teamdetails.country}
-          founded={teamdetails.founded}
-          stadium={venue.name}
-          capacity={venue.capacity}
-          address={venue.address}
-          league={teamstatistics.league.name}
-          leagueLogo={teamstatistics.league.logo}
-          form={teamstatistics.form}
+          name={teamdetails?.name}
+          logo={teamdetails?.logo}
+          country={teamdetails?.country}
+          founded={teamdetails?.founded}
+          stadium={venue?.name}
+          capacity={venue?.capacity}
+          address={venue?.address}
+          league={teamstatistics?.league?.name}
+          leagueLogo={teamstatistics?.league?.logo}
+          form={teamstatistics?.form}
           style={style}
         />
       </motion.div>

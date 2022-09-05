@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { db } from "../firebase-config";
+import { db } from "../../firebase-config";
 import { doc, getDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";

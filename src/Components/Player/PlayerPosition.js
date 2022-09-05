@@ -1,4 +1,4 @@
-import pitch from "../img/positionpitch.png";
+import pitch from "../../img/positionpitch.png";
 import "./styles/PlayerPosition.css";
 
 const PlayerPosition = ({ position, style }) => {

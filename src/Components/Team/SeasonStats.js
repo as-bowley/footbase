@@ -11,42 +11,42 @@ const SeasonStats = ({ statistics, style }) => {
           </tr>
           <tr>
             <td>Total</td>
-            <td>{statistics.fixtures.played.total}</td>
+            <td>{statistics?.fixtures.played.total}</td>
           </tr>
           <tr>
             <th>Results</th>
           </tr>
           <tr>
             <td>Wins</td>
-            <td>{statistics.fixtures.wins.total}</td>
+            <td>{statistics?.fixtures.wins.total}</td>
           </tr>
           <tr>
             <td>Draws</td>
-            <td>{statistics.fixtures.draws.total}</td>
+            <td>{statistics?.fixtures.draws.total}</td>
           </tr>
           <tr>
             <td>Losses</td>
-            <td>{statistics.fixtures.loses.total}</td>
+            <td>{statistics?.fixtures.loses.total}</td>
           </tr>
           <tr>
             <th>Goals</th>
           </tr>
           <tr>
             <td>For</td>
-            <td>{statistics.goals.for.total.total}</td>
+            <td>{statistics?.goals.for.total.total}</td>
           </tr>
           <tr>
             <td>Against</td>
-            <td>{statistics.goals.against.total.total}</td>
+            <td>{statistics?.goals.against.total.total}</td>
           </tr>
           <tr>
             <th>Formations Used</th>
           </tr>
-          {statistics.lineups.map((lineup) => {
+          {statistics?.lineups.map((lineup) => {
             return (
               <tr key={lineup.formation}>
-                <td>{lineup.formation}</td>
-                <td>{lineup.played}</td>
+                <td>{lineup?.formation}</td>
+                <td>{lineup?.played}</td>
               </tr>
             );
           })}
@@ -55,11 +55,11 @@ const SeasonStats = ({ statistics, style }) => {
           </tr>
           <tr>
             <td>Clean Sheets</td>
-            <td>{statistics.clean_sheet.total}</td>
+            <td>{statistics?.clean_sheet.total}</td>
           </tr>
           <tr>
             <td>Penalties</td>
-            <td>{statistics.penalty.total}</td>
+            <td>{statistics?.penalty.total}</td>
           </tr>
         </tbody>
       </table>

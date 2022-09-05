@@ -68,6 +68,7 @@ const Teaminfo = ({
           </div>
         </div>
       </div>
+
       <div className="team__info__league" style={style}>
         <h4>{league}</h4>
         <img src={leagueLogo} alt="league logo" width="90px" />

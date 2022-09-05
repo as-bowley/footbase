@@ -1,10 +1,10 @@
-import profpic from "./img/userprofpic.png";
-import faveicon from "./img/fav.png";
-import playericon from "./img/player.png";
-import teamicon from "./img/team.png";
-import logouticon from "./img/logout.png";
-import darkIcon from "./img/dark.png";
-import lightIcon from "./img/light.png";
+import homeicon from "../../img/home.png";
+import faveicon from "../../img/fav.png";
+import playericon from "../../img/player.png";
+import teamicon from "../../img/team.png";
+import logouticon from "../../img/logout.png";
+import darkIcon from "../../img/dark.png";
+import lightIcon from "../../img/light.png";
 import "./styles/Navbar.css";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -24,6 +24,16 @@ const Navbar = ({ username, signOut, style, toggleDarkMode, darkMode }) => {
       </div>
       <div className="navbar__menu">
         <ul>
+          <li>
+            <NavLink to="/" style={darkMode ? { color: "#fff" } : null}>
+              <img
+                src={homeicon}
+                alt="favourite"
+                style={darkMode ? { filter: "invert(100%)" } : null}
+              />
+              <strong>Home</strong>
+            </NavLink>
+          </li>
           <li>
             <NavLink
               to="./favourites"

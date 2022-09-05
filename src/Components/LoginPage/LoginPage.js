@@ -1,8 +1,13 @@
 import { useState } from "react";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { auth } from "../../firebase-config";
 import "./styles/LoginPage.css";
-import loadIcon from "./img/loading-icon.gif";
+import loadIcon from "../../img/loading-icon.gif";
 
-const LoginPage = ({ register, login, error, isLoggingIn, style }) => {
+const LoginPage = ({ isLoggedIn, style, logOut }) => {
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
   const [registerPasswordConfirm, setRegisterPasswordConfirm] = useState("");
@@ -10,6 +15,41 @@ const LoginPage = ({ register, login, error, isLoggingIn, style }) => {
   const [loginPassword, setLoginPassword] = useState("");
   const [registerIsDisplayed, setRegisterIsDisplayed] = useState(false);
   const [loginIsDisplayed, setLoginIsDisplayed] = useState(true);
+  const [isLoggingIn, setIsLoggingIn] = useState(false);
+  const [error, setError] = useState("");
+
+  const register = async (
+    registerEmail,
+    registerPassword,
+    registerPasswordConfirm
+  ) => {
+    if (registerPassword !== registerPasswordConfirm) {
+      return setError("Passwords do not match.");
+    }
+    try {
+      await createUserWithEmailAndPassword(
+        auth,
+        registerEmail,
+        registerPassword
+      );
+      setError("");
+    } catch (error) {
+      setError(error.message.split("Firebase:")[1]);
+    }
+  };
+
+  const login = async (loginEmail, loginPassword) => {
+    setIsLoggingIn(true);
+    try {
+      await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
+      isLoggedIn(true);
+      setIsLoggingIn(false);
+      setError("");
+    } catch (error) {
+      setError(error.message.split("Firebase:")[1]);
+      setIsLoggingIn(false);
+    }
+  };
 
   const showLoginForm = () => {
     setLoginIsDisplayed(true);

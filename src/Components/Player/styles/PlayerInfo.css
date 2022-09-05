@@ -56,6 +56,16 @@
   padding: 0;
 }
 
+@media (max-width: 1300px) {
+  .player__info {
+    height: auto;
+  }
+
+  .player__stats {
+    grid-template-rows: 1fr 2fr;
+  }
+}
+
 @media (max-width: 950px) {
   .player__info {
     flex-direction: column;

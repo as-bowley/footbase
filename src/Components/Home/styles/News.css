@@ -1,0 +1,27 @@
+.home__headlines {
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.home__headline {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  color: #000;
+}
+
+.home__headline > div > h3 {
+  margin-top: 0;
+}
+
+.home__headline > img {
+  margin-right: 1rem;
+  border-radius: 8px;
+}
+
+.home__headline:nth-child(2n) {
+  background-color: rgb(225, 252, 229);
+}
