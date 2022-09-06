@@ -1,6 +1,6 @@
 import "./styles/LeagueStats.css";
 
-const LeagueStats = ({ topScorers, topAssists }) => {
+const LeagueStats = ({ topScorers, topAssists, darkMode }) => {
   return (
     <div className="home__leaguestats">
       <div className="home__leaguestats__topscorers">
@@ -8,7 +8,12 @@ const LeagueStats = ({ topScorers, topAssists }) => {
         {topScorers.map((scorer, i) => {
           if (i < 5) {
             return (
-              <div key={i} className="home__leaguestats__topscorer">
+              <div
+                key={i}
+                className={`home__leaguestats__topscorer ${
+                  darkMode ? "dark" : null
+                }`}
+              >
                 <img src={scorer.player.photo} alt="" height={"50px"} />
                 <strong>{scorer.player.name}</strong>
                 <span>
@@ -25,7 +30,12 @@ const LeagueStats = ({ topScorers, topAssists }) => {
         {topAssists.map((assistee, i) => {
           if (i < 5) {
             return (
-              <div key={i} className="home__leaguestats__assistee">
+              <div
+                key={i}
+                className={`home__leaguestats__assistee ${
+                  darkMode ? "dark" : null
+                }`}
+              >
                 <img src={assistee.player.photo} alt="" height={"50px"} />
                 <strong>{assistee.player.name}</strong>
                 <span>

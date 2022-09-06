@@ -9,8 +9,13 @@
 .home__headline {
   display: flex;
   align-items: center;
-  padding: 15px;
+  padding: 15px 15px 15px 5px;
   color: #000;
+}
+
+.home__headline.dark:nth-child(2n) {
+  background-color: rgb(57, 57, 57);
+  border-radius: 8px;
 }
 
 .home__headline > div > h3 {
@@ -24,4 +29,14 @@
 
 .home__headline:nth-child(2n) {
   background-color: rgb(225, 252, 229);
+}
+
+@media (max-width: 950px) {
+  .home__headline {
+    font-size: 0.8rem;
+  }
+
+  .home__headline > img {
+    max-width: 100px;
+  }
 }

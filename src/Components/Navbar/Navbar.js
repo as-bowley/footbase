@@ -28,10 +28,11 @@ const Navbar = ({ username, signOut, style, toggleDarkMode, darkMode }) => {
             <NavLink to="/" style={darkMode ? { color: "#fff" } : null}>
               <img
                 src={homeicon}
-                alt="favourite"
+                alt="home"
                 style={darkMode ? { filter: "invert(100%)" } : null}
+                width={"30px"}
               />
-              <strong>Home</strong>
+              <span>Home</span>
             </NavLink>
           </li>
           <li>
@@ -43,8 +44,9 @@ const Navbar = ({ username, signOut, style, toggleDarkMode, darkMode }) => {
                 src={faveicon}
                 alt="favourite"
                 style={darkMode ? { filter: "invert(100%)" } : null}
+                width={"30px"}
               />
-              <strong>Favourites</strong>
+              <span>Favourites</span>
             </NavLink>
           </li>
           <li>
@@ -53,8 +55,9 @@ const Navbar = ({ username, signOut, style, toggleDarkMode, darkMode }) => {
                 src={playericon}
                 alt="playericon"
                 style={darkMode ? { filter: "invert(100%)" } : null}
+                width={"30px"}
               />
-              <strong>Players</strong>
+              <span>Players</span>
             </NavLink>
           </li>
           <li>
@@ -65,28 +68,43 @@ const Navbar = ({ username, signOut, style, toggleDarkMode, darkMode }) => {
                 width="30px"
                 style={darkMode ? { filter: "invert(100%)" } : null}
               />
-              <strong>Teams</strong>
+              <span>Teams</span>
             </NavLink>
           </li>
         </ul>
       </div>
-      <div className="navbar__darkMode">
-        <motion.button
-          onClick={toggleDarkMode}
-          className="navbar__darkMode__button"
-          whileTap={{ scale: 0.95 }}
-        >
-          {<img src={darkMode ? lightIcon : darkIcon} alt="" />}
-        </motion.button>
-      </div>
-      <div className="navbar__userInfo">
-        <h2>{username}</h2>
-      </div>
-      <div className="navbar__signout">
-        <motion.button whileTap={{ scale: 0.95 }} onClick={signOut}>
-          <img src={logouticon} alt="" width={"25px"} />
-          <p>Sign Out</p>
-        </motion.button>
+      <div>
+        <div className="navbar__darkMode">
+          <motion.button
+            onClick={toggleDarkMode}
+            className="navbar__darkMode__button"
+            whileTap={{ scale: 0.95 }}
+          >
+            {<img src={darkMode ? lightIcon : darkIcon} alt="" />}
+          </motion.button>
+        </div>
+        <div className="navbar__userInfo">
+          <h2>{username}</h2>
+        </div>
+        <div className="navbar__signout">
+          <motion.button
+            whileTap={{ scale: 0.95 }}
+            onClick={signOut}
+            style={
+              darkMode
+                ? { backgroundColor: "transparent", color: "#fff" }
+                : null
+            }
+          >
+            <img
+              src={logouticon}
+              alt=""
+              width={"25px"}
+              style={darkMode ? { filter: "invert(100%)" } : null}
+            />
+            <p>Sign Out</p>
+          </motion.button>
+        </div>
       </div>
     </div>
   );

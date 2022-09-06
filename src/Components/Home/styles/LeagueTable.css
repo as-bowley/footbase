@@ -43,6 +43,6 @@
 
 @media (max-width: 1500px) {
   .home__leaguetable {
-    height: min-content;
+    padding-bottom: 10px;
   }
 }

@@ -1,12 +1,13 @@
 .player {
   margin-left: 250px;
+  box-sizing: border-box;
   padding: 20px;
   height: 100vh;
   width: 100%;
   display: grid;
   gap: 25px;
   grid-template-columns: 20% 2fr 1fr;
-  grid-template-rows: 7% 25% 30%;
+  grid-template-rows: 5% 30% 65%;
   grid-template-areas:
     "search search fave"
     "playerinfo playerinfo position"
@@ -65,21 +66,13 @@
 @media (max-width: 1560px) {
   .player {
     height: 100%;
-    grid-template-columns: 40% 40%;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 50px auto;
     grid-template-areas:
       "search fave"
       "playerinfo playerinfo"
       "current current"
       "position position";
-  }
-
-  .player__faveButton__container > button > img {
-    margin: 0;
-  }
-
-  .player__faveButton__container > button > p {
-    display: none;
   }
 }
 
@@ -118,5 +111,9 @@
 
   .player__faveButton__container > button > img {
     margin-right: 0;
+  }
+
+  .player__faveButton__container > button > p {
+    display: none;
   }
 }

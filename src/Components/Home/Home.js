@@ -1,5 +1,6 @@
 import "./styles/Home.css";
 import leaguelogo from "../../img/premierleague_logo.png";
+import leaguelogoalt from "../../img/premierleague_logo2.png";
 import leagueemblem from "../../img/premierleague_emblem.png";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -19,7 +20,7 @@ const options = {
   },
 };
 
-const Home = ({ leaguetable }) => {
+const Home = ({ leaguetable, style, darkMode }) => {
   const [headlines, setHeadlines] = useState([]);
   const [results, setResults] = useState([]);
   const [topScorers, setTopScorers] = useState([]);
@@ -62,23 +63,51 @@ const Home = ({ leaguetable }) => {
 
   return (
     <div className="home">
-      <div className="home__title">
-        <img src={leagueemblem} height={"200px"} alt="" />
-        <img src={leaguelogo} height={"200px"} alt="" />
-      </div>
-
-      <motion.div className="home__results__container">
-        <Results results={results} />
+      <motion.div
+        className="home__title"
+        initial={{ x: 5, opacity: 0 }}
+        exit={{ y: 5, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ ease: "easeIn", duration: 0.5 }}
+        style={darkMode ? { color: "#fff" } : null}
+      >
+        <img src={leaguelogoalt} height={"200px"} alt="" />
+        <h1>Gameweek - {results[0]?.league.round.split("Regular Season -")}</h1>
       </motion.div>
-      <div className="home_season">
-        {" "}
-        <h1>2022/23</h1>
-      </div>
-      <motion.div className="home__table__container">
+
+      <motion.div
+        className="home__results__container"
+        initial={{ x: 5, opacity: 0 }}
+        exit={{ y: 5, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ ease: "easeIn", duration: 0.5 }}
+        style={style}
+      >
+        <Results results={results} darkMode={darkMode} />
+      </motion.div>
+      <motion.div
+        className="home__table__container"
+        initial={{ x: 5, opacity: 0 }}
+        exit={{ y: 5, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ ease: "easeIn", duration: 0.5 }}
+        style={style}
+      >
         <LeagueTable leaguetable={leaguetable} />
       </motion.div>
-      <motion.div className="home__leaguestats__container">
-        <LeagueStats topScorers={topScorers} topAssists={topAssists} />
+      <motion.div
+        className="home__leaguestats__container"
+        initial={{ x: 5, opacity: 0 }}
+        exit={{ y: 5, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ ease: "easeIn", duration: 0.5 }}
+        style={style}
+      >
+        <LeagueStats
+          topScorers={topScorers}
+          topAssists={topAssists}
+          darkMode={darkMode}
+        />
       </motion.div>
       <motion.div
         className="home__headlines__container"
@@ -86,8 +115,9 @@ const Home = ({ leaguetable }) => {
         exit={{ y: 5, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ ease: "easeIn", duration: 0.5 }}
+        style={style}
       >
-        <News headlines={headlines} />
+        <News headlines={headlines} darkMode={darkMode} />
       </motion.div>
     </div>
   );

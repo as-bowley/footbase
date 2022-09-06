@@ -139,7 +139,7 @@ const Team = ({
             onClick={removeFromFavourites}
             style={style}
           >
-            <img src={unfavIcon} alt="" /> <p>Remove from favourites</p>
+            <img src={unfavIcon} alt="" /> <p>Unfavourite</p>
           </motion.button>
         ) : (
           <motion.button
@@ -154,7 +154,7 @@ const Team = ({
             }}
           >
             <img src={favIcon} alt="" />
-            <p>Add to favourites</p>
+            <p>Favourite</p>
           </motion.button>
         )}
       </motion.div>

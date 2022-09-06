@@ -1,9 +1,9 @@
 import "./styles/Results.css";
 
-const Results = ({ results }) => {
+const Results = ({ results, darkMode }) => {
   return (
     <div className="home__results">
-      {console.log(results)}{" "}
+      <h2>Latest Results</h2>
       {results.map((result, i) => {
         if (i < 5) {
           return (
@@ -11,7 +11,7 @@ const Results = ({ results }) => {
               <div
                 className={`home__result__hometeam ${
                   result.teams.home.winner ? "winner" : null
-                }`}
+                } ${darkMode ? "dark" : null}`}
               >
                 <img src={result.teams.home.logo} alt="" width={"40px"} />
                 <strong>{result.teams.home.name}</strong>

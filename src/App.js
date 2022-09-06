@@ -213,7 +213,13 @@ const App = () => {
               <Route
                 index
                 path="/"
-                element={<Home leaguetable={standings} />}
+                element={
+                  <Home
+                    leaguetable={standings}
+                    style={isDarkMode ? darkMode : null}
+                    darkMode={isDarkMode}
+                  />
+                }
               />
               <Route
                 path="/team"

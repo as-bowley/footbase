@@ -140,7 +140,7 @@ const Player = ({
             style={style}
           >
             <img src={unfavIcon} alt="" />
-            <p>Remove from Favourites</p>
+            <p>Unfavourite</p>
           </motion.button>
         ) : (
           <motion.button
@@ -155,7 +155,7 @@ const Player = ({
             }
           >
             <img src={favIcon} alt="" />
-            <p>Add to Favourites</p>
+            <p>Favourite</p>
           </motion.button>
         )}
       </motion.div>

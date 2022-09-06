@@ -5,8 +5,13 @@
   justify-content: space-between;
 }
 
+.home__results > h2 {
+  align-self: baseline;
+  margin: 0;
+}
+
 .home__result {
-  padding: 15px;
+  padding: 15px 0 15px 0;
   border-bottom: thin solid #000;
 }
 
@@ -44,4 +49,8 @@
 
 .winner {
   background-color: rgb(225, 252, 229);
+}
+
+.winner.dark {
+  background-color: rgb(0 62 9);
 }
