@@ -20,6 +20,13 @@ const options = {
   },
 };
 
+const optionsNews = {
+  method: "GET",
+  headers: {
+    "x-api-key": newsKey,
+  },
+};
+
 const Home = ({ leaguetable, style, darkMode }) => {
   const [headlines, setHeadlines] = useState([]);
   const [results, setResults] = useState([]);
@@ -28,7 +35,8 @@ const Home = ({ leaguetable, style, darkMode }) => {
 
   useEffect(() => {
     fetch(
-      `https://newsapi.org/v2/everything?q=premier-league&apiKey=${newsKey}`
+      `https://api.newscatcherapi.com/v2/search?q="premier league"&countries=GB&page_size=15`,
+      optionsNews
     )
       .then((response) => response.json())
       .then((response) => setHeadlines(response.articles))
