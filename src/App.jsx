@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
-import Home from "./Components/Home/Home";
-import LoginPage from "./Components/LoginPage/LoginPage";
-import Navbar from "./Components/Navbar/Navbar";
-import Player from "./Components/Player/Player";
-import Favourites from "./Components/Favourites/Favourites";
-import Team from "./Components/Team/Team";
+import Home from "./components/Home/Home";
+import LoginPage from "./components/LoginPage/LoginPage";
+import Navbar from "./components/Navbar/Navbar";
+import Player from "./components/Player/Player";
+import Favourites from "./components/Favourites/Favourites";
+import Team from "./components/Team/Team";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "./firebase-config";
 import { AnimatePresence } from "framer-motion";
 
-const API_KEY = process.env.REACT_APP_API_KEY;
+const API_KEY = import.meta.env.REACT_APP_API_KEY;
 
 const options = {
   method: "GET",
