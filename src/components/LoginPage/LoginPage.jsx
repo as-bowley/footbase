@@ -5,7 +5,7 @@ import {
 } from "firebase/auth";
 import { auth } from "../../firebase-config";
 import "./styles/LoginPage.css";
-import loadIcon from "../../img/loading-icon.gif";
+import loadIcon from "@img/loading-icon.gif";
 
 const LoginPage = ({ isLoggedIn, style, logOut }) => {
   const [registerEmail, setRegisterEmail] = useState("");

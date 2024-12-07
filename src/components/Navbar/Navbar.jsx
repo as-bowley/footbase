@@ -1,10 +1,10 @@
-import homeicon from "../../img/home.png";
-import faveicon from "../../img/fav.png";
-import playericon from "../../img/player.png";
-import teamicon from "../../img/team.png";
-import logouticon from "../../img/logout.png";
-import darkIcon from "../../img/dark.png";
-import lightIcon from "../../img/light.png";
+import homeicon from "@img/home.png";
+import faveicon from "@img/fav.png";
+import playericon from "@img/player.png";
+import teamicon from "@img/team.png";
+import logouticon from "@img/logout.png";
+import darkIcon from "@img/dark.png";
+import lightIcon from "@img/light.png";
 import "./styles/Navbar.css";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";

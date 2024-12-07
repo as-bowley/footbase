@@ -1,7 +1,7 @@
 import "./styles/Home.css";
-import leaguelogo from "../../img/premierleague_logo.png";
-import leaguelogoalt from "../../img/premierleague_logo2.png";
-import leagueemblem from "../../img/premierleague_emblem.png";
+import leaguelogo from "@img/premierleague_logo.png";
+import leaguelogoalt from "@img/premierleague_logo2.png";
+import leagueemblem from "@img/premierleague_emblem.png";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import News from "./News";

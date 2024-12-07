@@ -14,8 +14,8 @@ import {
 } from "firebase/firestore";
 import { db } from "../../firebase-config";
 import { useEffect, useState } from "react";
-import favIcon from "../../img/favfilled.png";
-import unfavIcon from "../../img/unfav.png";
+import favIcon from "@img/favfilled.png";
+import unfavIcon from "@img/unfav.png";
 
 const Player = ({
   stats,

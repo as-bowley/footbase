@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
-import Home from "./components/Home/Home";
+import Home from "@components/Home/Home";
 import LoginPage from "./components/LoginPage/LoginPage";
 import Navbar from "./components/Navbar/Navbar";
 import Player from "./components/Player/Player";
