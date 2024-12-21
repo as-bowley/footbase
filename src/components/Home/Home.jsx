@@ -1,31 +1,12 @@
 import "./styles/Home.css";
-import leaguelogo from "@img/premierleague_logo.png";
 import leaguelogoalt from "@img/premierleague_logo2.png";
-import leagueemblem from "@img/premierleague_emblem.png";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import News from "./News";
 import LeagueTable from "./LeagueTable";
 import LeagueStats from "./LeagueStats";
 import Results from "./Results";
-
-const newsKey = import.meta.env.VITE_REACT_APP_NEWS_KEY;
-const API_KEY = import.meta.env.VITE_REACT_APP_API_KEY;
-
-const options = {
-  method: "GET",
-  headers: {
-    "x-rapidapi-key": `${API_KEY}`,
-    "x-rapidapi-host": "v3.football.api-sports.io",
-  },
-};
-
-const optionsNews = {
-  method: "GET",
-  headers: {
-    "x-api-key": newsKey,
-  },
-};
+import apiService from "../../services/apiService"; // Import the updated apiService
 
 const Home = ({ leaguetable, style, darkMode }) => {
   const [headlines, setHeadlines] = useState([]);
@@ -34,39 +15,27 @@ const Home = ({ leaguetable, style, darkMode }) => {
   const [topAssists, setTopAssists] = useState([]);
 
   useEffect(() => {
-    fetch(
-      `https://api.newscatcherapi.com/v2/search?q="premier league"&countries=GB&page_size=15`,
-      optionsNews
-    )
-      .then((response) => response.json())
-      .then((response) => setHeadlines(response.articles))
-      .catch((err) => console.error(err));
-  }, []);
+    apiService
+      .getFootballNews("Premier League", 15, "en")
+      .then((articles) => setHeadlines(articles))
+      .catch((err) => console.error("Error fetching football news:", err));
 
-  useEffect(() => {
-    fetch(
-      `https://v3.football.api-sports.io/fixtures?league=39&last=5`,
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => setResults(response.response))
-      .catch((err) => console.error(err));
+    apiService
+      .getFixtures(39, 5)
+      .then((data) => setResults(data))
+      .catch((err) => console.error("Error fetching results:", err));
 
-    fetch(
-      `https://v3.football.api-sports.io/players/topscorers?season=2022&league=39`,
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => setTopScorers(response.response))
-      .catch((err) => console.error(err));
+    apiService
+      .getTopScorers(39, 2024)
+      .then((data) => {
+        setTopScorers(data);
+      })
+      .catch((err) => console.error("Error fetching top scorers:", err));
 
-    fetch(
-      `https://v3.football.api-sports.io/players/topassists?season=2022&league=39`,
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => setTopAssists(response.response))
-      .catch((err) => console.error(err));
+    apiService
+      .getTopAssists(39, 2024)
+      .then((data) => setTopAssists(data))
+      .catch((err) => console.error("Error fetching top assists:", err));
   }, []);
 
   return (
