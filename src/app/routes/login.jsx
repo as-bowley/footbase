@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import useAuthStore from "../../stores/authStore";
-import "./styles/LoginPage.css";
+import useAuthStore from "@/stores/authStore";
+import "@/components/LoginPage/styles/LoginPage.css";
 import loadIcon from "@img/loading-icon.gif";
 
 const LoginPage = ({ style }) => {

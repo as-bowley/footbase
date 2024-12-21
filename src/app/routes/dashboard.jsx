@@ -1,14 +1,14 @@
-import "./styles/Home.css";
+import "@/components/Home/styles/Home.css";
 import leaguelogoalt from "@img/premierleague_logo2.png";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import News from "./News";
-import LeagueTable from "./LeagueTable";
-import LeagueStats from "./LeagueStats";
-import Results from "./Results";
-import apiService from "../../services/apiService"; // Import the updated apiService
+import News from "@/components/Home/News";
+import LeagueTable from "@/components/Home/LeagueTable";
+import LeagueStats from "@/components/Home/LeagueStats";
+import Results from "@/components/Home/Results";
+import apiService from "@/services/apiService";
 
-const Home = ({ leaguetable, style, darkMode }) => {
+const Dashboard = ({ leaguetable, style, darkMode }) => {
   const [headlines, setHeadlines] = useState([]);
   const [results, setResults] = useState([]);
   const [topScorers, setTopScorers] = useState([]);
@@ -100,4 +100,4 @@ const Home = ({ leaguetable, style, darkMode }) => {
   );
 };
 
-export default Home;
+export default Dashboard;

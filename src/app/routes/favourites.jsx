@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./styles/Favourites.css";
+import "@/components/Favourites/styles/Favourites.css";
 
 const Favourites = ({ user, searchTeam, searchPlayer, style, darkMode }) => {
   const [favTeams, setFavTeams] = useState([]);

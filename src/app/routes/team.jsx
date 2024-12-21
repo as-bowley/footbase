@@ -1,12 +1,12 @@
-import Teaminfo from "./Teaminfo";
-import "./styles/Team.css";
-import TeamSearchbar from "./TeamSearchbar";
-import Fixtures from "./Fixtures";
-import Squad from "./Squad";
-import Standings from "./Standings";
-import SeasonStats from "./SeasonStats";
+import Teaminfo from "@/components/Team/Teaminfo";
+import "@/components/Team/styles/Team.css";
+import TeamSearchbar from "@/components/Team/TeamSearchbar";
+import Fixtures from "@/components/Team/Fixtures";
+import Squad from "@/components/Team/Squad";
+import Standings from "@/components/Team/Standings";
+import SeasonStats from "@/components/Team/SeasonStats";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import favIcon from "@img/favfilled.png";
 import unfavIcon from "@img/unfav.png";
 

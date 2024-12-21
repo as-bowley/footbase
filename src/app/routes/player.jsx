@@ -1,10 +1,10 @@
-import Playerstats from "./PlayerInfo";
-import PlayerSeason from "./PlayerSeason";
-import "./styles/Player.css";
-import PlayerPosition from "./PlayerPosition";
+import Playerstats from "@/components/Player/PlayerInfo";
+import PlayerSeason from "@/components/Player/PlayerSeason";
+import "@/components/Player/styles/Player.css";
+import PlayerPosition from "@/components/Player/PlayerPosition";
 import { motion } from "framer-motion";
-import PlayerSearchbar from "./PlayerSearchbar";
-import { useEffect, useState } from "react";
+import PlayerSearchbar from "@/components/Player/PlayerSearchbar";
+import React, { useEffect, useState } from "react";
 import favIcon from "@img/favfilled.png";
 import unfavIcon from "@img/unfav.png";
 
