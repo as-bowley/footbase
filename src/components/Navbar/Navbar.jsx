@@ -1,3 +1,4 @@
+import React from "react";
 import homeicon from "@img/home.png";
 import faveicon from "@img/fav.png";
 import playericon from "@img/player.png";

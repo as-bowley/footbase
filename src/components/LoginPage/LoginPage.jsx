@@ -1,5 +1,5 @@
-import { useState } from "react";
-import useAuthStore from "../../stores/authStore"; // Zustand auth store
+import React, { useState } from "react";
+import useAuthStore from "../../stores/authStore";
 import "./styles/LoginPage.css";
 import loadIcon from "@img/loading-icon.gif";
 
@@ -62,102 +62,102 @@ const LoginPage = ({ style }) => {
   };
 
   return (
-      <div className="loginPage" style={style}>
-        <h1 className="loginPage__logo">
-          Foot<strong>base</strong>
-        </h1>
-        <div className="loginPage__formContainer">
-          <div className="loginPage__formDisplayButtons">
-            <button
-                onClick={showLoginForm}
-                className={`loginPage__loginFormDisplay ${
-                    loginIsDisplayed && "formSelected"
-                }`}
-            >
-              Login
-            </button>
-            <button
-                onClick={showRegisterForm}
-                className={`loginPage__registerFormDisplay ${
-                    registerIsDisplayed && "formSelected"
-                }`}
-            >
-              Register
+    <div className="loginPage" style={style}>
+      <h1 className="loginPage__logo">
+        Foot<strong>base</strong>
+      </h1>
+      <div className="loginPage__formContainer">
+        <div className="loginPage__formDisplayButtons">
+          <button
+            onClick={showLoginForm}
+            className={`loginPage__loginFormDisplay ${
+              loginIsDisplayed && "formSelected"
+            }`}
+          >
+            Login
+          </button>
+          <button
+            onClick={showRegisterForm}
+            className={`loginPage__registerFormDisplay ${
+              registerIsDisplayed && "formSelected"
+            }`}
+          >
+            Register
+          </button>
+        </div>
+
+        {registerIsDisplayed && (
+          <div className="loginPage__registerForm">
+            <input
+              placeholder="Email.."
+              onChange={(event) => setRegisterEmail(event.target.value)}
+            />
+            <input
+              placeholder="Password.."
+              onChange={(event) => setRegisterPassword(event.target.value)}
+              type="password"
+            />
+            <input
+              placeholder="Confirm password.."
+              onChange={(event) =>
+                setRegisterPasswordConfirm(event.target.value)
+              }
+              type="password"
+            />
+            <div>
+              <p>{error}</p>
+            </div>
+
+            <button onClick={register}>
+              {!isLoggingIn ? (
+                "Register"
+              ) : (
+                <img src={loadIcon} alt="loading" width={"35px"} />
+              )}
             </button>
           </div>
+        )}
 
-          {registerIsDisplayed && (
-              <div className="loginPage__registerForm">
-                <input
-                    placeholder="Email.."
-                    onChange={(event) => setRegisterEmail(event.target.value)}
-                />
-                <input
-                    placeholder="Password.."
-                    onChange={(event) => setRegisterPassword(event.target.value)}
-                    type="password"
-                />
-                <input
-                    placeholder="Confirm password.."
-                    onChange={(event) =>
-                        setRegisterPasswordConfirm(event.target.value)
-                    }
-                    type="password"
-                />
-                <div>
-                  <p>{error}</p>
-                </div>
+        {loginIsDisplayed && (
+          <div className="loginPage__loginForm">
+            <input
+              placeholder="Email.."
+              onChange={(event) => setLoginEmail(event.target.value)}
+            />
+            <input
+              placeholder="Password.."
+              onChange={(event) => setLoginPassword(event.target.value)}
+              type="password"
+            />
+            <div>
+              <p>{error}</p>
+            </div>
 
-                <button onClick={register}>
-                  {!isLoggingIn ? (
-                      "Register"
-                  ) : (
-                      <img src={loadIcon} alt="loading" width={"35px"} />
-                  )}
-                </button>
-              </div>
-          )}
-
-          {loginIsDisplayed && (
-              <div className="loginPage__loginForm">
-                <input
-                    placeholder="Email.."
-                    onChange={(event) => setLoginEmail(event.target.value)}
-                />
-                <input
-                    placeholder="Password.."
-                    onChange={(event) => setLoginPassword(event.target.value)}
-                    type="password"
-                />
-                <div>
-                  <p>{error}</p>
-                </div>
-
-                <button onClick={login}>
-                  {!isLoggingIn ? (
-                      "Login"
-                  ) : (
-                      <img src={loadIcon} alt="loading" width={"35px"} />
-                  )}
-                </button>
-                <button
-                    className="loginPage__loginform__demoUser"
-                    onClick={() => {
-                      setLoginEmail("demo@demo.com");
-                      setLoginPassword("123456");
-                      login();
-                    }}
-                >
-                  {!isLoggingIn ? (
-                      "Login as demo user"
-                  ) : (
-                      <img src={loadIcon} alt="loading" width={"35px"} />
-                  )}
-                </button>
-              </div>
-          )}
-        </div>
+            <button onClick={login}>
+              {!isLoggingIn ? (
+                "Login"
+              ) : (
+                <img src={loadIcon} alt="loading" width={"35px"} />
+              )}
+            </button>
+            <button
+              className="loginPage__loginform__demoUser"
+              onClick={() => {
+                setLoginEmail("demo@demo.com");
+                setLoginPassword("123456");
+                login();
+              }}
+            >
+              {!isLoggingIn ? (
+                "Login as demo user"
+              ) : (
+                <img src={loadIcon} alt="loading" width={"35px"} />
+              )}
+            </button>
+          </div>
+        )}
       </div>
+    </div>
   );
 };
 

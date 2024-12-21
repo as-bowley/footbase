@@ -20,16 +20,16 @@ const Squad = ({ squad, style, darkMode }) => {
 
   const sortSquad = () => {
     const goalkeepers = squad.filter(
-      (player) => player?.statistics[0].games.position === "Goalkeeper"
+      (player) => player?.statistics[0].games.position === "Goalkeeper",
     );
     const defenders = squad.filter(
-      (player) => player?.statistics[0].games.position === "Defender"
+      (player) => player?.statistics[0].games.position === "Defender",
     );
     const midfielders = squad.filter(
-      (player) => player?.statistics[0].games.position === "Midfielder"
+      (player) => player?.statistics[0].games.position === "Midfielder",
     );
     const attackers = squad.filter(
-      (player) => player?.statistics[0].games.position === "Attacker"
+      (player) => player?.statistics[0].games.position === "Attacker",
     );
     return [goalkeepers, defenders, midfielders, attackers];
   };

@@ -1,4 +1,5 @@
-import uniqid from "uniqid";
+import React from "react";
+import { nanoid } from "nanoid";
 
 const Teaminfo = ({
   name,
@@ -30,7 +31,7 @@ const Teaminfo = ({
     return formArray.map((formItem, i) => {
       if (i < 4) {
         return (
-          <span className={`formbox ${checkResult(formItem)}`} key={uniqid()}>
+          <span className={`formbox ${checkResult(formItem)}`} key={nanoid()}>
             {formItem}
           </span>
         );
