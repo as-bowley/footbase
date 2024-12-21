@@ -4,15 +4,6 @@ import "./styles/Player.css";
 import PlayerPosition from "./PlayerPosition";
 import { motion } from "framer-motion";
 import PlayerSearchbar from "./PlayerSearchbar";
-import {
-  doc,
-  setDoc,
-  getDoc,
-  updateDoc,
-  arrayUnion,
-  arrayRemove,
-} from "firebase/firestore";
-import { db } from "../../firebase-config";
 import { useEffect, useState } from "react";
 import favIcon from "@img/favfilled.png";
 import unfavIcon from "@img/unfav.png";
@@ -29,83 +20,9 @@ const Player = ({
 }) => {
   const [playerIsFavourited, setPlayerIsFavourited] = useState(false);
 
-  useEffect(() => {
-    checkPlayerIsFavourited(stats.player.id);
-  }, [stats.player.id]);
-
-  const checkFireStoreDocExists = async () => {
-    const docRef = doc(db, "users", user);
-    const docSnap = await getDoc(docRef);
-
-    if (docSnap.exists()) {
-      return true;
-    } else {
-      return false;
-    }
-  };
-
-  const checkPlayerIsFavourited = async (player) => {
-    const docRef = doc(db, "users", user);
-    const docSnap = await getDoc(docRef);
-
-    if (docSnap.exists()) {
-      if (
-        docSnap
-          .data()
-          ?.favourites?.players.map(function (e) {
-            return e.id;
-          })
-          .indexOf(player) !== -1
-      ) {
-        setPlayerIsFavourited(true);
-      } else {
-        setPlayerIsFavourited(false);
-      }
-    }
-  };
-
-  const addTeamToFavourites = async (name, id, photo) => {
-    const docExists = await checkFireStoreDocExists();
-    if (docExists === true) {
-      const docRef = doc(db, "users", user);
-      await updateDoc(docRef, {
-        "favourites.players": arrayUnion({
-          name: name,
-          id: id,
-          photo: photo,
-        }),
-      });
-    } else {
-      const userFaves = {
-        favourites: {
-          teams: [
-            {
-              name: name,
-              id: id,
-              photo: photo,
-            },
-          ],
-          players: [],
-        },
-      };
-      await setDoc(doc(db, "users", user), userFaves);
-    }
-    setPlayerIsFavourited(true);
-  };
-
-  const removeFromFavourites = async () => {
-    const playerToRemove = {
-      name: stats.player.firstname + stats.player.lastname,
-      id: stats.player.id,
-      photo: stats.player.photo,
-    };
-    const docRef = doc(db, "users", user);
-
-    await updateDoc(docRef, {
-      "favourites.players": arrayRemove(playerToRemove),
-    });
-    setPlayerIsFavourited(false);
-  };
+  // useEffect(() => {
+  //   checkPlayerIsFavourited(stats.player.id);
+  // }, [stats.player.id]);
 
   return (
     <div className="player">
@@ -135,7 +52,7 @@ const Player = ({
         <h4 style={style}>Player</h4>
         {playerIsFavourited ? (
           <motion.button
-            onClick={removeFromFavourites}
+            // onClick={removeFromFavourites}
             whileTap={{ scale: 0.95 }}
             style={style}
           >
@@ -146,13 +63,13 @@ const Player = ({
           <motion.button
             style={style}
             whileTap={{ scale: 0.95 }}
-            onClick={() =>
-              addTeamToFavourites(
-                stats.player.firstname + " " + stats.player.lastname,
-                stats.player.id,
-                stats.player.photo
-              )
-            }
+            // onClick={() =>
+            //   addTeamToFavourites(
+            //     stats.player.firstname + " " + stats.player.lastname,
+            //     stats.player.id,
+            //     stats.player.photo
+            //   )
+            // }
           >
             <img src={favIcon} alt="" />
             <p>Favourite</p>

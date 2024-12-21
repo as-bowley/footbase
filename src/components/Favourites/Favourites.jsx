@@ -1,28 +1,11 @@
 import { motion } from "framer-motion";
-import { db } from "../../firebase-config";
-import { doc, getDoc } from "firebase/firestore";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./styles/Favourites.css";
 
 const Favourites = ({ user, searchTeam, searchPlayer, style, darkMode }) => {
   const [favTeams, setFavTeams] = useState([]);
   const [favPlayers, setFavPlayers] = useState([]);
-
-  const docRef = doc(db, "users", user);
-
-  useEffect(() => {
-    const teams = async () => {
-      const docSnap = await getDoc(docRef);
-      setFavTeams(docSnap.data().favourites.teams);
-    };
-    const players = async () => {
-      const docSnap = await getDoc(docRef);
-      setFavPlayers(docSnap.data().favourites.players);
-    };
-    teams();
-    players();
-  }, []);
 
   return (
     <div
@@ -61,7 +44,7 @@ const Favourites = ({ user, searchTeam, searchPlayer, style, darkMode }) => {
                 className="favourites__teams--row"
                 key={i}
                 to="../team"
-                onClick={() => searchTeam(data.id)}
+                // onClick={() => searchTeam(data.id)}
                 style={darkMode ? { color: "#fff" } : null}
               >
                 <img src={data.logo} width={"80px"} alt="team badge" />
@@ -87,7 +70,7 @@ const Favourites = ({ user, searchTeam, searchPlayer, style, darkMode }) => {
                 className="favourites__players--row"
                 key={i}
                 to="../player"
-                onClick={() => searchPlayer(data.id)}
+                // onClick={() => searchPlayer(data.id)}
                 style={darkMode ? { color: "#fff" } : null}
               >
                 <img src={data.photo} width={"80px"} alt="team badge" />

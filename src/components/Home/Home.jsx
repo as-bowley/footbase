@@ -9,8 +9,8 @@ import LeagueTable from "./LeagueTable";
 import LeagueStats from "./LeagueStats";
 import Results from "./Results";
 
-const newsKey = import.meta.env.REACT_APP_NEWS_KEY;
-const API_KEY = import.meta.env.REACT_APP_API_KEY;
+const newsKey = import.meta.env.VITE_REACT_APP_NEWS_KEY;
+const API_KEY = import.meta.env.VITE_REACT_APP_API_KEY;
 
 const options = {
   method: "GET",

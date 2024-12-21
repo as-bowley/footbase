@@ -6,15 +6,6 @@ import Squad from "./Squad";
 import Standings from "./Standings";
 import SeasonStats from "./SeasonStats";
 import { motion } from "framer-motion";
-import {
-  doc,
-  setDoc,
-  getDoc,
-  updateDoc,
-  arrayUnion,
-  arrayRemove,
-} from "firebase/firestore";
-import { db } from "../../firebase-config";
 import { useEffect, useState } from "react";
 import favIcon from "@img/favfilled.png";
 import unfavIcon from "@img/unfav.png";
@@ -41,70 +32,6 @@ const Team = ({
   useEffect(() => {
     checkTeamIsFavourited(teamdetails.id);
   }, [teamdetails.id]);
-
-  const checkFireStoreDocExists = async () => {
-    const docRef = doc(db, "users", user);
-    const docSnap = await getDoc(docRef);
-
-    if (docSnap.exists()) {
-      return true;
-    } else {
-      return false;
-    }
-  };
-
-  const checkTeamIsFavourited = async (team) => {
-    const docRef = doc(db, "users", user);
-    const docSnap = await getDoc(docRef);
-
-    if (docSnap.exists()) {
-      if (
-        docSnap
-          .data()
-          ?.favourites?.teams.map(function (e) {
-            return e.id;
-          })
-          .indexOf(team) !== -1
-      ) {
-        setIsTeamFavourited(true);
-      } else {
-        setIsTeamFavourited(false);
-      }
-    }
-  };
-
-  const addTeamToFavourites = async (name, id, logo) => {
-    const docExists = await checkFireStoreDocExists();
-    if (docExists === true) {
-      const docRef = doc(db, "users", user);
-      await updateDoc(docRef, {
-        "favourites.teams": arrayUnion({ name: name, id: id, logo: logo }),
-      });
-    } else {
-      const userFaves = {
-        favourites: {
-          teams: [{ name: name, id: id, logo: logo }],
-          players: [],
-        },
-      };
-      await setDoc(doc(db, "users", user), userFaves);
-    }
-    setIsTeamFavourited(true);
-  };
-
-  const removeFromFavourites = async () => {
-    const teamToRemove = {
-      name: teamdetails.name,
-      id: teamdetails.id,
-      logo: teamdetails.logo,
-    };
-    const docRef = doc(db, "users", user);
-
-    await updateDoc(docRef, {
-      "favourites.teams": arrayRemove(teamToRemove),
-    });
-    setIsTeamFavourited(false);
-  };
 
   return (
     <div className="team">
@@ -136,7 +63,7 @@ const Team = ({
         {isTeamFavourited ? (
           <motion.button
             whileTap={{ scale: 0.95 }}
-            onClick={removeFromFavourites}
+            // onClick={removeFromFavourites}
             style={style}
           >
             <img src={unfavIcon} alt="" /> <p>Unfavourite</p>
@@ -145,13 +72,13 @@ const Team = ({
           <motion.button
             style={style}
             whileTap={{ scale: 0.95 }}
-            onClick={() => {
-              addTeamToFavourites(
-                teamdetails.name,
-                teamdetails.id,
-                teamdetails.logo
-              );
-            }}
+            // onClick={() => {
+            //   addTeamToFavourites(
+            //     teamdetails.name,
+            //     teamdetails.id,
+            //     teamdetails.logo
+            //   );
+            // }}
           >
             <img src={favIcon} alt="" />
             <p>Favourite</p>
