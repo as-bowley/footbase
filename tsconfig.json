@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "ESNext",
     "lib": [
       "dom",
       "dom.iterable",
@@ -8,45 +8,40 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
+    "noFallthroughCasesInSwitch": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": "./",
+    "types": [
+      "vite/client",
+      "vitest/globals"
+    ],
+    "isolatedModules": true,
+    "baseUrl": ".",
     "paths": {
       "@/*": [
         "./src/*"
+      ],
+      "@img": [
+        "./src/assets/img/*"
       ]
-    },
-    "allowSyntheticDefaultImports": true,
-    "useDefineForClassFields": true,
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "strictBindCallApply": true,
-    "strictPropertyInitialization": true,
-    "strictBuiltinIteratorReturn": true,
-    "alwaysStrict": true,
-    "useUnknownInCatchVariables": true
-  },
-  "references": [
-    {
-      "path": "./tsconfig.app.json"
-    },
-    {
-      "path": "./tsconfig.node.json"
     }
-  ],
+  },
   "include": [
     "src"
   ],
   "exclude": [
     "node_modules"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
   ]
 }
