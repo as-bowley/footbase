@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import Dashboard from "@/app/routes/dashboard.jsx";
+import Dashboard from "@/app/routes/dashboard.js";
 import LoginPage from "@/app/routes/login";
 import Team from "@/app/routes/team";
 import Player from "@/app/routes/player";

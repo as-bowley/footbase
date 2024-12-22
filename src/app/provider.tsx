@@ -3,8 +3,13 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import React, { useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { HelmetProvider } from "react-helmet-async";
+import { MainErrorFallback } from "@/components/errors/main";
 
-export const AppProvider = ({ children }) => {
+type AppProviderProps = {
+  children: React.ReactNode;
+};
+
+export const AppProvider = ({ children }: AppProviderProps) => {
   const [queryClient] = useState(() => new QueryClient());
 
   return (
@@ -15,7 +20,7 @@ export const AppProvider = ({ children }) => {
         </div>
       }
     >
-      <ErrorBoundary FallbackComponent={<p>error</p>}>
+      <ErrorBoundary FallbackComponent={MainErrorFallback}>
         <HelmetProvider>
           <QueryClientProvider client={queryClient}>
             {import.meta.env.DEV && <ReactQueryDevtools />}

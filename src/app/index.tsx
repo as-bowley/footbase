@@ -1,4 +1,4 @@
-import "../App.css";
+import "../index.css";
 import { AppProvider } from "./provider";
 import { AppRouter } from "./router";
 import { Toaster } from "@/components/ui/toaster";

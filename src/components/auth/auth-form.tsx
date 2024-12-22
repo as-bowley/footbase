@@ -34,7 +34,11 @@ export default function AuthForm() {
     formState: { errors },
   } = form;
 
-  const onSubmit = async (values) => {
+  const onSubmit = async (values: {
+    email: string;
+    password: string;
+    confirmPassword: string;
+  }) => {
     try {
       if (isLogin) {
         const user = await signIn(values.email, values.password);
@@ -56,12 +60,14 @@ export default function AuthForm() {
       }
 
       navigate("/dashboard");
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: error.message || "Something went wrong",
-        variant: "destructive",
-      });
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        toast({
+          title: "Error",
+          description: error.message ?? "Something went wrong",
+          variant: "destructive",
+        });
+      }
     }
   };
 

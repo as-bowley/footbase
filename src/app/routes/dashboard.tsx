@@ -7,12 +7,15 @@ import LeagueTable from "@/components/Home/LeagueTable";
 import LeagueStats from "@/components/Home/LeagueStats";
 import Results from "@/components/Home/Results";
 import apiService from "@/services/apiService";
+import useThemeStore from "@/stores/themeStore.js";
 
-const Dashboard = ({ leaguetable, style, darkMode }) => {
+const Dashboard = () => {
   const [headlines, setHeadlines] = useState([]);
   const [results, setResults] = useState([]);
   const [topScorers, setTopScorers] = useState([]);
   const [topAssists, setTopAssists] = useState([]);
+
+  const { darkMode } = useThemeStore();
 
   useEffect(() => {
     apiService
@@ -58,7 +61,6 @@ const Dashboard = ({ leaguetable, style, darkMode }) => {
         exit={{ y: 5, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ ease: "easeIn", duration: 0.5 }}
-        style={style}
       >
         <Results results={results} darkMode={darkMode} />
       </motion.div>
@@ -68,7 +70,6 @@ const Dashboard = ({ leaguetable, style, darkMode }) => {
         exit={{ y: 5, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ ease: "easeIn", duration: 0.5 }}
-        style={style}
       >
         <LeagueTable leaguetable={leaguetable} />
       </motion.div>
@@ -78,7 +79,6 @@ const Dashboard = ({ leaguetable, style, darkMode }) => {
         exit={{ y: 5, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ ease: "easeIn", duration: 0.5 }}
-        style={style}
       >
         <LeagueStats
           topScorers={topScorers}
@@ -92,7 +92,6 @@ const Dashboard = ({ leaguetable, style, darkMode }) => {
         exit={{ y: 5, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ ease: "easeIn", duration: 0.5 }}
-        style={style}
       >
         <News headlines={headlines} darkMode={darkMode} />
       </motion.div>

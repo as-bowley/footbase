@@ -8,16 +8,30 @@ const NEWS_API_BASE_URL = isDev
   ? "http://localhost:3002/api/news"
   : "https://newsapi.org/v2";
 
-const defaultFootballHeaders = {
+type FootballHeaders = {
+  "x-rapidapi-key": string;
+  "x-rapidapi-host": string;
+};
+
+type NewsHeaders = {
+  Authorization: string;
+};
+
+const defaultFootballHeaders: FootballHeaders = {
   "x-rapidapi-key": import.meta.env.VITE_API_SPORTS_KEY,
   "x-rapidapi-host": "v3.football.api-sports.io",
 };
 
-const defaultNewsHeaders = {
+const defaultNewsHeaders: NewsHeaders = {
   Authorization: `Bearer ${import.meta.env.VITE_NEWSAPI_KEY}`,
 };
 
-const fetchApi = async (endpoint, baseUrl, headers, options = {}) => {
+const fetchApi = async (
+  endpoint: string,
+  baseUrl: string,
+  headers: FootballHeaders | NewsHeaders,
+  options = {},
+) => {
   const response = await fetch(`${baseUrl}${endpoint}`, {
     method: "GET",
     headers,
@@ -41,7 +55,11 @@ const apiService = {
     return data.response[0].league.standings[0];
   },
 
-  getTeamStatistics: async (teamId, leagueId = 39, season = 2024) => {
+  getTeamStatistics: async (
+    teamId: number,
+    leagueId: number = 39,
+    season: number = 2024,
+  ) => {
     if (!teamId) throw new Error("Team ID is required");
     const data = await fetchApi(
       `/teams/statistics?league=${leagueId}&season=${season}&team=${teamId}`,
@@ -51,7 +69,7 @@ const apiService = {
     return data.response;
   },
 
-  getTeamDetails: async (teamId) => {
+  getTeamDetails: async (teamId: number) => {
     if (!teamId) throw new Error("Team ID is required");
     const data = await fetchApi(
       `/teams?id=${teamId}`,
@@ -64,7 +82,7 @@ const apiService = {
     };
   },
 
-  getFixtures: async (teamId, leagueId = 39, nextCount = 3) => {
+  getFixtures: async (teamId: number, leagueId = 39, nextCount = 3) => {
     if (!teamId) throw new Error("Team ID is required");
     const data = await fetchApi(
       `/fixtures?league=${leagueId}&team=${teamId}&next=${nextCount}`,
@@ -74,7 +92,7 @@ const apiService = {
     return data.response;
   },
 
-  getSquad: async (teamId, season = 2022) => {
+  getSquad: async (teamId: number, season = 2022) => {
     if (!teamId) throw new Error("Team ID is required");
     const data = await fetchApi(
       `/players?team=${teamId}&season=${season}`,
@@ -93,7 +111,7 @@ const apiService = {
     return data.response;
   },
 
-  getPlayerStats: async (playerId, leagueId = 39, season = 2024) => {
+  getPlayerStats: async (playerId: number, leagueId = 39, season = 2024) => {
     if (!playerId) throw new Error("Player ID is required");
     const data = await fetchApi(
       `/players?id=${playerId}&league=${leagueId}&season=${season}`,
@@ -103,7 +121,7 @@ const apiService = {
     return data.response[0];
   },
 
-  getPlayerSearchData: async (searchValue, leagueId = 39) => {
+  getPlayerSearchData: async (searchValue: string, leagueId = 39) => {
     if (!searchValue) throw new Error("Search value is required");
     const data = await fetchApi(
       `/players?league=${leagueId}&search=${searchValue}`,
