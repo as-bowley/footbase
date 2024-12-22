@@ -1,6 +1,6 @@
 import "@/components/Home/styles/Home.css";
 import leaguelogoalt from "@img/premierleague_logo2.png";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import News from "@/components/Home/News";
 import LeagueTable from "@/components/Home/LeagueTable";

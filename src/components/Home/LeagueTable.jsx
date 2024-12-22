@@ -1,4 +1,3 @@
-import React from "react";
 import "./styles/LeagueTable.css";
 
 const LeagueTable = ({ leaguetable }) => {

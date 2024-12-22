@@ -6,7 +6,7 @@ import Squad from "@/components/Team/Squad";
 import Standings from "@/components/Team/Standings";
 import SeasonStats from "@/components/Team/SeasonStats";
 import { motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import favIcon from "@img/favfilled.png";
 import unfavIcon from "@img/unfav.png";
 

@@ -1,5 +1,4 @@
 import "./styles/LeagueStats.css";
-import React from "react";
 
 const LeagueStats = ({ topScorers, topAssists, darkMode }) => {
   return (

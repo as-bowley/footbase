@@ -4,7 +4,7 @@ import "@/components/Player/styles/Player.css";
 import PlayerPosition from "@/components/Player/PlayerPosition";
 import { motion } from "framer-motion";
 import PlayerSearchbar from "@/components/Player/PlayerSearchbar";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import favIcon from "@img/favfilled.png";
 import unfavIcon from "@img/unfav.png";
 
