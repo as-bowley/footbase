@@ -1,5 +1,3 @@
-import "./styles/PlayerInfo.css";
-
 const Playerstats = ({ stats, style }) => {
   return (
     <div className="player__info">

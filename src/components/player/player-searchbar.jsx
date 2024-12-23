@@ -1,5 +1,3 @@
-import "./styles/PlayerSearchbar.css";
-
 const PlayerSearchbar = ({
   onPlayerSearchChange,
   playerSearchData,

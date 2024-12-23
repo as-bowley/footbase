@@ -1,40 +1,14 @@
-import { motion } from "framer-motion";
-import "@/components/Favourites/styles/Favourites.css";
-import useThemeStore from "@/stores/themeStore.js";
-
 const Favourites = () => {
-  const { darkMode } = useThemeStore();
-
   return (
-    <div
-      className="favourites"
-      style={darkMode ? { backgroundColor: "#000" } : null}
-    >
-      <motion.div
-        initial={{ y: -5, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        exit={{ y: -5, opacity: 0 }}
-        transition={{ ease: "easeIn", duration: 0.5 }}
-        style={darkMode ? { color: "#fff" } : null}
-      >
+    <div className="favourites">
+      <div>
         <div className="favourites__title">
           <h1>Favourites</h1>
         </div>
-      </motion.div>
-      <motion.div
-        className="favourites__teams"
-        initial={{ y: -5, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        exit={{ y: -5, opacity: 0 }}
-        transition={{ ease: "easeIn", duration: 0.5 }}
-      >
+      </div>
+      <div className="favourites__teams">
         <div>
-          <h2
-            className="favourites__teams__title"
-            style={darkMode ? { color: "#fff" } : null}
-          >
-            Teams
-          </h2>
+          <h2 className="favourites__teams__title">Teams</h2>
           {/*{favTeams.map((data, i) => {*/}
           {/*  return (*/}
           {/*    <Link*/}
@@ -50,14 +24,8 @@ const Favourites = () => {
           {/*  );*/}
           {/*})}*/}
         </div>
-      </motion.div>
-      <motion.div
-        className="favourites__players"
-        initial={{ y: -5, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        exit={{ y: -5, opacity: 0 }}
-        transition={{ ease: "easeIn", duration: 0.5 }}
-      >
+      </div>
+      <div className="favourites__players">
         <div>
           <h2 className="favourites__players__title">Players</h2>
           {/*{favPlayers ? favPlayers.map((data, i) => {*/}
@@ -75,7 +43,7 @@ const Favourites = () => {
           {/*  );*/}
           {/*}) : null}*/}
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };

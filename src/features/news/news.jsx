@@ -1,4 +1,4 @@
-import "./styles/News.css";
+import "../../components/Home/styles/News.css";
 
 const News = ({ headlines, darkMode }) => {
   return (

@@ -60,7 +60,7 @@ const apiService = {
     leagueId: number = 39,
     season: number = 2024,
   ) => {
-    if (!teamId) throw new Error("Team ID is required");
+    if (!teamId) throw new Error("team ID is required");
     const data = await fetchApi(
       `/teams/statistics?league=${leagueId}&season=${season}&team=${teamId}`,
       FOOTBALL_API_BASE_URL,
@@ -70,7 +70,7 @@ const apiService = {
   },
 
   getTeamDetails: async (teamId: number) => {
-    if (!teamId) throw new Error("Team ID is required");
+    if (!teamId) throw new Error("team ID is required");
     const data = await fetchApi(
       `/teams?id=${teamId}`,
       FOOTBALL_API_BASE_URL,
@@ -83,7 +83,7 @@ const apiService = {
   },
 
   getFixtures: async (teamId: number, leagueId = 39, nextCount = 3) => {
-    if (!teamId) throw new Error("Team ID is required");
+    if (!teamId) throw new Error("team ID is required");
     const data = await fetchApi(
       `/fixtures?league=${leagueId}&team=${teamId}&next=${nextCount}`,
       FOOTBALL_API_BASE_URL,
@@ -93,7 +93,7 @@ const apiService = {
   },
 
   getSquad: async (teamId: number, season = 2022) => {
-    if (!teamId) throw new Error("Team ID is required");
+    if (!teamId) throw new Error("team ID is required");
     const data = await fetchApi(
       `/players?team=${teamId}&season=${season}`,
       FOOTBALL_API_BASE_URL,
@@ -112,7 +112,7 @@ const apiService = {
   },
 
   getPlayerStats: async (playerId: number, leagueId = 39, season = 2024) => {
-    if (!playerId) throw new Error("Player ID is required");
+    if (!playerId) throw new Error("player ID is required");
     const data = await fetchApi(
       `/players?id=${playerId}&league=${leagueId}&season=${season}`,
       FOOTBALL_API_BASE_URL,

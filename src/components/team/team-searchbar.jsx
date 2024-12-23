@@ -1,5 +1,3 @@
-import "./styles/TeamSearchbar.css";
-
 const TeamSearchbar = ({
   placeholder,
   searchData,

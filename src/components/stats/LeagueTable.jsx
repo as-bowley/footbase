@@ -1,4 +1,4 @@
-import "./styles/LeagueTable.css";
+import "../Home/styles/LeagueTable.css";
 
 const LeagueTable = ({ leaguetable }) => {
   return (

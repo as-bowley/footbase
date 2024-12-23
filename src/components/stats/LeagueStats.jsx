@@ -1,4 +1,4 @@
-import "./styles/LeagueStats.css";
+import "../Home/styles/LeagueStats.css";
 
 const LeagueStats = ({ topScorers, topAssists, darkMode }) => {
   return (

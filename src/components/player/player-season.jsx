@@ -1,5 +1,3 @@
-import "./styles/PlayerSeason.css";
-
 const PlayerSeason = ({ seasonStats, style }) => {
   return (
     <div className="player__seasonStats" style={style}>

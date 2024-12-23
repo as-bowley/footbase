@@ -1,5 +1,3 @@
-import "./styles/Standings.css";
-
 const Standings = ({ standings, team, style }) => {
   return (
     <div className="team__standings" style={style}>

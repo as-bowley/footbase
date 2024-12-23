@@ -1,4 +1,4 @@
-import "./styles/Results.css";
+import "../Home/styles/Results.css";
 
 const Results = ({ results, darkMode }) => {
   return (

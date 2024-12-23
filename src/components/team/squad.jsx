@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./styles/Squad.css";
 
 const Squad = ({ squad, style, darkMode }) => {
   const [squadModalIsOpen, setSquadModalIsOpen] = useState(false);

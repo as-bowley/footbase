@@ -1,5 +1,4 @@
-import "@/components/LoginPage/styles/LoginPage.css";
-import AuthForm from "@/components/auth/auth-form";
+import AuthForm from "@/features/auth/components/auth-form";
 import loginPageImg from "@img/fb-bg.jpg";
 
 const LoginPage = () => {

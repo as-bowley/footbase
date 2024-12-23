@@ -1,5 +1,3 @@
-import "./styles/Fixtures.css";
-
 const Fixtures = ({ fixtures, style }) => {
   const getNextThreeFixtures = () => {
     const games = [];

@@ -6,7 +6,7 @@ import LoginPage from "@/app/routes/login";
 import Team from "@/app/routes/team";
 import Player from "@/app/routes/player";
 import Favourites from "@/app/routes/favourites";
-import ProtectedRoute from "@/components/ProtectedRoute/ProtectedRoute.jsx";
+import { ProtectedRoute } from "@/lib/auth";
 import NotFound from "@/app/routes/not-found";
 
 const createAppRouter = () =>

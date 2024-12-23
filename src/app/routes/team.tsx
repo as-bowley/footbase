@@ -1,11 +1,9 @@
-// import Teaminfo from "@/components/Team/Teaminfo";
-import "@/components/Team/styles/Team.css";
-import TeamSearchbar from "@/components/Team/TeamSearchbar";
-// import Fixtures from "@/components/Team/Fixtures";
-// import Squad from "@/components/Team/Squad";
-// import Standings from "@/components/Team/Standings";
-// import SeasonStats from "@/components/Team/SeasonStats";
-import { motion } from "framer-motion";
+// import TeamInfo from "@/components/team/TeamInfo";
+// import TeamSearchbar from "@/components/team/TeamSearchbar";
+// import Fixtures from "@/components/team/Fixtures";
+// import Squad from "@/components/team/Squad";
+// import Standings from "@/components/team/Standings";
+// import SeasonStats from "@/components/team/SeasonStats";
 // import { useEffect, useState } from "react";
 // import favIcon from "@img/favfilled.png";
 // import unfavIcon from "@img/unfav.png";
@@ -19,13 +17,7 @@ const Team = () => {
 
   return (
     <div className="team">
-      <motion.div
-        initial={{ y: -5, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        exit={{ y: -5, opacity: 0 }}
-        transition={{ ease: "easeIn", duration: 0.5 }}
-        className="team__searchbar__container"
-      >
+      <div className="team__searchbar__container">
         {/*<TeamSearchbar*/}
         {/*  placeholder="Search team here..."*/}
         {/*  searchData={teamSearchData}*/}
@@ -35,25 +27,19 @@ const Team = () => {
         {/*  setTeamSearchValue={setTeamSearchValue}*/}
         {/*  style={style}*/}
         {/*/>*/}
-      </motion.div>
-      <motion.div
-        initial={{ y: -5, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        exit={{ y: -5, opacity: 0 }}
-        transition={{ ease: "easeIn", duration: 0.5 }}
-        className="team__favebutton"
-      >
+      </div>
+      <div className="team__favebutton">
         <h2>Teams</h2>
         {/*{isTeamFavourited ? (*/}
-        {/*  <motion.button*/}
+        {/*  <button*/}
         {/*    whileTap={{ scale: 0.95 }}*/}
         {/*    // onClick={removeFromFavourites}*/}
         {/*    style={style}*/}
         {/*  >*/}
         {/*    <img src={unfavIcon} alt="" /> <p>Unfavourite</p>*/}
-        {/*  </motion.button>*/}
+        {/*  </button>*/}
         {/*) : (*/}
-        {/*  <motion.button*/}
+        {/*  <button*/}
         {/*    style={style}*/}
         {/*    whileTap={{ scale: 0.95 }}*/}
         {/*    // onClick={() => {*/}
@@ -66,17 +52,11 @@ const Team = () => {
         {/*  >*/}
         {/*    <img src={favIcon} alt="" />*/}
         {/*    <p>Favourite</p>*/}
-        {/*  </motion.button>*/}
+        {/*  </button>*/}
         {/*)}*/}
-      </motion.div>
-      <motion.div
-        className="teaminfo__container"
-        initial={{ y: -5, opacity: 0 }}
-        exit={{ y: -5, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ ease: "easeIn", duration: 0.5 }}
-      >
-        {/*<Teaminfo*/}
+      </div>
+      <div className="teaminfo__container">
+        {/*<TeamInfo*/}
         {/*  name={teamdetails?.name}*/}
         {/*  logo={teamdetails?.logo}*/}
         {/*  country={teamdetails?.country}*/}
@@ -89,43 +69,19 @@ const Team = () => {
         {/*  form={teamstatistics?.form}*/}
         {/*  style={style}*/}
         {/*/>*/}
-      </motion.div>
-      <motion.div
-        className="fixtures__container"
-        initial={{ y: 5, opacity: 0 }}
-        exit={{ y: 5, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ type: "easeIn", duration: 0.5 }}
-      >
+      </div>
+      <div className="fixtures__container">
         {/*<Fixtures fixtures={fixtures} style={style} />*/}
-      </motion.div>
-      <motion.div
-        className="squad__container"
-        initial={{ y: -5, opacity: 0 }}
-        exit={{ y: -5, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ ease: "easeIn", duration: 0.5 }}
-      >
+      </div>
+      <div className="squad__container">
         {/*<Squad squad={squad} style={style} darkMode={darkMode} />*/}
-      </motion.div>
-      <motion.div
-        className="standings__container"
-        initial={{ x: 5, opacity: 0 }}
-        exit={{ y: 5, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ ease: "easeIn", duration: 0.5 }}
-      >
+      </div>
+      <div className="standings__container">
         {/*<Standings standings={standings} team={team} style={style} />*/}
-      </motion.div>
-      <motion.div
-        className="seasonstats__container"
-        initial={{ x: 5, opacity: 0 }}
-        exit={{ y: 5, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ ease: "easeIn", duration: 0.5 }}
-      >
+      </div>
+      <div className="seasonstats__container">
         {/*<SeasonStats statistics={teamstatistics} style={style} />*/}
-      </motion.div>
+      </div>
     </div>
   );
 };

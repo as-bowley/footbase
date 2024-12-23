@@ -1,6 +1,6 @@
 import { nanoid } from "nanoid";
 
-const Teaminfo = ({
+const TeamInfo = ({
   name,
   logo,
   country,
@@ -77,4 +77,4 @@ const Teaminfo = ({
   );
 };
 
-export default Teaminfo;
+export default TeamInfo;
