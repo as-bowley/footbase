@@ -1,49 +1,22 @@
-// import leaguelogoalt from "@img/premierleague_logo2.png";
-// import { useEffect, useState } from "react";
-// import { motion } from "framer-motion";
-// import News from "@/components/Home/News";
-// import LeagueTable from "@/components/Home/LeagueTable";
-// import LeagueStats from "@/components/Home/LeagueStats";
-// import Results from "@/components/Home/Results";
-// import apiService from "@/services/apiService";
-// import useThemeStore from "@/stores/themeStore.js";
 import DashboardLayout from "@/components/layout/dashboard-layout";
+import LatestNews from "@/features/news/news";
+import LeagueTable from "@/components/stats/league-table";
+import TopScorers from "@/components/stats/top-scorers";
+import TopAssists from "@/components/stats/top-assists";
+import LatestResults from "@/components/stats/latest-results";
 
 const Dashboard = () => {
-  // const [headlines, setHeadlines] = useState([]);
-  // const [results, setResults] = useState([]);
-  // const [topScorers, setTopScorers] = useState([]);
-  // const [topAssists, setTopAssists] = useState([]);
-
-  // const { darkMode } = useThemeStore();
-
-  // useEffect(() => {
-  //   apiService
-  //     .getFootballNews("Premier League", 15, "en")
-  //     .then((articles) => setHeadlines(articles))
-  //     .catch((err) => console.error("Error fetching football news:", err));
-  //
-  //   apiService
-  //     .getFixtures(39, 5)
-  //     .then((data) => setResults(data))
-  //     .catch((err) => console.error("Error fetching results:", err));
-  //
-  //   apiService
-  //     .getTopScorers(39, 2024)
-  //     .then((data) => {
-  //       setTopScorers(data);
-  //     })
-  //     .catch((err) => console.error("Error fetching top scorers:", err));
-  //
-  //   apiService
-  //     .getTopAssists(39, 2024)
-  //     .then((data) => setTopAssists(data))
-  //     .catch((err) => console.error("Error fetching top assists:", err));
-  // }, []);
-
   return (
     <DashboardLayout>
-      <></>
+      <div className="container mx-auto p-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <LatestResults />
+          <LeagueTable />
+          <TopScorers />
+          <TopAssists />
+          <LatestNews />
+        </div>
+      </div>
     </DashboardLayout>
   );
 };
