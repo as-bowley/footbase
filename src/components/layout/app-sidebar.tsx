@@ -9,6 +9,8 @@ import {
 } from "@/components/ui/sidebar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Home, Star, Users, Trophy } from "lucide-react";
+import { Switch } from "@/components/ui/switch";
+import useThemeStore from "@/stores/themeStore";
 
 const navItems = [
   { icon: Home, label: "Home", url: "/" },
@@ -18,6 +20,8 @@ const navItems = [
 ];
 
 export function AppSidebar() {
+  const { theme, toggleTheme } = useThemeStore();
+
   return (
     <Sidebar>
       <SidebarHeader className="mb-8">
@@ -37,7 +41,7 @@ export function AppSidebar() {
           ))}
         </SidebarMenu>
       </SidebarContent>
-      <SidebarFooter>
+      <SidebarFooter className="flex flex-row items-center">
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton className="w-full">
@@ -49,6 +53,10 @@ export function AppSidebar() {
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
+        <Switch
+          checked={theme === "dark"}
+          onCheckedChange={toggleTheme}
+        ></Switch>
       </SidebarFooter>
     </Sidebar>
   );
