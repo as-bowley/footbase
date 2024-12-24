@@ -79,10 +79,14 @@ export default function AuthForm() {
             control={form.control}
             name="name"
             render={({ field }) => (
-              <FormItem>
+              <FormItem className="hidden">
                 <FormLabel>Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="John Doe" {...field} />
+                  <Input
+                    placeholder="John Doe"
+                    {...field}
+                    autoComplete="username"
+                  />
                 </FormControl>
                 <FormMessage>{errors.name?.message}</FormMessage>
               </FormItem>
@@ -96,7 +100,12 @@ export default function AuthForm() {
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input type="email" placeholder="john@example.com" {...field} />
+                <Input
+                  type="email"
+                  placeholder="john@example.com"
+                  {...field}
+                  autoComplete="email"
+                />
               </FormControl>
               <FormMessage>{errors.email?.message}</FormMessage>
             </FormItem>
@@ -109,7 +118,12 @@ export default function AuthForm() {
             <FormItem>
               <FormLabel>Password</FormLabel>
               <FormControl>
-                <Input type="password" placeholder="********" {...field} />
+                <Input
+                  type="password"
+                  placeholder="********"
+                  {...field}
+                  autoComplete={isLogin ? "current-password" : "new-password"}
+                />
               </FormControl>
               <FormMessage>{errors.password?.message}</FormMessage>
             </FormItem>
@@ -123,7 +137,12 @@ export default function AuthForm() {
               <FormItem>
                 <FormLabel>Confirm Password</FormLabel>
                 <FormControl>
-                  <Input type="password" placeholder="********" {...field} />
+                  <Input
+                    type="password"
+                    placeholder="********"
+                    {...field}
+                    autoComplete="new-password"
+                  />
                 </FormControl>
                 <FormMessage>{errors.confirmPassword?.message}</FormMessage>
               </FormItem>
