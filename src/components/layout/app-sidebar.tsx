@@ -14,7 +14,6 @@ import useThemeStore from "@/stores/themeStore";
 import React from "react";
 import useAuthStore from "@/stores/authStore";
 import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -32,11 +31,6 @@ const navItems = [
 export function AppSidebar() {
   const { theme, toggleTheme } = useThemeStore();
   const { user, signOut } = useAuthStore();
-  const navigate = useNavigate();
-
-  const handleSignOut = async () => {
-    await signOut().then(() => navigate("/"));
-  };
 
   return (
     <Sidebar>
@@ -75,7 +69,7 @@ export function AppSidebar() {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="start" className="w-56">
-            <DropdownMenuItem onClick={handleSignOut}>
+            <DropdownMenuItem onClick={signOut}>
               <LogOut className="mr-2 h-4 w-4" />
               <span>Log out</span>
             </DropdownMenuItem>

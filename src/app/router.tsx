@@ -17,7 +17,11 @@ const createAppRouter = () =>
     },
     {
       path: "/dashboard",
-      element: <Dashboard />,
+      element: (
+        <ProtectedRoute>
+          <Dashboard />,
+        </ProtectedRoute>
+      ),
     },
     {
       path: "/team",
