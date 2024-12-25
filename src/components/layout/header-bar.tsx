@@ -15,7 +15,7 @@ export function HeaderBar() {
   };
 
   return (
-    <header className="flex items-center justify-between p-4 border-b">
+    <header className="flex items-center justify-between p-4 border-b sticky top-0 bg-background z-10">
       <form onSubmit={handleSearch} className="flex-1 mr-4">
         <div className="relative">
           <Search className="absolute left-2 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />

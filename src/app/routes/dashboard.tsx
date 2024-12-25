@@ -1,5 +1,5 @@
 import DashboardLayout from "@/components/layout/dashboard-layout";
-import LatestNews from "@/features/news/news";
+import NewsCard from "@/features/news/components/news-card";
 import LeagueTable from "@/components/stats/league-table";
 import TopScorers from "@/components/stats/top-scorers";
 import TopAssists from "@/components/stats/top-assists";
@@ -14,7 +14,7 @@ const Dashboard = () => {
           <LeagueTable />
           <TopScorers />
           <TopAssists />
-          <LatestNews />
+          <NewsCard />
         </div>
       </div>
     </DashboardLayout>
