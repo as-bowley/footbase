@@ -29,7 +29,7 @@ export default function NewsCard() {
   }, []);
 
   return (
-    <Card className="col-span-2">
+    <Card>
       <CardHeader>
         <CardTitle>Latest News</CardTitle>
       </CardHeader>
