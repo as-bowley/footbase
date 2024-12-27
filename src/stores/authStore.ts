@@ -5,6 +5,7 @@ import { User } from "@supabase/supabase-js";
 type AuthStore = {
   user: User | null;
   isLoggedIn: boolean;
+  isLoading: boolean;
   setUser: (user: User | null) => void;
   initialize: () => void;
   signUp: (email: string, password: string) => Promise<User | null>;
@@ -15,14 +16,21 @@ type AuthStore = {
 const useAuthStore = create<AuthStore>((set) => ({
   user: null,
   isLoggedIn: false,
+  isLoading: true,
 
-  setUser: (user) => set({ user, isLoggedIn: !!user }),
+  setUser: (user) => set({ user, isLoggedIn: !!user, isLoading: false }),
 
   initialize: async () => {
-    const session = await supabase.auth.getSession();
+    const { data: sessionData, error } = await supabase.auth.getSession();
+
+    if (error) {
+      console.error("Session restoration error: ", error.message);
+    }
+
     set({
-      user: session.data.session?.user ?? null,
-      isLoggedIn: !!session.data.session?.user,
+      user: sessionData.session?.user ?? null,
+      isLoggedIn: !!sessionData.session?.user,
+      isLoading: false,
     });
 
     supabase.auth.onAuthStateChange((event, session) => {
@@ -36,7 +44,7 @@ const useAuthStore = create<AuthStore>((set) => ({
       console.error("Sign-up error:", error.message);
       return null;
     }
-    const user = data.user as User; // Type assertion to ensure `data.user` matches `User`
+    const user = data.user as User;
     set({ user, isLoggedIn: true });
     return user;
   },
