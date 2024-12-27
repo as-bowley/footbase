@@ -1,5 +1,5 @@
 export type NewsItem = {
   title: string;
-  publishedAt: Date;
+  publishedAt: string;
   url: string;
 };

@@ -4,32 +4,30 @@ import apiService from "@/services/apiService";
 import { dateConversion } from "@/lib/utils";
 import { Skeleton } from "@/components/ui/skeleton";
 import { NewsItem } from "@/types/api/news";
-
-// const mockNews = [
-//   {
-//     title: "Transfer Rumors: Star Player X Linked with Big Move",
-//     publishedAt: "2023-07-15",
-//   },
-//   { title: "Injury Update: Key Player Y Out for 3 Weeks", publishedAt: "2023-07-14" },
-//   {
-//     title: "Match Preview: Upcoming Derby Between Rival Teams",
-//     publishedAt: "2023-07-13",
-//   },
-// ];
+import { mockNews } from "@/mocks/news.mock";
 
 export default function NewsCard() {
   const [latestNews, setLatestNews] = useState<NewsItem[] | []>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    apiService
-      .getFootballNews()
-      .then((data) => setLatestNews(data))
-      .finally(() => setIsLoading(false));
+    if (process.env.NODE_ENV === "development") {
+      setTimeout(() => {
+        setLatestNews(mockNews);
+        setIsLoading(false);
+      }, 1000);
+    } else {
+      apiService
+        .getFootballNews()
+        .then((data) => {
+          setLatestNews(data);
+        })
+        .finally(() => setIsLoading(false));
+    }
   }, []);
 
   return (
-    <Card>
+    <Card className="col-span-2">
       <CardHeader>
         <CardTitle>Latest News</CardTitle>
       </CardHeader>

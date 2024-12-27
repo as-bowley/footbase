@@ -164,7 +164,7 @@ const apiService = {
     language = "en",
   ) => {
     const data = await fetchApi(
-      `/everything?q=${encodeURIComponent(query)}&pageSize=${pageSize}&language=${language}`,
+      `/everything?q=${encodeURIComponent(query)}&pageSize=${pageSize}&sortBy=publishedAt&domains=bbc.com,telegraph.co.uk,athletic.com,goal.com,skysports.com,eurosport.com,theguardian.com&language=${language}`,
       NEWS_API_BASE_URL,
       defaultNewsHeaders,
     );
