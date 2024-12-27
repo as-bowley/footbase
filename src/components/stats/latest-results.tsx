@@ -40,7 +40,7 @@ export default function LatestResults() {
   }, []);
 
   return (
-    <Card className="col-span-2">
+    <Card className="col-span-2 row-span-1">
       <CardHeader>
         <CardTitle>Latest Results</CardTitle>
       </CardHeader>
@@ -62,7 +62,11 @@ export default function LatestResults() {
               <li key={index} className="border-b pb-2 last:border-b-0 w-full">
                 <div className="grid grid-cols-3">
                   <div className="grid grid-cols-[1fr_2fr] items-center gap-6">
-                    <img className="h-10 mx-auto" src={result.homeTeam.logo} />
+                    <img
+                      className="h-10 mx-auto"
+                      src={result.homeTeam.logo}
+                      alt={`${result.homeTeam.name}' logo`}
+                    />
                     <span>{result.homeTeam.name}</span>
                   </div>
                   <div className="text-center text-xl font-bold my-auto">
@@ -70,7 +74,11 @@ export default function LatestResults() {
                   </div>
                   <div className="grid grid-cols-[2fr_1fr] items-center gap-6">
                     <span>{result.awayTeam.name}</span>
-                    <img className="h-10 mx-auto" src={result.awayTeam.logo} />
+                    <img
+                      className="h-10 mx-auto"
+                      src={result.awayTeam.logo}
+                      alt={`${result.awayTeam.name}' logo`}
+                    />
                   </div>
                 </div>
                 <p className="text-center text-xs italic">
