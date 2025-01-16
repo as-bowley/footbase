@@ -4,15 +4,6 @@ import loginPageImg from "@img/fb-bg.jpg";
 const LoginPage = () => {
   return (
     <div className="flex min-h-screen">
-      <div className="hidden lg:flex lg:w-1/2 bg-gray-100 items-center justify-center">
-        <img
-          src={loginPageImg}
-          alt="Football"
-          width={600}
-          height={600}
-          className="object-cover h-full w-full"
-        />
-      </div>
       <div className="w-full lg:w-1/2 flex items-center justify-center p-8">
         <div className="w-full max-w-md">
           <div className="text-center mb-8">
@@ -23,6 +14,15 @@ const LoginPage = () => {
           </div>
           <AuthForm />
         </div>
+      </div>
+      <div className="hidden lg:flex lg:w-1/2 bg-gray-100 items-center justify-center">
+        <img
+          src={loginPageImg}
+          alt="Football"
+          width={600}
+          height={600}
+          className="object-cover h-full w-full"
+        />
       </div>
     </div>
   );
