@@ -10,6 +10,7 @@ import StatsOverviewCards from "@/components/stats/stats-overview-cards";
 import PerformanceTab from "@/components/stats/performance-tab";
 import TechnicalTab from "@/components/stats/technical-tab";
 import CompetitionBreakdown from "@/components/stats/competition-breakdown";
+import apiService from "@/services/apiService";
 
 const Players = () => {
   const [stats, setStats] = useState<Partial<PlayerStatsAPIResponse>>();
@@ -21,6 +22,11 @@ const Players = () => {
         setStats(mockPlayerStats[0]);
         setIsLoading(false);
       }, 1000);
+    } else {
+      apiService.getPlayerStats(276).then((data) => {
+        setStats(data);
+        setIsLoading(false);
+      });
     }
   }, []);
 
