@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Dashboard from "@/app/routes/dashboard.js";
 import LoginPage from "@/app/routes/login";
 import Team from "@/app/routes/team";
-import Player from "@/app/routes/player";
+import Players from "@/app/routes/players";
 import Favourites from "@/app/routes/favourites";
 import { ProtectedRoute } from "@/lib/auth";
 import NotFound from "@/app/routes/not-found";
@@ -32,10 +32,10 @@ const createAppRouter = () =>
       ),
     },
     {
-      path: "/player",
+      path: "/players",
       element: (
         <ProtectedRoute>
-          <Player />
+          <Players />
         </ProtectedRoute>
       ),
     },

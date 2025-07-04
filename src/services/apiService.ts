@@ -111,13 +111,14 @@ const apiService = {
     return data.response;
   },
 
-  getPlayerStats: async (playerId: number, leagueId = 39, season = 2024) => {
+  getPlayerStats: async (playerId: number, season = 2024) => {
     if (!playerId) throw new Error("player ID is required");
     const data = await fetchApi(
-      `/players?id=${playerId}&league=${leagueId}&season=${season}`,
+      `/players?id=${playerId}&season=${season}`,
       FOOTBALL_API_BASE_URL,
       defaultFootballHeaders,
     );
+    console.log(data);
     return data.response[0];
   },
 

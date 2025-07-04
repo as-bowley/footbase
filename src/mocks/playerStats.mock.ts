@@ -1,4 +1,4 @@
-import { TopAssist } from "@/types/api/player-stats";
+import { PlayerStatsAPIResponse, TopAssist } from "@/types/api/player-stats";
 
 export const mockAssists: TopAssist[] = [
   { name: "Mohamed Salah", team: "Liverpool", assists: 13 },
@@ -29,4 +29,472 @@ export const mockScorers = [
   { name: "Harry Kane", team: "Tottenham", goals: 12 },
   { name: "Marcus Rashford", team: "Manchester United", goals: 10 },
   { name: "Bukayo Saka", team: "Arsenal", goals: 9 },
+];
+
+export const mockPlayerStats: Partial<PlayerStatsAPIResponse>[] = [
+  {
+    player: {
+      id: 19088,
+      name: "D. Henderson",
+      firstname: "Dean Alex",
+      lastname: "Henderson",
+      age: 28,
+      birth: {
+        date: "1997-03-12",
+        place: "Whitehaven",
+        country: "England",
+      },
+      nationality: "England",
+      height: "188 cm",
+      weight: "85 kg",
+      injured: false,
+      photo: "https://media.api-sports.io/football/players/19088.png",
+    },
+    statistics: [
+      {
+        team: {
+          id: 52,
+          name: "Crystal Palace",
+          logo: "https://media.api-sports.io/football/teams/52.png",
+        },
+        league: {
+          id: 39,
+          name: "Premier League",
+          country: "England",
+          logo: "https://media.api-sports.io/football/leagues/39.png",
+          flag: "https://media.api-sports.io/flags/gb-eng.svg",
+          season: 2024,
+        },
+        games: {
+          appearences: 38,
+          lineups: 38,
+          minutes: 3420,
+          number: null,
+          position: "Goalkeeper",
+          rating: "6.944736",
+          captain: false,
+        },
+        substitutes: {
+          in: 0,
+          out: 0,
+          bench: 0,
+        },
+        shots: {
+          total: 1,
+          on: 0,
+        },
+        goals: {
+          total: 0,
+          conceded: 51,
+          assists: 0,
+          saves: 104,
+        },
+        passes: {
+          total: 1101,
+          key: 3,
+          accuracy: 0,
+        },
+        tackles: {
+          total: 2,
+          blocks: 0,
+          interceptions: 0,
+        },
+        duels: {
+          total: 20,
+          won: 15,
+        },
+        dribbles: {
+          attempts: 0,
+          success: 0,
+          past: 0,
+        },
+        fouls: {
+          drawn: 2,
+          committed: 0,
+        },
+        cards: {
+          yellow: 3,
+          yellowred: 0,
+          red: 0,
+        },
+        penalty: {
+          won: 0,
+          commited: 0,
+          scored: 0,
+          missed: 0,
+          saved: 1,
+        },
+      },
+      {
+        team: {
+          id: 52,
+          name: "Crystal Palace",
+          logo: "https://media.api-sports.io/football/teams/52.png",
+        },
+        league: {
+          id: 48,
+          name: "League Cup",
+          country: "England",
+          logo: "https://media.api-sports.io/football/leagues/48.png",
+          flag: "https://media.api-sports.io/flags/gb-eng.svg",
+          season: 2024,
+        },
+        games: {
+          appearences: 3,
+          lineups: 3,
+          minutes: 270,
+          number: 0,
+          position: "Goalkeeper",
+          rating: "7.433333",
+          captain: false,
+        },
+        substitutes: {
+          in: 0,
+          out: 0,
+          bench: 1,
+        },
+        shots: {
+          total: 0,
+          on: 0,
+        },
+        goals: {
+          total: 0,
+          conceded: 4,
+          assists: 1,
+          saves: 10,
+        },
+        passes: {
+          total: 77,
+          key: 1,
+          accuracy: 0,
+        },
+        tackles: {
+          total: 0,
+          blocks: 0,
+          interceptions: 0,
+        },
+        duels: {
+          total: 2,
+          won: 2,
+        },
+        dribbles: {
+          attempts: 0,
+          success: 0,
+          past: 0,
+        },
+        fouls: {
+          drawn: 0,
+          committed: 0,
+        },
+        cards: {
+          yellow: 1,
+          yellowred: 0,
+          red: 0,
+        },
+        penalty: {
+          won: 0,
+          commited: 0,
+          scored: 0,
+          missed: 0,
+          saved: 0,
+        },
+      },
+      {
+        team: {
+          id: 52,
+          name: "Crystal Palace",
+          logo: "https://media.api-sports.io/football/teams/52.png",
+        },
+        league: {
+          id: 45,
+          name: "FA Cup",
+          country: "England",
+          logo: "https://media.api-sports.io/football/leagues/45.png",
+          flag: "https://media.api-sports.io/flags/gb-eng.svg",
+          season: 2024,
+        },
+        games: {
+          appearences: 3,
+          lineups: 3,
+          minutes: 270,
+          number: 0,
+          position: "Goalkeeper",
+          rating: "8.000000",
+          captain: false,
+        },
+        substitutes: {
+          in: 0,
+          out: 0,
+          bench: 2,
+        },
+        shots: {
+          total: 0,
+          on: 0,
+        },
+        goals: {
+          total: 0,
+          conceded: 0,
+          assists: 0,
+          saves: 13,
+        },
+        passes: {
+          total: 90,
+          key: 0,
+          accuracy: 0,
+        },
+        tackles: {
+          total: 1,
+          blocks: 0,
+          interceptions: 0,
+        },
+        duels: {
+          total: 5,
+          won: 5,
+        },
+        dribbles: {
+          attempts: 0,
+          success: 0,
+          past: 0,
+        },
+        fouls: {
+          drawn: 1,
+          committed: 0,
+        },
+        cards: {
+          yellow: 1,
+          yellowred: 0,
+          red: 0,
+        },
+        penalty: {
+          won: 0,
+          commited: 0,
+          scored: 0,
+          missed: 0,
+          saved: 1,
+        },
+      },
+      {
+        team: {
+          id: 10,
+          name: "England",
+          logo: "https://media.api-sports.io/football/teams/10.png",
+        },
+        league: {
+          id: 5,
+          name: "UEFA Nations League",
+          country: "World",
+          logo: "https://media.api-sports.io/football/leagues/5.png",
+          flag: "https://media.api-sports.io/flags/gb-eng.svg",
+          season: 2024,
+        },
+        games: {
+          appearences: 1,
+          lineups: 1,
+          minutes: 90,
+          number: 0,
+          position: "Goalkeeper",
+          rating: "6.944736",
+          captain: false,
+        },
+        substitutes: {
+          in: 0,
+          out: 0,
+          bench: 5,
+        },
+        shots: {
+          total: 0,
+          on: 0,
+        },
+        goals: {
+          total: 0,
+          conceded: 0,
+          assists: 0,
+          saves: 0,
+        },
+        passes: {
+          total: 0,
+          key: 0,
+          accuracy: 0,
+        },
+        tackles: {
+          total: 0,
+          blocks: 0,
+          interceptions: 0,
+        },
+        duels: {
+          total: 0,
+          won: 0,
+        },
+        dribbles: {
+          attempts: 0,
+          success: 0,
+          past: 0,
+        },
+        fouls: {
+          drawn: 0,
+          committed: 0,
+        },
+        cards: {
+          yellow: 0,
+          yellowred: 0,
+          red: 0,
+        },
+        penalty: {
+          won: 0,
+          commited: 0,
+          scored: 0,
+          missed: 0,
+          saved: 0,
+        },
+      },
+      {
+        team: {
+          id: 10,
+          name: "England",
+          logo: "https://media.api-sports.io/football/teams/10.png",
+        },
+        league: {
+          id: 4,
+          name: "Euro Championship",
+          country: "World",
+          logo: "https://media.api-sports.io/football/leagues/4.png",
+          flag: "https://media.api-sports.io/flags/gb-eng.svg",
+          season: 2024,
+        },
+        games: {
+          appearences: 0,
+          lineups: 0,
+          minutes: 0,
+          number: 0,
+          position: "Goalkeeper",
+          rating: "6.944736",
+          captain: false,
+        },
+        substitutes: {
+          in: 0,
+          out: 0,
+          bench: 7,
+        },
+        shots: {
+          total: 0,
+          on: 0,
+        },
+        goals: {
+          total: 0,
+          conceded: 0,
+          assists: 0,
+          saves: 0,
+        },
+        passes: {
+          total: 0,
+          key: 0,
+          accuracy: 0,
+        },
+        tackles: {
+          total: 0,
+          blocks: 0,
+          interceptions: 0,
+        },
+        duels: {
+          total: 0,
+          won: 0,
+        },
+        dribbles: {
+          attempts: 0,
+          success: 0,
+          past: 0,
+        },
+        fouls: {
+          drawn: 0,
+          committed: 0,
+        },
+        cards: {
+          yellow: 0,
+          yellowred: 0,
+          red: 0,
+        },
+        penalty: {
+          won: 0,
+          commited: 0,
+          scored: 0,
+          missed: 0,
+          saved: 0,
+        },
+      },
+      {
+        team: {
+          id: 10,
+          name: "England",
+          logo: "https://media.api-sports.io/football/teams/10.png",
+        },
+        league: {
+          id: 10,
+          name: "Friendlies",
+          country: "World",
+          logo: "https://media.api-sports.io/football/leagues/10.png",
+          flag: "https://media.api-sports.io/flags/gb-eng.svg",
+          season: 2024,
+        },
+        games: {
+          appearences: 0,
+          lineups: 0,
+          minutes: 0,
+          number: 0,
+          position: "Goalkeeper",
+          rating: "6.944736",
+          captain: false,
+        },
+        substitutes: {
+          in: 0,
+          out: 0,
+          bench: 2,
+        },
+        shots: {
+          total: 0,
+          on: 0,
+        },
+        goals: {
+          total: 0,
+          conceded: 0,
+          assists: 0,
+          saves: 0,
+        },
+        passes: {
+          total: 0,
+          key: 0,
+          accuracy: 0,
+        },
+        tackles: {
+          total: 0,
+          blocks: 0,
+          interceptions: 0,
+        },
+        duels: {
+          total: 0,
+          won: 0,
+        },
+        dribbles: {
+          attempts: 0,
+          success: 0,
+          past: 0,
+        },
+        fouls: {
+          drawn: 0,
+          committed: 0,
+        },
+        cards: {
+          yellow: 0,
+          yellowred: 0,
+          red: 0,
+        },
+        penalty: {
+          won: 0,
+          commited: 0,
+          scored: 0,
+          missed: 0,
+          saved: 0,
+        },
+      },
+    ],
+  },
 ];
