@@ -118,7 +118,6 @@ const apiService = {
       FOOTBALL_API_BASE_URL,
       defaultFootballHeaders,
     );
-    console.log(data);
     return data.response[0];
   },
 
