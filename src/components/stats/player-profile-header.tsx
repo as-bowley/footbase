@@ -11,10 +11,12 @@ const PlayerProfileHeader = ({
 }: {
   stats: Partial<PlayerStatsAPIResponse>;
 }) => {
-  const primaryStats = stats?.statistics?.find((stat) => stat.league.id === 39);
+  const primaryStats = stats.statistics?.[0];
+  const playerStats = stats.player;
+
   const isGK = isGoalkeeper(stats);
-  const age = stats?.player?.birth?.date
-    ? getAge(stats?.player?.birth?.date)
+  const age = playerStats?.birth?.date
+    ? getAge(playerStats?.birth?.date)
     : "N/A";
 
   return (
@@ -23,9 +25,9 @@ const PlayerProfileHeader = ({
         <div className="flex flex-col md:flex-row gap-6">
           <div className="flex flex-col items-center md:items-start">
             <Avatar className="h-32 w-32 mb-4">
-              <AvatarImage src={stats?.player?.photo} alt="Player" />
+              <AvatarImage src={playerStats?.photo} alt="Player" />
               <AvatarFallback className="text-2xl">
-                {`${stats?.player?.firstname[0]}${stats?.player?.lastname[0]}`}
+                {`${playerStats?.firstname[0]}${playerStats?.lastname[0]}`}
               </AvatarFallback>
             </Avatar>
             <Badge variant="secondary" className="mx-auto mb-2">
@@ -33,9 +35,9 @@ const PlayerProfileHeader = ({
             </Badge>
           </div>
 
-          <div className="flex-1 space-y-4">
-            <div>
-              <h1 className="text-3xl font-bold mb-2">{stats?.player?.name}</h1>
+          <div className="flex flex-col w-full">
+            <div className="mb-4">
+              <h1 className="text-3xl font-bold mb-2">{playerStats?.name}</h1>
               <div className="flex flex-wrap gap-4 text-muted-foreground">
                 <div className="flex items-center gap-1">
                   <Users className="h-4 w-4" />
@@ -43,7 +45,7 @@ const PlayerProfileHeader = ({
                 </div>
                 <div className="flex items-center gap-1">
                   <MapPin className="h-4 w-4" />
-                  <span>{stats?.player?.nationality}</span>
+                  <span>{playerStats?.nationality}</span>
                 </div>
                 <div className="flex items-center gap-1">
                   <Calendar className="h-4 w-4" />
