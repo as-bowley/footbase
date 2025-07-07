@@ -2,7 +2,6 @@ import DashboardLayout from "@/components/layout/dashboard-layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useEffect, useState } from "react";
-import { mockPlayerStats } from "@/mocks/playerStats.mock";
 import { PlayerStatsAPIResponse } from "@/types/api/player-stats";
 import { isGoalkeeper } from "@/lib/utils";
 import PlayerProfileHeader from "@/components/stats/player-profile-header";
@@ -17,17 +16,10 @@ const Players = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    if (process.env.NODE_ENV === "development") {
-      setTimeout(() => {
-        setStats(mockPlayerStats[0]);
-        setIsLoading(false);
-      }, 1000);
-    } else {
-      apiService.getPlayerStats(276).then((data) => {
-        setStats(data);
-        setIsLoading(false);
-      });
-    }
+    apiService.getPlayerStats(300).then((data) => {
+      setStats(data);
+      setIsLoading(false);
+    });
   }, []);
 
   if (!stats || isLoading) {
