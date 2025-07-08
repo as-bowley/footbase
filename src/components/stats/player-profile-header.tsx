@@ -1,4 +1,4 @@
-import { getAge, isGoalkeeper } from "@/lib/utils";
+import { isGoalkeeper } from "@/lib/utils";
 import { Card, CardContent } from "@/components/ui/card";
 import { PlayerStatsAPIResponse } from "@/types/api/player-stats";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -15,9 +15,6 @@ const PlayerProfileHeader = ({
   const playerStats = stats.player;
 
   const isGK = isGoalkeeper(stats);
-  const age = playerStats?.birth?.date
-    ? getAge(playerStats?.birth?.date)
-    : "N/A";
 
   return (
     <Card>
@@ -49,7 +46,7 @@ const PlayerProfileHeader = ({
                 </div>
                 <div className="flex items-center gap-1">
                   <Calendar className="h-4 w-4" />
-                  <span>{age} years old</span>
+                  <span>{playerStats?.age} years old</span>
                 </div>
               </div>
             </div>

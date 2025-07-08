@@ -6,7 +6,7 @@ import { PlayerStatsAPIResponse } from "@/types/api/player-stats";
 import { isGoalkeeper } from "@/lib/utils";
 import PlayerProfileHeader from "@/components/stats/player-profile-header";
 import StatsOverviewCards from "@/components/stats/stats-overview-cards";
-import PerformanceTab from "@/components/stats/performance-tab";
+// import PerformanceTab from "@/components/stats/performance-tab";
 import TechnicalTab from "@/components/stats/technical-tab";
 import CompetitionBreakdown from "@/components/stats/competition-breakdown";
 import apiService from "@/services/apiService";
@@ -49,17 +49,17 @@ const Players = () => {
         />
 
         {/* Detailed Stats Tabs */}
-        <Tabs defaultValue="performance" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-4">
-            <TabsTrigger value="performance">Performance</TabsTrigger>
+        <Tabs defaultValue="technical" className="space-y-6">
+          <TabsList className="grid w-full grid-cols-3">
+            {/*<TabsTrigger value="performance">Performance</TabsTrigger>*/}
             <TabsTrigger value="technical">Technical</TabsTrigger>
             <TabsTrigger value="physical">Physical</TabsTrigger>
             <TabsTrigger value="competitions">Competitions</TabsTrigger>
           </TabsList>
 
-          <TabsContent value="performance" className="space-y-6">
-            <PerformanceTab isGoalkeeper={isGK} />
-          </TabsContent>
+          {/*<TabsContent value="performance" className="space-y-6">*/}
+          {/*  <PerformanceTab isGoalkeeper={isGK} stats={stats} />*/}
+          {/*</TabsContent>*/}
 
           <TabsContent value="technical" className="space-y-6">
             <TechnicalTab

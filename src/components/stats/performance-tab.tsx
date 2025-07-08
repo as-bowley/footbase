@@ -13,7 +13,6 @@ import {
 import { Area, AreaChart, Line, LineChart, XAxis, YAxis } from "recharts";
 
 const PerformanceTab = ({ isGoalkeeper }: { isGoalkeeper: boolean }) => {
-  // Mock data - in real app this would come from props or API
   const goalkeepperData = [
     { month: "Aug", saves: 12, conceded: 4, rating: 7.2, cleanSheets: 2 },
     { month: "Sep", saves: 15, conceded: 6, rating: 6.8, cleanSheets: 1 },
