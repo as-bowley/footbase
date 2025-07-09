@@ -170,6 +170,16 @@ const apiService = {
     );
     return data.articles;
   },
+
+  searchPlayers: async (searchTerm: string) => {
+    const data = await fetchApi(
+      `/players/profiles?search=${encodeURIComponent(searchTerm)}`,
+      FOOTBALL_API_BASE_URL,
+      defaultFootballHeaders,
+    );
+
+    return data.response;
+  },
 };
 
 export default apiService;
