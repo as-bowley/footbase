@@ -37,7 +37,15 @@ const PlayerProfileHeader = ({
               <h1 className="text-3xl font-bold mb-2">{playerStats?.name}</h1>
               <div className="flex flex-wrap gap-4 text-muted-foreground">
                 <div className="flex items-center gap-1">
-                  <Users className="h-4 w-4" />
+                  {primaryStats?.team.logo ? (
+                    <img
+                      src={primaryStats.team.logo}
+                      alt={`${primaryStats.team.name} logo`}
+                      className="size-7"
+                    />
+                  ) : (
+                    <Users className="h-4 w-4" />
+                  )}
                   <span>{primaryStats?.team.name}</span>
                 </div>
                 <div className="flex items-center gap-1">

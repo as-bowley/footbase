@@ -57,7 +57,8 @@ const CompetitionBreakdown = ({ stats }: { stats: PlayerStatsAPIResponse }) => {
                 </div>
                 <div className="text-center">
                   <div className="font-semibold">
-                    {stat.games.rating || "N/A"}
+                    {Math.round(parseFloat(stat.games.rating) * 100) / 100 ||
+                      "N/A"}
                   </div>
                   <div className="text-muted-foreground">Rating</div>
                 </div>
