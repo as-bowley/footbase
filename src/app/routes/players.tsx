@@ -1,7 +1,9 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router";
+
 import DashboardLayout from "@/components/layout/dashboard-layout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useEffect, useState } from "react";
 import { PlayerStatsAPIResponse } from "@/types/api/player-stats";
 import { isGoalkeeper } from "@/lib/utils";
 import PlayerProfileHeader from "@/components/stats/player-profile-header";
@@ -14,9 +16,14 @@ import apiService from "@/services/apiService";
 const Players = () => {
   const [stats, setStats] = useState<Partial<PlayerStatsAPIResponse>>();
   const [isLoading, setIsLoading] = useState(true);
+  const params = useParams();
+  const playerId = params.playerId ?? 300;
 
   useEffect(() => {
-    apiService.getPlayerStats(300).then((data) => {
+    let id = playerId;
+    if (typeof id === "string") id = parseInt(id);
+    
+    apiService.getPlayerStats(id).then((data) => {
       setStats(data);
       setIsLoading(false);
     });

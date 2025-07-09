@@ -1,5 +1,6 @@
 import { useMemo } from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter } from "react-router";
+import { RouterProvider } from "react-router/dom";
 
 import Dashboard from "@/app/routes/dashboard.js";
 import LoginPage from "@/app/routes/login";
@@ -32,7 +33,7 @@ const createAppRouter = () =>
       ),
     },
     {
-      path: "/players",
+      path: "/players/:playerId?",
       element: (
         <ProtectedRoute>
           <Players />
