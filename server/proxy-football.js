@@ -25,8 +25,8 @@ if (!FOOTBALL_API_KEY) {
 }
 
 const CACHE_TTL = {
-  players: 24 * 60 * 60 * 1000, // 24 hours
-  teams: 24 * 60 * 60 * 1000, // 24 hours
+  player: 24 * 60 * 60 * 1000, // 24 hours
+  team: 24 * 60 * 60 * 1000, // 24 hours
   fixtures: 2 * 60 * 60 * 1000, // 2 hours
   standings: 12 * 60 * 60 * 1000, // 12 hours
   default: 6 * 60 * 60 * 1000, // 6 hours
@@ -42,8 +42,8 @@ const getCacheKey = (url, params) => {
 };
 
 const getCacheType = (url) => {
-  if (url.includes("/players")) return "players";
-  if (url.includes("/teams")) return "teams";
+  if (url.includes("/player")) return "player";
+  if (url.includes("/team")) return "team";
   if (url.includes("/fixtures")) return "fixtures";
   if (url.includes("/standings")) return "standings";
   return "default";

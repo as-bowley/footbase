@@ -13,7 +13,7 @@ import TechnicalTab from "@/components/stats/technical-tab";
 import CompetitionBreakdown from "@/components/stats/competition-breakdown";
 import apiService from "@/services/apiService";
 
-const Players = () => {
+const Player = () => {
   const [stats, setStats] = useState<Partial<PlayerStatsAPIResponse>>();
   const [isLoading, setIsLoading] = useState(true);
   const params = useParams();
@@ -22,12 +22,12 @@ const Players = () => {
   useEffect(() => {
     let id = playerId;
     if (typeof id === "string") id = parseInt(id);
-    
+
     apiService.getPlayerStats(id).then((data) => {
       setStats(data);
       setIsLoading(false);
     });
-  }, []);
+  }, [playerId]);
 
   if (!stats || isLoading) {
     return (
@@ -42,7 +42,7 @@ const Players = () => {
   const isGK = isGoalkeeper(stats);
 
   return (
-    <DashboardLayout>
+    <DashboardLayout key={playerId}>
       <div className="container mx-auto px-4 py-6">
         {/* Player Profile Header */}
         <div className="mb-8">
@@ -176,4 +176,4 @@ const Players = () => {
   );
 };
 
-export default Players;
+export default Player;

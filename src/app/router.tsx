@@ -5,7 +5,7 @@ import { RouterProvider } from "react-router/dom";
 import Dashboard from "@/app/routes/dashboard.js";
 import LoginPage from "@/app/routes/login";
 import Team from "@/app/routes/team";
-import Players from "@/app/routes/players";
+import Player from "@/app/routes/player";
 import Favourites from "@/app/routes/favourites";
 import { ProtectedRoute } from "@/lib/auth";
 import NotFound from "@/app/routes/not-found";
@@ -33,10 +33,10 @@ const createAppRouter = () =>
       ),
     },
     {
-      path: "/players/:playerId?",
+      path: "/player/:playerId?",
       element: (
         <ProtectedRoute>
-          <Players />
+          <Player />
         </ProtectedRoute>
       ),
     },
